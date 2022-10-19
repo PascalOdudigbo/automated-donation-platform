@@ -1,3 +1,3 @@
 class CharityProfileSerializer < ActiveModel::Serializer
-  attributes :id, :charities, :about_us
+  attributes :id, :charity_id, :about_us
 end

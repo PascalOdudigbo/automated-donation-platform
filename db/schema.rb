@@ -43,32 +43,32 @@ ActiveRecord::Schema.define(version: 2022_10_19_094113) do
   end
 
   create_table "charity_beneficiaries", force: :cascade do |t|
-    t.bigint "charities_id", null: false
-    t.bigint "beneficiaries_id", null: false
+    t.bigint "charity_id", null: false
+    t.bigint "beneficiary_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["beneficiaries_id"], name: "index_charity_beneficiaries_on_beneficiaries_id"
-    t.index ["charities_id"], name: "index_charity_beneficiaries_on_charities_id"
+    t.index ["beneficiary_id"], name: "index_charity_beneficiaries_on_beneficiary_id"
+    t.index ["charity_id"], name: "index_charity_beneficiaries_on_charity_id"
   end
 
   create_table "charity_profiles", force: :cascade do |t|
-    t.bigint "charities_id", null: false
+    t.bigint "charity_id", null: false
     t.text "about_us"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["charities_id"], name: "index_charity_profiles_on_charities_id"
+    t.index ["charity_id"], name: "index_charity_profiles_on_charity_id"
   end
 
   create_table "donations", force: :cascade do |t|
-    t.bigint "donors_id", null: false
-    t.bigint "charities_id", null: false
+    t.bigint "donor_id", null: false
+    t.bigint "charity_id", null: false
     t.integer "amount"
     t.string "donation_frequency"
     t.boolean "anonymous"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["charities_id"], name: "index_donations_on_charities_id"
-    t.index ["donors_id"], name: "index_donations_on_donors_id"
+    t.index ["charity_id"], name: "index_donations_on_charity_id"
+    t.index ["donor_id"], name: "index_donations_on_donor_id"
   end
 
   create_table "donors", force: :cascade do |t|
@@ -84,19 +84,19 @@ ActiveRecord::Schema.define(version: 2022_10_19_094113) do
   create_table "inventories", force: :cascade do |t|
     t.string "item"
     t.integer "quantity"
-    t.bigint "beneficiaries_id", null: false
-    t.bigint "charities_id", null: false
+    t.bigint "beneficiary_id", null: false
+    t.bigint "charity_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["beneficiaries_id"], name: "index_inventories_on_beneficiaries_id"
-    t.index ["charities_id"], name: "index_inventories_on_charities_id"
+    t.index ["beneficiary_id"], name: "index_inventories_on_beneficiary_id"
+    t.index ["charity_id"], name: "index_inventories_on_charity_id"
   end
 
-  add_foreign_key "charity_beneficiaries", "beneficiaries", column: "beneficiaries_id"
-  add_foreign_key "charity_beneficiaries", "charities", column: "charities_id"
-  add_foreign_key "charity_profiles", "charities", column: "charities_id"
-  add_foreign_key "donations", "charities", column: "charities_id"
-  add_foreign_key "donations", "donors", column: "donors_id"
-  add_foreign_key "inventories", "beneficiaries", column: "beneficiaries_id"
-  add_foreign_key "inventories", "charities", column: "charities_id"
+  add_foreign_key "charity_beneficiaries", "beneficiaries"
+  add_foreign_key "charity_beneficiaries", "charities"
+  add_foreign_key "charity_profiles", "charities"
+  add_foreign_key "donations", "charities"
+  add_foreign_key "donations", "donors"
+  add_foreign_key "inventories", "beneficiaries"
+  add_foreign_key "inventories", "charities"
 end

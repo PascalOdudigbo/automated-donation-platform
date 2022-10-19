@@ -33,9 +33,9 @@ Charity.create([
         email: "womenone@gmail.com",
         approved: true
     }
-])
+    ])
 
-Administrator.create([
+    Administrator.create([
     {
         first_name: "John",
         last_name: "Mwangi",
