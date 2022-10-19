@@ -63,6 +63,8 @@ ActiveRecord::Schema.define(version: 2022_10_19_094113) do
     t.bigint "donors_id", null: false
     t.bigint "charities_id", null: false
     t.integer "amount"
+    t.string "donation_frequency"
+    t.boolean "anonymous"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["charities_id"], name: "index_donations_on_charities_id"
@@ -75,7 +77,6 @@ ActiveRecord::Schema.define(version: 2022_10_19_094113) do
     t.string "email"
     t.string "password_digest"
     t.string "country"
-    t.boolean "anonymous"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
