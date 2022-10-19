@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  resources :charity_beneficiaries
+  resources :inventories
+  resources :beneficiaries
+  resources :charity_profiles
   resources :donations
   resources :administrators
   resources :charities

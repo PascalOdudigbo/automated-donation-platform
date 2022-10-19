@@ -6,7 +6,7 @@ class CreateDonors < ActiveRecord::Migration[6.1]
       t.string :email
       t.string :password_digest
       t.string :country
-      t.boolean :anonymous
+      
 
       t.timestamps
     end

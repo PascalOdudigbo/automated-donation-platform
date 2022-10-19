@@ -46,6 +46,6 @@ class DonorsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def donor_params
-      params.require(:donor).permit(:first_name, :last_name, :email, :password_digest, :country, :anonymous)
+      params.permit(:first_name, :last_name, :email, :password_digest, :country, :anonymous)
     end
 end

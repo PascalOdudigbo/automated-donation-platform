@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_18_114039) do
+ActiveRecord::Schema.define(version: 2022_10_19_094113) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 2022_10_18_114039) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "beneficiaries", force: :cascade do |t|
+    t.string "name"
+    t.text "location"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "charities", force: :cascade do |t|
     t.string "name"
     t.text "address"
@@ -32,6 +40,23 @@ ActiveRecord::Schema.define(version: 2022_10_18_114039) do
     t.boolean "approved"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "charity_beneficiaries", force: :cascade do |t|
+    t.bigint "charities_id", null: false
+    t.bigint "beneficiaries_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["beneficiaries_id"], name: "index_charity_beneficiaries_on_beneficiaries_id"
+    t.index ["charities_id"], name: "index_charity_beneficiaries_on_charities_id"
+  end
+
+  create_table "charity_profiles", force: :cascade do |t|
+    t.bigint "charities_id", null: false
+    t.text "about_us"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["charities_id"], name: "index_charity_profiles_on_charities_id"
   end
 
   create_table "donations", force: :cascade do |t|
@@ -55,6 +80,22 @@ ActiveRecord::Schema.define(version: 2022_10_18_114039) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "inventories", force: :cascade do |t|
+    t.string "item"
+    t.integer "quantity"
+    t.bigint "beneficiaries_id", null: false
+    t.bigint "charities_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["beneficiaries_id"], name: "index_inventories_on_beneficiaries_id"
+    t.index ["charities_id"], name: "index_inventories_on_charities_id"
+  end
+
+  add_foreign_key "charity_beneficiaries", "beneficiaries", column: "beneficiaries_id"
+  add_foreign_key "charity_beneficiaries", "charities", column: "charities_id"
+  add_foreign_key "charity_profiles", "charities", column: "charities_id"
   add_foreign_key "donations", "charities", column: "charities_id"
   add_foreign_key "donations", "donors", column: "donors_id"
+  add_foreign_key "inventories", "beneficiaries", column: "beneficiaries_id"
+  add_foreign_key "inventories", "charities", column: "charities_id"
 end
