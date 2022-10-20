@@ -15,8 +15,8 @@ function Login({ userData }) {
     e.preventDefault();
     setIsLoading(true);
 
-     if (userType === "donor"){
-        axios
+    if (userType === "donor") {
+      axios
         .post(`/loginDonor`, {
           email: email,
           password: password,
@@ -36,8 +36,8 @@ function Login({ userData }) {
             alert(error.response.data.error);
           }
         });
-     }
-     else{
+    }
+    else {
       axios
         .post(`/loginCharity`, {
           email: email,
@@ -58,46 +58,49 @@ function Login({ userData }) {
             alert(error.response.data.error);
           }
         });
-     }
-    
+    }
+
   }
 
   return (
-    <form onSubmit={handleOnSubmit} className="form">
-      <h3>LOGIN</h3>
-      <DropdownButton
-        title="Select User Type"
-        className="userTypeDropDown"
-        onSelect={(e)=>{
-        console.log(e);
-        setUserType(e);
-        }}    
-      >
-        <Dropdown.Item eventKey="donor">Donor</Dropdown.Item>
-        <Dropdown.Item eventKey="charity">Charity</Dropdown.Item>
-      </DropdownButton>
-      <label htmlFor="email">Email: </label>
-      <input
-        type="email"
-        id="email"
-        value={email}
-        required
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <label htmlFor="password">Password: </label>
-      <input
-        type="password"
-        id="password"
-        value={password}
-        required
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button type="submit" className="login">
-        {isLoading ? "Loading..." : "Login"}
-      </button>
-      <p>or</p>
-      <Link to="/signup">SignUp</Link>
-    </form>
+    <div className="loginContainer">
+       <h3>LOGIN</h3>
+      <form onSubmit={handleOnSubmit} className="form">
+        <DropdownButton
+          title="Select User Type"
+          className="userTypeDropDown"
+          onSelect={(e) => {
+            console.log(e);
+            setUserType(e);
+          }}
+        >
+          <Dropdown.Item eventKey="donor">Donor</Dropdown.Item>
+          <Dropdown.Item eventKey="charity">Charity</Dropdown.Item>
+        </DropdownButton>
+        <label htmlFor="email">Email: </label>
+        <input
+          type="email"
+          id="email"
+          value={email}
+          required
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <label htmlFor="password">Password: </label>
+        <input
+          type="password"
+          id="password"
+          value={password}
+          required
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button type="submit" className="login">
+          {isLoading ? "Loading..." : "Login"}
+        </button>
+        <p>or</p>
+        <Link  className="signUp" to="/signup">SignUp</Link>
+      </form>
+    </div>
+
   );
 }
 export default Login;
