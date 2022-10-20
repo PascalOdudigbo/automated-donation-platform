@@ -1,3 +1,3 @@
 class DonorSerializer < ActiveModel::Serializer
-  attributes :id, :first_name, :last_name, :email, :country, :anonymous
+  attributes :id, :first_name, :last_name, :email, :country
 end

@@ -63,7 +63,7 @@ function Login({ userData }) {
   }
 
   return (
-    <form onSubmit={handleOnSubmit}>
+    <form onSubmit={handleOnSubmit} className="form">
       <h3>LOGIN</h3>
       <DropdownButton
       title="Select User Type"
@@ -96,7 +96,7 @@ function Login({ userData }) {
         {isLoading ? "Loading..." : "Login"}
       </button>
       <p>or</p>
-      <Link to="/SignUp">SignUp</Link>
+      <Link to="/signup">SignUp</Link>
     </form>
   );
 }
