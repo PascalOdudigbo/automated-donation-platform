@@ -5,7 +5,7 @@ class DonorsController < ApplicationController
   def login
     user = Donor.find_by(email: params[:email])
     if user&.authenticate(params[:password])
-        session[:donor_id] = donor.id
+        session[:donor_id] = user.id
         render json: user, status: :created
     else
         render json: {error: "Invalid email or password"}, status: :unauthorized
@@ -41,6 +41,7 @@ class DonorsController < ApplicationController
     @donor = Donor.new(donor_params)
 
     if @donor.save
+      session[:donor_id] = @donor.id
       render json: @donor, status: :created, location: @donor
     else
       render json: @donor.errors, status: :unprocessable_entity
@@ -69,6 +70,6 @@ class DonorsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def donor_params
-      params.permit(:first_name, :last_name, :email, :password_digest, :country, :anonymous)
+      params.permit(:first_name, :last_name, :email,:country,:password, :password_confirmation )
     end
 end
