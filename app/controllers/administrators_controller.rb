@@ -1,6 +1,30 @@
 class AdministratorsController < ApplicationController
   before_action :set_administrator, only: [:show, :update, :destroy]
 
+   #Login donor
+   def login
+    user = Adminstrator.find_by(email: params[:email])
+    if user&.authenticate(params[:password])
+        session[:adminstrator_id] = user.id
+        render json: user, status: :created
+    else
+        render json: {error: "Invalid email or password"}, status: :unauthorized
+    end
+  end
+
+  #Logout adminstrator
+  def logout
+    session.delete :adminstrator_id
+    head :no_content
+  end
+
+  #Verify adminstrator has logged in
+  def loggedIn
+    user = Adminstrator.find_by(id: session[:administrator_id])
+    render json: user, status: :created
+  end
+
+
   # GET /administrators
   def index
     @administrators = Administrator.all
