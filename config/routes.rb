@@ -17,4 +17,7 @@ Rails.application.routes.draw do
   get "/meAdministrator", to: "administrators#loggedIn"
   post "/loginAdministrator", to: "administrators#login"
   delete "/logoutAdministrator", to: "administrators#logout"
+  get "/meCharity", to: "charities#loggedIn"
+  post "/loginCharity", to: "charities#login"
+  delete "/logoutCharity", to: "charities#logout"
 end

@@ -38,7 +38,26 @@ function Login({ userData }) {
         });
      }
      else{
-
+      axios
+        .post(`/loginCharity`, {
+          email: email,
+          password: password,
+        })
+        .then((res) => {
+          setIsLoading(false);
+          console.log(res.data);
+          userData(res.data);
+          // localStorage.setItem("userId", JSON.stringify(res.data.id));
+          alert("Login successful");
+          // navigate("home")
+        })
+        .catch((error) => {
+          setIsLoading(false);
+          if (error.response) {
+            //console.log(error?.response?.data?.error)
+            alert(error.response.data.error);
+          }
+        });
      }
     
   }

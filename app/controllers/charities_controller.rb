@@ -1,6 +1,30 @@
 class CharitiesController < ApplicationController
   before_action :set_charity, only: [:show, :update, :destroy]
 
+  #Login donor
+  def login
+    user = Charity.find_by(email: params[:email])
+    if user&.authenticate(params[:password])
+        session[:charity_id] = user.id
+        render json: user, status: :created
+    else
+        render json: {error: "Invalid email or password"}, status: :unauthorized
+    end
+  end
+
+  #Logout charity
+  def logout
+    session.delete :charity_id
+    head :no_content
+  end
+
+  #Verify charity has logged in
+  def loggedIn
+    user = Charity.find_by(id: session[:charity_id])
+    render json: user, status: :created
+  end
+
+
   # GET /charities
   def index
     @charities = Charity.all
