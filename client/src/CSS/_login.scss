@@ -1,0 +1,23 @@
+.loginContainer{
+    display: block;
+    width: 40%;
+
+    .form{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+
+        .userTypeDropDown{
+            justify-content: space-evenly;
+            padding-bottom: 30px;
+        }
+
+        .input{
+            width: 40%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+    }
+
+}

@@ -23,7 +23,7 @@ function AdministratorLogin({ userData }) {
         userData(res.data);
         // localStorage.setItem("userId", JSON.stringify(res.data.id));
         alert("Login successful");
-        navigate("/")
+        navigate("/admin")
       })
       .catch((error) => {
         setIsLoading(false);
