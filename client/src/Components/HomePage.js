@@ -4,12 +4,8 @@ import Charity from "./Charity";
 import axios from "axios";
 //import {useNavigate} from "react-router-dom"
 
-
 // get our footer icon imports
 import { BsInstagram, BsFacebook, BsGithub, BsTwitter, BsLinkedin} from 'react-icons/bs';
-
-
-
 
 
 function HomePage(){
