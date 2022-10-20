@@ -53,7 +53,7 @@ Charity.create([
     }
 ])
 
-CharityProfiles.create([
+CharityProfile.create([
     {
         about_us: "We are an established charity across the coutry looking to help alleviate the various upcoming issues that school going girls face and to give them hope where there seems to be none",
         charity_id: 1

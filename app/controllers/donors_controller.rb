@@ -1,6 +1,29 @@
 class DonorsController < ApplicationController
   before_action :set_donor, only: [:show, :update, :destroy]
 
+  #Login donor
+  def login
+    user = Donor.find_by(email: params[:email])
+    if user&.authenticate(params[:password])
+        session[:donor_id] = donor.id
+        render json: user, status: :created
+    else
+        render json: {error: "Invalid email or password"}, status: :unauthorized
+    end
+  end
+
+  #Logout donor
+  def logout
+    session.delete :donor_id
+    head :no_content
+  end
+
+  #Verify donor has logged in
+  def loggedIn
+    user = Donor.find_by(id: session[:donor_id])
+    render json: user, status: :created
+  end
+
   # GET /donors
   def index
     @donors = Donor.all
