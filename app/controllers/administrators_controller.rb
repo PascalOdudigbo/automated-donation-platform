@@ -3,9 +3,9 @@ class AdministratorsController < ApplicationController
 
    #Login donor
    def login
-    user = Adminstrator.find_by(email: params[:email])
+    user = Administrator.find_by(email: params[:email])
     if user&.authenticate(params[:password])
-        session[:adminstrator_id] = user.id
+        session[:administrator_id] = user.id
         render json: user, status: :created
     else
         render json: {error: "Invalid email or password"}, status: :unauthorized
@@ -14,7 +14,7 @@ class AdministratorsController < ApplicationController
 
   #Logout adminstrator
   def logout
-    session.delete :adminstrator_id
+    session.delete :administrator_id
     head :no_content
   end
 
@@ -70,6 +70,6 @@ class AdministratorsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def administrator_params
-      params.permit(:first_name, :last_name, :email, :password_digest)
+      params.permit(:first_name, :last_name, :email, :password, :password_confirmation)
     end
 end
