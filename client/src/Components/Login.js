@@ -66,16 +66,16 @@ function Login({ userData }) {
     <form onSubmit={handleOnSubmit} className="form">
       <h3>LOGIN</h3>
       <DropdownButton
-      title="Select User Type"
-      className="userTypeDropDown"
-      onSelect={(e)=>{
-      console.log(e);
-      setUserType(e);
-      }}    
-  >
-      <Dropdown.Item eventKey="donor">Donor</Dropdown.Item>
-      <Dropdown.Item eventKey="charity">Charity</Dropdown.Item>
-  </DropdownButton>
+        title="Select User Type"
+        className="userTypeDropDown"
+        onSelect={(e)=>{
+        console.log(e);
+        setUserType(e);
+        }}    
+      >
+        <Dropdown.Item eventKey="donor">Donor</Dropdown.Item>
+        <Dropdown.Item eventKey="charity">Charity</Dropdown.Item>
+      </DropdownButton>
       <label htmlFor="email">Email: </label>
       <input
         type="email"

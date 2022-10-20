@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import {Routes, Route, useNavigate} from "react-router-dom";
 import AdminCharitiesList from "./AdminCharitiesList";
+import AdminEditCharity from "./AdminEditCharity";
 
 function AdminDashboard(){
     const [allCharities, setAllCharities] = useState([]);
@@ -20,7 +21,7 @@ function AdminDashboard(){
                 alert(error.response.data.error);
             }
         });
-    })
+    }, [])
 
     
     function handleFilteredData(searchData){
@@ -52,12 +53,19 @@ function AdminDashboard(){
         setAllCharities(newCharitiesData);
     }
 
-    // function handleCharityEdit(){
-    //     fetch("https://fathomless-garden-99838.herokuapp.com/addresses")
-    //     .then(response => response.json())
-    //     .then(addresses => setAddressData(addresses));
-    //     history("/allAddresses");
-    // }
+    function handleCharityEdit(){
+        axios.get("/charities")
+            .then(res=>{
+                console.log(res.data);
+                setAllCharities(res.data)
+            })
+            .catch(error=>{
+                if(error.response){
+                    alert(error.response.data.error);
+                }
+            });
+        navigate("/admin/manage-charities");
+    }
     
     
     return(
@@ -72,10 +80,16 @@ function AdminDashboard(){
                 handleDelete={handleCharityDelete}
                 />
             }/>
+
+            <Route path="manage-charities/edit-charity" element={
+                <AdminEditCharity
+                selectedItem={currentItem}
+                handleDataEdit={handleCharityEdit}
+                />
+            }/>
         
         </Routes>
-
-        
+            
         
         </>
     )

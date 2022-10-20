@@ -31,7 +31,7 @@ Charity.create([
     name: " Women One",
     address: "P.O. Box: 1478-60100 Embu",
     email: "womenone@gmail.com",
-    approved: true,
+    approved: false,
   },
 ])
 
