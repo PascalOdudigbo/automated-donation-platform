@@ -17,47 +17,49 @@ function SignUp({ userData }) {
         e.preventDefault();
         setIsLoading(true);
         axios.post(`/donors`,
-        {
+            {
                 first_name: firstName,
                 last_name: lastName,
                 email,
                 country,
                 password: password,
                 password_confirmation: passwordConfirmation
-        })
-        .then(res => {
-            setIsLoading(false);
-            userData(res.data)
-            alert("Signup successful!")
-            // navigate("/")
-        })
-        .catch(error =>{
-            setIsLoading(false);
-            if(error.response){
-                //console.log(error?.response?.data?.error)
-                alert(error.response.data.error)
-            }
-        });
+            })
+            .then(res => {
+                setIsLoading(false);
+                userData(res.data)
+                alert("Signup successful!")
+                // navigate("/")
+            })
+            .catch(error => {
+                setIsLoading(false);
+                if (error.response) {
+                    //console.log(error?.response?.data?.error)
+                    alert(error.response.data.error)
+                }
+            });
     }
 
     return (
         <div>
             <form onSubmit={handleSubmit} className="form">
                 <h1>Sign Up</h1>
-                <label htmlFor="fisrtName">First Name</label>
-                <input
-                    type="text"
-                    id="firstName"
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
-                />
-                <label htmlFor="email">Last Name</label>
-                <input
-                    type="text"
-                    id="lastName"
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
-                />
+                <div className="namesInput">
+                    <label htmlFor="fisrtName">First Name</label>
+                    <input
+                        type="text"
+                        id="firstName"
+                        value={firstName}
+                        onChange={(e) => setFirstName(e.target.value)}
+                    />
+                    <label htmlFor="email">Last Name</label>
+                    <input
+                        type="text"
+                        id="lastName"
+                        value={lastName}
+                        onChange={(e) => setLastName(e.target.value)}
+                    />
+                </div>
                 <label htmlFor="email">Email</label>
                 <input
                     type="email"
