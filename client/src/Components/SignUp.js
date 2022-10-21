@@ -97,7 +97,7 @@ function SignUp({ userData }) {
                     required
                 />
                 <p>______________________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;______________________</p>
-                <button type="submit" className="signUp"> {isLoading ? "Loading..." : "Signup"}</button>
+                <button type="submit" className="signUp"> {isLoading ? "Loading..." : "SignUp"}</button>
             </form>
         </div>
     );
