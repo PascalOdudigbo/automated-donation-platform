@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import logo from "../images/logo.png";
+
 
 function SignUp({ userData }) {
     // const [user, setUser] = useState(null)
@@ -41,18 +43,19 @@ function SignUp({ userData }) {
     }
 
     return (
-        <div>
+        <div className="signUpContainer">
             <form onSubmit={handleSubmit} className="form">
-                <h1>Sign Up</h1>
+                <img src={logo} alt="logo" />
+                <h2>Sign Up</h2>
                 <div className="namesInput">
-                    <label htmlFor="fisrtName">First Name</label>
+                    <label htmlFor="firstName" className="labelFirstName">First Name</label>
                     <input
                         type="text"
                         id="firstName"
                         value={firstName}
                         onChange={(e) => setFirstName(e.target.value)}
                     />
-                    <label htmlFor="email">Last Name</label>
+                    <label htmlFor="lastName">Last Name</label>
                     <input
                         type="text"
                         id="lastName"
@@ -93,7 +96,8 @@ function SignUp({ userData }) {
                     autoComplete="current-password"
                     required
                 />
-                <button type="submit"> {isLoading ? "Loading..." : "Signup"}</button>
+                <p>______________________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;______________________</p>
+                <button type="submit" className="signUp"> {isLoading ? "Loading..." : "Signup"}</button>
             </form>
         </div>
     );

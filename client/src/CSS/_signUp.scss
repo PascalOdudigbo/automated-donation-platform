@@ -3,3 +3,114 @@ body{
     justify-content: center;
     align-items: center;
 }
+
+.signUpContainer {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    padding: 50px 30px 30px;
+    //background: rgba(0,0,0,0.7);
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  
+    img {
+        position: absolute;
+        top: 7px;
+        left: calc(50% - 50px);
+        width: 100px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 55%;
+        margin-bottom: 10px;
+    }
+  
+    h2 {
+      text-align: center;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+      color: #fcb500;
+      font-family: "Courier New", Courier, monospace;
+    }
+  
+    .form {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+
+        .namesInput{
+            display: flex;
+            flex-direction: row;
+            text-align: left;
+
+            label {
+                color: black;
+                text-align: left;
+                margin-left: 9px;
+            }
+
+            .labelFirstName{
+                margin-left: 0px;
+            }
+
+            input {
+                width: 64%;
+                height: 15px;
+                padding: 10px 0;
+                font-size: 1rem;
+                letter-spacing: 1px;
+                margin-bottom: 5px;
+                background-color: transparent;
+                border-radius: 10px;
+                justify-content: space-between;
+                // color: inherit;
+            }
+        }
+
+        label {
+            color: black;
+            text-align: left;
+            
+        }
+
+        input {
+            width: 100%;
+            height: 15px;
+            padding: 10px 0;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            background-color: transparent;
+            border-radius: 10px;
+            // color: inherit;
+        }
+
+        p {
+            color: #fcb500;
+            text-align: center;
+            font-size: 10px;
+            font-weight: bolder;
+        }
+
+        .signUp {
+            color: white;
+            padding: 8px 12px;
+            //border: 1px solid #333;
+            height: 40px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 3px;
+            text-decoration: none;
+            font-style: bold;
+            display: inline-block;
+            margin-left: 10%;
+            margin-right: 14%;
+            background-color: rgb(6, 143, 255);
+            font-family: "Lucida Console", "Courier New", monospace;
+          }
+          .signUp:hover {
+              background-color: #FCB500;
+            }
+
+    }
+
+}
