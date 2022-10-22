@@ -1,0 +1,71 @@
+// .charity {
+//   display: grid;
+//   grid-gap: 30px;
+//   grid-template: auto / repeat(auto-fit, minmax(300px, 1fr));
+//   max-width: 380px;
+//   float: left;
+//   margin: 0 -10px;
+//   padding: 80px 40px 40px;
+//   border-radius: 10px;
+//   color: #fff;
+//   box-shadow: 0 0px 25px rgba(0, 0, 0, 0.5);
+
+//   h4{
+//     color:black;
+//   }
+// }
+.charity {
+  border-radius: 10px;
+  box-shadow: 0px 5px 20px rgb(75, 71, 71);
+  margin: 20px;
+  display: inline-block;
+  padding: 75px 50px 50px;
+  background: white;
+  align-items: center;
+  width: max-content;
+  text-align: center;
+
+  h4 {
+    color: black;
+    margin-top: 0px;
+    font-style: bold;
+    font-size: large;
+    font-family: "Lucida Console", "Courier New", monospace;
+  }
+
+  h5 {
+    color: black;
+    margin-top: -20px;
+    font-size: small;
+    font-family: "Lucida Console", "Courier New", monospace;
+  }
+
+  button {
+    margin-top: 200px;
+    border-radius: 10px;
+    background-color: #fcb500;
+    text-align: center;
+    text-decoration: none;
+    // display: inline-block;
+    border-style: none;
+    font-style: bold;
+    font-size: large;
+    font-family: "Lucida Console", "Courier New", monospace;
+  }
+
+  button:hover {
+    background-color: #8d5412;
+  }
+
+  //   box-sizing: border-box;
+  //   float: left;
+  //   width: 25%;
+  //   padding: 0 10px;
+  //   margin: 0 -5px;
+  //   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  //   padding: 16px;
+  //   text-align: center;
+  //   background-color: #f1f1f1;
+  //   display: block;
+  //   margin-bottom: 20px;
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import logo from "../images/logo.png";
 
 function NavBar(){
    const navigate = useNavigate();
@@ -8,7 +9,8 @@ function NavBar(){
    return (
     <div className={"navbar"}>
         <div className="title">
-            <h1 onClick={()=>navigate("/")}>NIA AFRICA</h1>
+        <img onClick={()=>navigate("/")} src={logo} alt="logo" />
+            {/* <h1 >NIA AFRICA</h1> */}
         </div>
 
         <NavLink
