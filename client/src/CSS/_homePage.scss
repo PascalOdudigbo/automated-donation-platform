@@ -1,12 +1,94 @@
+body {
+  justify-content: center;
+}
+
+.randomImages {
+  width: 100%;
+  height: 600px;
+}
+
+.NiaAbout {
+  text-align: justify;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  font-size: larger;
+  font-family: "Courier New", Courier, monospace;
+}
+
+
+.registerCharity {
+  text-decoration: none;
+  width: 100px;
+  height: 20px;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 10px;
+  // justify-self: center;
+  text-align: center;
+  margin-left: 45%;
+  margin-top: 50px;
+  margin-bottom: 50%;
+  font-style: bold;
+  font-size: large;
+  background-color: #fcb500;
+  border: none;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+
+
+
+h1 {
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  margin-top: 5rem;
+  color: #fcb500;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.CharitiesContainer {
+  display: grid;
+  gap: 25px 25px;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+
 .footer {
+  display: flex;
+  flex-direction: row;
   background-color: black;
   color: #fcb500;
   width: 100%;
   margin-left: -8px;
   padding-right: 16px;
   margin-bottom: -8px;
-  display: flex;
-  justify-content: space-evenly;
-  height: 200px;
+  height: 50px;
   padding-top: 50px;
+
+  h3 {
+    font-size: larger;
+    font-family: "Courier New", Courier, monospace;
+    margin-top: -7px;
+    margin-left: 25px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-evenly;
+    margin-top: -7px;
+
+    li {
+      height: 40px;
+      width: 40px;
+    }
+  }
+
+  h4 {
+    text-align: center;
+    margin-top: -7px;
+  }
 }
