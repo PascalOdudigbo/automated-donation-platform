@@ -8,9 +8,8 @@ function NavBar(){
 
    return (
     <div className={"navbar"}>
-        <div className="title">
+        <div className="logo">
         <img onClick={()=>navigate("/")} src={logo} alt="logo" />
-            {/* <h1 >NIA AFRICA</h1> */}
         </div>
 
         <NavLink
