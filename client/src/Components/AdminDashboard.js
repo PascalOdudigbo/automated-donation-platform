@@ -19,16 +19,15 @@ function AdminDashboard({ userData }) {
     const [displayData, setDisplayData] = useState(``);
 
     const navigate = useNavigate();
-    const _ = require('lodash');
 
     useEffect(() => {
-
         fetch('/meAdministrator')
             .then(response => response.json())
             .then(data => {
+                console.log(data)
                 setUser(data);
 
-                if (_.isEmpty(data)) {
+                if ((data?.error)) {
                     navigate("/");
                 }
                 else {
@@ -114,6 +113,12 @@ function AdminDashboard({ userData }) {
             });
     }
 
+    function handleLogout(){
+        fetch("/logoutAdministrator", {
+            method: "DELETE",
+        }).then(() => navigate("/"));
+    }
+
 
     return (
         <div className="adminDashboardContainer">
@@ -132,6 +137,7 @@ function AdminDashboard({ userData }) {
                         <h3 id="Name" className="adminName">{`${user?.first_name} ${user?.last_name}`}</h3>
                     </div>
                     <button className="uploadImage">Upload Image</button>
+                    <button className="adminLogoutbtn" onClick={handleLogout}>Logout</button>
                 </div>
 
                 <div className="statisticsContainer">

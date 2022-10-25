@@ -21,7 +21,11 @@ class DonorsController < ApplicationController
   #Verify donor has logged in
   def loggedIn
     user = Donor.find_by(id: session[:donor_id])
-    render json: user, status: :created
+    if user
+      render json: user, status: :found
+    else
+      render json: { error: "Not authorized" }, status: :unauthorized
+    end
   end
 
   # GET /donors
