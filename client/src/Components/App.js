@@ -10,8 +10,7 @@ import Research from "./Research";
 import CharityLogin from "./CharityLogin";
 import CharitySignUp from "./CharitySignUp";
 import Team from "./Team";
-import Solution from "./Solution";
-import Research from "./Research";
+
 
 
 function App() {
