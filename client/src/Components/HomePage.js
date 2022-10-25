@@ -88,7 +88,7 @@ function HomePage() {
 
           <Link className="registerCharity">Register Charity</Link>
         
-        <h1>CHARITIES</h1>
+        <h1 className="charitiesTitle">CHARITIES</h1>
 
         <div className="CharitiesContainer">
           {allCharities?.map((charity) => (
