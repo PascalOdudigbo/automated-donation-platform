@@ -83,4 +83,12 @@ CharityProfile.create([
   },
 ])
 
+b1 = Beneficiary.create([{name: "Kenya Kesho Girls School", location: "Nakuru", description: "Providing sustainable and quality education for the girls in our community"}])
+b1 = Beneficiary.create([{name: "St. Mary's School for Girls", location: "Kakamega", description: "Offering quality education and a furure for girls"}])
+b1 = Beneficiary.create([{name: "St. Bernard's Girls School", location: "Meru", description: "Giving every young girl the opportunity she cane be by offering top notch education"}])
+
+inv1 = Inventory.create([{item: "sanitary towels", quantity: 1000, beneficiary_id: 1, charity_id: 3}])
+inv1 = Inventory.create([{item: "exercise books", quantity: 500, beneficiary_id: 2, charity_id: 2}])
+inv1 = Inventory.create([{item: "stationery", quantity: 600, beneficiary_id: 3, charity_id: 1}])
+
 puts " Done Seeding"
