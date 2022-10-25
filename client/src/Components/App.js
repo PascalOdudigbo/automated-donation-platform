@@ -5,11 +5,11 @@ import Login from "./Login";
 import SignUp from "./SignUp";
 import AdministratorLogin from "./AdministratorLogin";
 import AdminDashboard from "./AdminDashboard";
+import Solution from "./Solution";
+import Research from "./Research";
 import CharityLogin from "./CharityLogin";
 import CharitySignUp from "./CharitySignUp";
 import Team from "./Team";
-import Solution from "./Solution";
-import Research from "./Research";
 
 
 
