@@ -95,6 +95,27 @@
                 border: none;
                 font-family: "Courier New", Courier, monospace;
             }
+
+            .adminLogoutbtn{
+                padding: 8px 12px;
+                //border: 1px solid #333;
+                border-radius: 10px;
+                text-align: center;
+                margin-top: 3px;
+                margin-bottom: 10px;
+                text-decoration: none;
+                display: inline-block;
+                margin-left: 100px;
+                // font-style: bold;
+                // font-size: large;
+                background-color: #c51212;
+                border: none;
+                font-family: "Courier New", Courier, monospace;
+            }
+            .adminLogoutbtn:hover {
+                background-color: #ff0000;
+                color: white;
+              }
         }
 
         .statisticsContainer{
@@ -186,6 +207,11 @@
                     }
 
                 }
+                .charityNameAndStatus:hover{
+                    background-color: #fcb500;
+                    color: white;
+                }
+                
 
                
             }
@@ -230,6 +256,9 @@
                     border: none;
                     font-family: "Courier New", Courier, monospace;
                 }
+                .approveBtn:hover {
+                    background-color: #109232;
+                  }
 
                 .rejectBtn{
                     padding: 8px 12px;
@@ -243,9 +272,13 @@
                     margin-left: 10px;
                     // font-style: bold;
                     // font-size: large;
-                    // background-color: #100f0e;
+                    background-color: #cccccc;
                     border: none;
                     font-family: "Courier New", Courier, monospace;
+                }
+                .rejectBtn:hover{
+                      background-color: #100f0e;
+                      color: white
                 }
 
                 .deleteBtn{
@@ -263,6 +296,10 @@
                     background-color: #c51212;
                     border: none;
                     font-family: "Courier New", Courier, monospace;
+                }
+                .deleteBtn:hover{
+                    background-color: #ff0000;
+                    color: white;
                 }
             }
 
