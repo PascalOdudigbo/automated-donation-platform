@@ -12,7 +12,7 @@ function App() {
     <>
       <Routes>
         <Route path="/adminlogin" element={<AdministratorLogin userData={setUserData} />} />
-        <Route path="/admin/*" element={<AdminDashboard/>}/>
+        <Route path="/admin/*" element={<AdminDashboard userData={userData}/>}/>
         <Route path="/" element={<HomePage />} />
         <Route path="/donate" element={<Login userData={setUserData} />} />
         <Route path="/signup" element={<SignUp userData={setUserData} />} />
