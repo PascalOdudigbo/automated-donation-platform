@@ -5,7 +5,7 @@ class AdministratorsController < ApplicationController
    def login
     user = Administrator.find_by(email: params[:email])
     if user&.authenticate(params[:password])
-        session[:administrator_id] = user.id
+      session[:admin_id] = user.id
         render json: user, status: :created
     else
         render json: {error: "Invalid email or password"}, status: :unauthorized
@@ -14,14 +14,18 @@ class AdministratorsController < ApplicationController
 
   #Logout adminstrator
   def logout
-    session.delete :administrator_id
+    session.delete :admin_id
     head :no_content
   end
 
   #Verify adminstrator has logged in
   def loggedIn
-    user = Adminstrator.find_by(id: session[:administrator_id])
-    render json: user, status: :created
+    user = Administrator.find_by(id: session[:admin_id])
+    if user
+      render json: user
+    else
+      render json: { error: "Not authorized" }, status: :unauthorized
+    end
   end
 
 
