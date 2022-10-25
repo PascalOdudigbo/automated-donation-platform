@@ -22,7 +22,7 @@ class AdministratorsController < ApplicationController
   def loggedIn
     user = Administrator.find_by(id: session[:admin_id])
     if user
-      render json: user
+      render json: user, status: :found
     else
       render json: { error: "Not authorized" }, status: :unauthorized
     end
