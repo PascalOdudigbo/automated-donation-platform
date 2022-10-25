@@ -5,6 +5,7 @@ import Login from "./Login";
 import SignUp from "./SignUp";
 import AdministratorLogin from "./AdministratorLogin";
 import AdminDashboard from "./AdminDashboard";
+import Solution from "./Solution";
 
 function App() {
   const [userData, setUserData] = useState({});
@@ -14,6 +15,7 @@ function App() {
         <Route path="/adminlogin" element={<AdministratorLogin userData={setUserData} />} />
         <Route path="/admin/*" element={<AdminDashboard/>}/>
         <Route path="/" element={<HomePage />} />
+        <Route path="/solution" element={<Solution />} />
         <Route path="/donate" element={<Login userData={setUserData} />} />
         <Route path="/signup" element={<SignUp userData={setUserData} />} />
       </Routes>
