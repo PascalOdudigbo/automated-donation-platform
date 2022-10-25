@@ -8,6 +8,10 @@ import AdminDashboard from "./AdminDashboard";
 import CharityLogin from "./CharityLogin";
 import CharitySignUp from "./CharitySignUp";
 import Team from "./Team";
+import Solution from "./Solution";
+import Research from "./Research";
+
+
 
 function App() {
   const [userData, setUserData] = useState({});
@@ -15,13 +19,17 @@ function App() {
     <>
       <Routes>
         <Route path="/adminlogin" element={<AdministratorLogin userData={setUserData} />} />
-        <Route path="/admin/*" element={<AdminDashboard/>}/>
+        <Route path="/admin/*" element={<AdminDashboard userData={userData}/>}/>
         <Route path="/" element={<HomePage />} />
         <Route path="/team" element={<Team/>} />
         <Route path="/donate" element={<Login userData={setUserData} />} />
         <Route path="/signup" element={<SignUp userData={setUserData} />} />
         <Route path="/charitylogin" element={<CharityLogin userData={setUserData} />} />
         <Route path="/charitysignup" element={<CharitySignUp userData={setUserData} />} />
+        <Route path="/solution" element={<Solution />} />
+        <Route path="/donate" element={<Login userData={setUserData} />} />
+        <Route path="/signup" element={<SignUp userData={setUserData} />} />
+        <Route path="/research" element={<Research />} />
       </Routes>
 
     </>
