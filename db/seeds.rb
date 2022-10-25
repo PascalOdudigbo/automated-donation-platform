@@ -7,7 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Seeding"
-
 Charity.create([
   {
     name: "Hope Africa",
@@ -63,7 +62,6 @@ Administrator.create([
     password_confirmation: "12345678",
   },
 ])
-
 CharityProfile.create([
   {
     about_us: "We are an established charity across the coutry looking to help alleviate the various upcoming issues that school going girls face and to give them hope where there seems to be none",
@@ -82,5 +80,4 @@ CharityProfile.create([
     charity_id: 4,
   },
 ])
-
 puts " Done Seeding"
