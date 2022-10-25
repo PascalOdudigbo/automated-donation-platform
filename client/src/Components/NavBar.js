@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../images/logo.png";
 
+
 function NavBar(){
    const navigate = useNavigate();
 
@@ -22,6 +23,7 @@ function NavBar(){
         <NavLink
             className={"link"}
             to={'/research'}
+
         >
             Research
         </NavLink>
