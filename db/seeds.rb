@@ -33,6 +33,11 @@ Charity.create([
     email: "womenone@gmail.com",
     approved: false,
   },
+  {
+    name: "All for one",
+    address: "Sema Hse, Gr Flr Xanny Rd, Madara",
+    email: "onegirlcan@gmail.com",
+  }
 ])
 
 Administrator.create([
