@@ -8,11 +8,11 @@
 
 puts "Seeding"
 
-c1 = Charity.create(name: "Hope Africa", address: "Parkside Hotel, Monrovia St, City Centre, Nairobi", email: "hopeafrica@gmail.com", password: "hafrica", approved: true)
-c2 = Charity.create(name: "Zana Africa", address: "Wanguru Makutano/Embu Rd, Kerugoya, 272-10303", email: "zanaafrica@gmail.com", password: "zafrica", approved: true)
-c3 = Charity.create(name: "One Girl Can", address: "Frontier Hse, Gr Flr Mosque Rd, Mandera", email: "onegirlcan@gmail.com", password: "ogcan", approved: true)
-c4 = Charity.create(name: " Women One", address: "P.O. Box: 1478-60100 Embu", email: "womenone@gmail.com", password: "women1", approved: false)
-c5 = Charity.create(name: "All for one", address: "Sema Hse, Gr Flr Xanny Rd, Madara", email: "onegirlcan@gmail.com", password: "all4one")
+c1 = Charity.create(name: "Hope Africa", address: "Parkside Hotel, Monrovia St, City Centre, Nairobi", email: "hopeafrica@gmail.com", password: "hafrica", password_confirmation: "hafrica", approved: true)
+c2 = Charity.create(name: "Zana Africa", address: "Wanguru Makutano/Embu Rd, Kerugoya, 272-10303", email: "zanaafrica@gmail.com", password: "zafrica", password_confirmation: "zafrica", approved: true)
+c3 = Charity.create(name: "One Girl Can", address: "Frontier Hse, Gr Flr Mosque Rd, Mandera", email: "onegirlcan@gmail.com", password: "ogcan", password_confirmation: "ogcan", approved: true)
+c4 = Charity.create(name: " Women One", address: "P.O. Box: 1478-60100 Embu", email: "womenone@gmail.com", password: "women1", password_confirmation: "women1", approved: false)
+c5 = Charity.create(name: "All for one", address: "Sema Hse, Gr Flr Xanny Rd, Madara", email: "onegirlcan@gmail.com", password: "all4one", password_confirmation: "all4one")
   
 Administrator.create([
   {
@@ -65,8 +65,8 @@ inv1= Inventory.create(item: "sanitary towels", quantity: 1000, beneficiary_id: 
 inv2 = Inventory.create(item: "exercise books", quantity: 500, beneficiary_id: b2.id, charity_id: 20)
 inv3 = Inventory.create(item: "stationery", quantity: 600, beneficiary_id: b3.id, charity_id: 21)
 
-d1 = Donor.create(first_name: "Mary", last_name: "Coleman", email: "marycole@gmail.com", password: "1234", country: "USA")
-d2 = Donor.create(first_name: "Robert", last_name: "Kavai", email: "r.kavai@gmail.com", password: "5678", country: "Kenya")
-d3 = Donor.create(first_name: "Susan", last_name: "Kansime", email: "marycole@gmail.com", password: "1357", country: "Uganda")
+d1 = Donor.create(first_name: "Mary", last_name: "Coleman", email: "marycole@gmail.com", password: "1234", password_confirmation: "1234", country: "USA")
+d2 = Donor.create(first_name: "Robert", last_name: "Kavai", email: "r.kavai@gmail.com", password: "5678", password_confirmation: "5678", country: "Kenya")
+d3 = Donor.create(first_name: "Susan", last_name: "Kansime", email: "marycole@gmail.com", password: "1357", password_confirmation: "1357", country: "Uganda")
 
 puts " Done Seeding"
