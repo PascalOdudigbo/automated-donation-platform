@@ -47,13 +47,13 @@ function Research() {
                 <hr></hr>
                 <div className="intro2">
                     <img src={girls} alt="girls image"></img>
-                    <p className="welcome">In Kenya, girls drop out of school at a higher rate than boys beginning at puberty, and many do not have access to reliable reproductive health education as they enter adolescence. Access to menstrual hygiene products and sexual and reproductive health education is thought to help reduce school absence and improve health and social outcomes, however, little rigorous evidence exists to date.</p>
+                    <p className="welcome">In Kenya, girls drop out of school at a higher rate than boys beginning at puberty,<br/> and many do not have access to reliable reproductive health education as they enter adolescence. <br/>Access to menstrual hygiene products and sexual and reproductive health education is thought to help reduce school absence<br/> and improve health and social outcomes, however, little rigorous evidence exists to date.</p>
 
                 </div>
                 <hr className="horizontal"></hr>
                 <div className="intro1">
 
-                    <p className="welcome">As we scale our intervention, with a goal to reach 200,000 beneficiaries across Kenya over the next two years, it is our hope that this solution will serve as a replicable model for communities and governments that seek to support girls’ health and rights. NiaAfrica’s powerful solution helps girls to safely, and confidently, navigate puberty. With a burgeoning youth population as never before witnessed globally, the time for NiaAfrica’s solution is now.</p>
+                    <p className="welcome">As we scale our intervention, with a goal to reach 200,000 beneficiaries<br/> across Kenya over the next two years, it is our hope that this solution will serve as a replicable model for communities and <br/>governments that seek to support girls’ health and rights. <br/>NiaAfrica’s powerful solution helps girls to safely, and confidently, navigate puberty. <br/>With a burgeoning youth population as never before witnessed globally, the time for NiaAfrica’s solution is now.</p>
 
                     <img src={schoolGirls} alt="girls image"></img>
                 </div>

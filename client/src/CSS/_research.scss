@@ -6,16 +6,19 @@ body {
 .research {
     margin-top: -50px;
 
-    h1 {
-        color: black;
-        font-size: 50px;
-    }
+
 
     p {
         font-size: 15px;
     }
 }
 
+.research h1 {
+    color: black;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 50px;
+}
 
 .intro2 {
     display: flex;
