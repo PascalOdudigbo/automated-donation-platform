@@ -25,7 +25,7 @@ function App() {
         <Route path="/donate" element={<Login userData={setUserData} />} />
         <Route path="/signup" element={<SignUp userData={setUserData} />} />
         <Route path="/charitylogin" element={<CharityLogin userData={setUserData} />} />
-        <Route path="/charitysignup" element={<CharitySignUp userData={setUserData} />} />
+        <Route path="/charityregister" element={<CharitySignUp userData={setUserData} />} />
         <Route path="/solution" element={<Solution />} />
         <Route path="/donate" element={<Login userData={setUserData} />} />
         <Route path="/signup" element={<SignUp userData={setUserData} />} />

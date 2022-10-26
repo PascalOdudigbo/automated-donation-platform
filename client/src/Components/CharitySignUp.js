@@ -45,7 +45,7 @@ function CharitySignUp({ userData }) {
         <div className="signUpContainer">
             <form onSubmit={handleSubmit} className="form">
                 <img src={logo} alt="logo" />
-                <h2>Sign Up</h2>
+                <h2>Register Charity</h2>
                     <label htmlFor="name" className="labelName">Name</label>
                     <input className="textInput"
                         type="text"
@@ -94,7 +94,7 @@ function CharitySignUp({ userData }) {
                     required
                 />
                 <p>______________________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;______________________</p>
-                <button type="submit" className="signUp"> {isLoading ? "Loading..." : "SignUp"}</button>
+                <button type="submit" className="signUp"> {isLoading ? "Loading..." : "Register"}</button>
             </form>
         </div>
     )
