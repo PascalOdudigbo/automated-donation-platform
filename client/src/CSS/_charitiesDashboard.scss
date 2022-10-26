@@ -1,0 +1,152 @@
+.charitiesDasboardContainer{
+    width: 99vw;
+    height: 100vh;
+    .charitiesDasboardLogoAndTitleContainer{
+        top: 20px;
+        height: 100px;
+        display: flex;
+        flex-direction: row;
+        width: 800px;
+        align-items: center;
+        position: absolute;
+        right: 70px;
+        background-color: rgb(226, 221, 221);
+        border-radius: 5px;
+        
+        .charitiesDasboardLogo{
+            position: relative;
+            top: 0px;
+            width: 100px;
+            height: 80px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 100%;
+            margin-left: 2%;
+        }
+        .charitiesDasboardTitle{
+            
+            margin-top: 20px;
+            text-align: left;
+            margin-left: 50%;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+            color: #fcb500;
+            font-family: "Courier New", Courier, monospace;
+            margin-right: 100px; 
+        }
+
+    }
+
+    .charitiesDasboardProfileAndNavigationContainer{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        background-color: rgb(226, 221, 221);
+        border-radius: 5px;
+        margin-left: 2%;
+        height: 95vh;
+
+        .charitiesDasboardProfileContainer{
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+            height: 130px;
+            align-items: center;
+            border-radius: 5px;
+            box-shadow: 0px 5px 20px rgb(75, 71, 71);
+            margin-bottom: 40px;
+
+            .charitiesDasboardProfileImageContainer{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+
+                .charityImage{
+                    margin-top: 3%;
+                    width: 70px;
+                    height: 70px;
+                    background-color: #fcb500;
+                    border-radius: 100%;
+                    margin-left: 10px;
+                    color: black;
+                }
+
+                .charityName{
+                    margin-top: 8%;
+                    background-color: #fcb500;
+                    border-radius: 5px;
+                    color: black;
+                    height: fit-content;
+                    margin-left: 10px;
+                }
+            }
+
+            .charityEditProfileBtn{
+                padding: 8px 12px;
+                //border: 1px solid #333;
+                border-radius: 10px;
+                text-align: center;
+                margin-top: 5px;
+                margin-bottom: 10px;
+                text-decoration: none;
+                display: inline-block;
+                margin-left: 10px;
+                // font-style: bold;
+                // font-size: large;
+                background-color: #fcb500;
+                border: none;
+                font-family: "Courier New", Courier, monospace;
+            }
+            .charityEditProfileBtn:hover{
+                background-color: #109232;
+                color: white;
+            }
+        }
+
+        .charitiesDasboardNavigationContainer{
+            display: flex;
+            flex-direction: column;
+
+            .charitiesDasboardNavigationLink{
+                margin-left: 10px;
+                margin-right: 10px;
+                margin-bottom: 30px;
+                height: 40px;
+                color: black;
+                padding: 8px 12px;
+                border-radius: 10px;
+                text-align: center;
+                text-decoration: none;
+                font-style: bold;
+                display: inline-block;
+                background-color: #fcb500;
+                font-family: "Lucida Console", "Courier New", monospace;
+            }
+            .charitiesDasboardNavigationLink:hover{
+                background-color: #8d5412;
+                color: white;
+            }
+        }
+        .charityLogoutbtn{
+            padding: 8px 12px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 70px;
+            margin-bottom: 10px;
+            text-decoration: none;
+            display: inline-block;
+            margin-left: 100px;
+            margin-right: 10px;
+            background-color: #c51212;
+            border: none;
+            font-family: "Courier New", Courier, monospace;
+            margin-bottom: 10px;
+        }
+        .charityLogoutbtn:hover{
+            background-color: #ff0000;
+            color: white;
+        }
+
+    }
+
+}

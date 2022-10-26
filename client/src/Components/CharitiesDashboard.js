@@ -17,9 +17,16 @@ function CharitiesDashboard(charityData) {
         // console.log(data);
         setCharity(data);
 
-        if (data?.error || data?.approved === false) {
-          navigate("/");
-        } else {
+        if (data?.error) {
+          navigate("/login");
+        }
+        else if(data?.approved === null){
+            alert("Your charity registration is still pending approval!")
+          }
+        else if(data?.approved === false){
+            alert("Your charity registration wad denied!")
+        }
+        else {
           fetch(`/a_charitys_beneficiaries/${data?.id}`)
             .then((response) => response.json())
             .then((data) => {
@@ -42,8 +49,8 @@ function CharitiesDashboard(charityData) {
   return (
     <div className="charitiesDasboardContainer">
       <div className="charitiesDasboardLogoAndTitleContainer">
-        {/* <img className="charitiesDasboardLogo"src={logo} alt="logo"/> */}
-        <h1 className="charitiesDasboardTitle"></h1>
+        <img className="charitiesDasboardLogo"src={logo} alt="logo"/>
+        <h1 className="charitiesDasboardTitle">CHARITIES PORTAL</h1>
       </div>
 
       <div className="charitiesDasboardProfileAndNavigationContainer">
@@ -54,7 +61,7 @@ function CharitiesDashboard(charityData) {
               {charity?.name}
             </h3>
           </div>
-          <button className="uploadImage">Edit Profile</button>
+          <button className="charityEditProfileBtn">Edit Profile</button>
         </div>
 
         <div className="charitiesDasboardNavigationContainer">
