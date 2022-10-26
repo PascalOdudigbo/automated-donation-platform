@@ -1,5 +1,5 @@
 class CharityBeneficiarySerializer < ActiveModel::Serializer
-  attributes :id
-  has_one :charities
-  has_one :beneficiaries
+  attributes :id, :charity_id
+  # has_one :charities
+  has_many :beneficiary, serializer: BeneficiarySerializer
 end

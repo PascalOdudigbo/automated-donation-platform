@@ -1,0 +1,71 @@
+body {
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.team{
+  //   margin-left: -180px;
+  margin-top: 20px;
+  color: #fcb500;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.staffContainer {
+  text-align: center;
+  //   background-color: red;
+  // margin-top: 40px;
+
+  .subHeading{
+    color: #fcb500;
+    margin-bottom: 10px;
+  }
+
+  .paragraph{
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+}
+
+.teamFooter {
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+  color: #fcb500;
+  width: 100%;
+  //   margin-left: 0px;
+  // margin-right: 0px;
+  position: absolute;
+  margin: 0px 0 0 -125px;
+
+  // padding-right: 120px;
+  margin-bottom: -8px;
+  height: 50px;
+  padding-top: 50px;
+
+  .follow {
+    font-size: larger;
+    font-family: "Courier New", Courier, monospace;
+    margin-top: -7px;
+    margin-left: 25px;
+    margin-right: 20px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-evenly;
+    margin-top: -7px;
+
+    li {
+      height: 40px;
+      width: 40px;
+    }
+  }
+
+  .copyright{
+    text-align: center;
+    margin-top: -7px;
+  }
+}

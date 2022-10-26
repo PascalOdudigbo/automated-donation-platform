@@ -61,9 +61,15 @@ b1 = Beneficiary.create(name: "Kenya Kesho Girls School", location: "Nakuru", de
 b2 = Beneficiary.create(name: "St. Mary's School for Girls", location: "Kakamega", description: "Offering quality education and a furure for girls")
 b3 = Beneficiary.create(name: "St. Bernard's Girls School", location: "Meru", description: "Giving every young girl the opportunity she cane be by offering top notch education")
 
-inv1= Inventory.create(item: "sanitary towels", quantity: 1000, beneficiary_id: b1.id, charity_id: 19)
-inv2 = Inventory.create(item: "exercise books", quantity: 500, beneficiary_id: b2.id, charity_id: 20)
-inv3 = Inventory.create(item: "stationery", quantity: 600, beneficiary_id: b3.id, charity_id: 21)
+cb1= CharityBeneficiary.create(charity_id: c1.id, beneficiary_id: b1.id);
+cb2= CharityBeneficiary.create(charity_id: c2.id, beneficiary_id: b3.id);
+cb3= CharityBeneficiary.create(charity_id: c1.id, beneficiary_id: b2.id);
+cb4= CharityBeneficiary.create(charity_id: c1.id, beneficiary_id: b3.id);
+
+
+inv1= Inventory.create(item: "sanitary towels", quantity: 1000, beneficiary_id: b1.id, charity_id:c1.id )
+inv2 = Inventory.create(item: "exercise books", quantity: 500, beneficiary_id: b2.id, charity_id: c1.id)
+inv3 = Inventory.create(item: "stationery", quantity: 600, beneficiary_id: b3.id, charity_id: c1.id)
 
 d1 = Donor.create(first_name: "Mary", last_name: "Coleman", email: "marycole@gmail.com", password: "1234", password_confirmation: "1234", country: "USA")
 d2 = Donor.create(first_name: "Robert", last_name: "Kavai", email: "r.kavai@gmail.com", password: "5678", password_confirmation: "5678", country: "Kenya")

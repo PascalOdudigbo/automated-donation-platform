@@ -3,6 +3,10 @@
     flex-direction: column;
     text-align: left;
 
+    h2{
+      margin-top: 10px;
+    }
+
     .namesInput {
       display: flex;
       flex-direction: row;
@@ -20,6 +24,10 @@
       }
     .textInput{
         background-color: red;
+    }
+
+    .signUp{
+      margin-top: 10px;
     }
     }
 }
