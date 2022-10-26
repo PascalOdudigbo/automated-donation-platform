@@ -7,7 +7,7 @@ class CharityBeneficiariesController < ApplicationController
     if beneficiaries.length > 0
       render json: beneficiaries, status: :found
     else
-      render json: {error: "no beeficiaries found"}
+      render json: {error: "no beneficiaries found"}
     end
   end
   
