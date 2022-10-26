@@ -8,38 +8,12 @@
 
 puts "Seeding"
 
-Charity.create([
-  {
-    name: "Hope Africa",
-    address: "Parkside Hotel, Monrovia St, City Centre, Nairobi",
-    email: "hopeafrica@gmail.com",
-    approved: true,
-  },
-  {
-    name: "Zana Africa",
-    address: "Wanguru Makutano/Embu Rd, Kerugoya, 272-10303",
-    email: "zanaafrica@gmail.com",
-    approved: true,
-  },
-  {
-    name: "One Girl Can",
-    address: "Frontier Hse, Gr Flr Mosque Rd, Mandera",
-    email: "onegirlcan@gmail.com",
-    approved: true,
-  },
-  {
-    name: " Women One",
-    address: "P.O. Box: 1478-60100 Embu",
-    email: "womenone@gmail.com",
-    approved: false,
-  },
-  {
-    name: "All for one",
-    address: "Sema Hse, Gr Flr Xanny Rd, Madara",
-    email: "onegirlcan@gmail.com",
-  }
-])
-
+c1 = Charity.create(name: "Hope Africa", address: "Parkside Hotel, Monrovia St, City Centre, Nairobi", email: "hopeafrica@gmail.com", password: "hafrica", password_confirmation: "hafrica", approved: true)
+c2 = Charity.create(name: "Zana Africa", address: "Wanguru Makutano/Embu Rd, Kerugoya, 272-10303", email: "zanaafrica@gmail.com", password: "zafrica", password_confirmation: "zafrica", approved: true)
+c3 = Charity.create(name: "One Girl Can", address: "Frontier Hse, Gr Flr Mosque Rd, Mandera", email: "onegirlcan@gmail.com", password: "ogcan", password_confirmation: "ogcan", approved: true)
+c4 = Charity.create(name: " Women One", address: "P.O. Box: 1478-60100 Embu", email: "womenone@gmail.com", password: "women1", password_confirmation: "women1", approved: false)
+c5 = Charity.create(name: "All for one", address: "Sema Hse, Gr Flr Xanny Rd, Madara", email: "onegirlcan@gmail.com", password: "all4one", password_confirmation: "all4one")
+  
 Administrator.create([
   {
     first_name: "John",
@@ -82,5 +56,17 @@ CharityProfile.create([
     charity_id: 4,
   },
 ])
+
+b1 = Beneficiary.create(name: "Kenya Kesho Girls School", location: "Nakuru", description: "Providing sustainable and quality education for the girls in our community")
+b2 = Beneficiary.create(name: "St. Mary's School for Girls", location: "Kakamega", description: "Offering quality education and a furure for girls")
+b3 = Beneficiary.create(name: "St. Bernard's Girls School", location: "Meru", description: "Giving every young girl the opportunity she cane be by offering top notch education")
+
+inv1= Inventory.create(item: "sanitary towels", quantity: 1000, beneficiary_id: b1.id, charity_id: 19)
+inv2 = Inventory.create(item: "exercise books", quantity: 500, beneficiary_id: b2.id, charity_id: 20)
+inv3 = Inventory.create(item: "stationery", quantity: 600, beneficiary_id: b3.id, charity_id: 21)
+
+d1 = Donor.create(first_name: "Mary", last_name: "Coleman", email: "marycole@gmail.com", password: "1234", password_confirmation: "1234", country: "USA")
+d2 = Donor.create(first_name: "Robert", last_name: "Kavai", email: "r.kavai@gmail.com", password: "5678", password_confirmation: "5678", country: "Kenya")
+d3 = Donor.create(first_name: "Susan", last_name: "Kansime", email: "marycole@gmail.com", password: "1357", password_confirmation: "1357", country: "Uganda")
 
 puts " Done Seeding"

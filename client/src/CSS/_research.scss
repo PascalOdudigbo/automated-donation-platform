@@ -1,21 +1,32 @@
 body {
-    justify-content: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    //justify-content: center;
     font-family: 'Poppins', sans-serif;
 }
 
 .research {
     margin-top: -50px;
 
-    h1 {
-        color: black;
-        font-size: 50px;
-    }
 
-    p {
-        font-size: 15px;
-    }
 }
 
+.research p {
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.research li {
+list-style-type: none;
+}
+
+.research h1 {
+    color: black;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 50px;
+}
 
 .intro2 {
     display: flex;
