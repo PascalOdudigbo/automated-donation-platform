@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import logo from "../images/logo.png";
 import CharitiesManageBeneficiaries from "./CharitiesManageBeneficiaries";
+import CharityInventoriesManagement from "./CharityInventoriesManagement";
 
 function CharitiesDashboard(charityData) {
   const [charity, setCharity] = useState(charityData);
@@ -23,7 +24,7 @@ function CharitiesDashboard(charityData) {
           fetch(`/a_charitys_beneficiaries/${data?.id}`)
             .then((response) => response.json())
             .then((data) => {
-            //   console.log("BENEFICIARIES:", data);
+              console.log("BENEFICIARIES:", data);
               setBeneficiaries(data);
               // handleDashboardStatistics(res.data)
             })
@@ -85,10 +86,11 @@ function CharitiesDashboard(charityData) {
           path="/manage-beneficiaries"
           element={
             <CharitiesManageBeneficiaries allBeneficiaries={beneficiaries} setBeneficiaries={setBeneficiaries}/>
+          
           }
         />
         {/* CharitiesManageInventories should be in the route below and its the parent component of CharitiesInventoryList*/}
-        {/* <Route path="manage-inventories"/> */}
+        <Route path="/manage-inventories" element={<CharityInventoriesManagement allBeneficiaries={beneficiaries}/>}/>
       </Routes>
     </div>
   );
