@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_19_094113) do
+ActiveRecord::Schema.define(version: 2022_10_26_104430) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -92,6 +92,18 @@ ActiveRecord::Schema.define(version: 2022_10_19_094113) do
     t.index ["charity_id"], name: "index_inventories_on_charity_id"
   end
 
+  create_table "stories", force: :cascade do |t|
+    t.text "beneficificiary_story"
+    t.bigint "beneficiary_id", null: false
+    t.bigint "charity_id", null: false
+    t.bigint "inventory_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["beneficiary_id"], name: "index_stories_on_beneficiary_id"
+    t.index ["charity_id"], name: "index_stories_on_charity_id"
+    t.index ["inventory_id"], name: "index_stories_on_inventory_id"
+  end
+
   add_foreign_key "charity_beneficiaries", "beneficiaries"
   add_foreign_key "charity_beneficiaries", "charities"
   add_foreign_key "charity_profiles", "charities"
@@ -99,4 +111,7 @@ ActiveRecord::Schema.define(version: 2022_10_19_094113) do
   add_foreign_key "donations", "donors"
   add_foreign_key "inventories", "beneficiaries"
   add_foreign_key "inventories", "charities"
+  add_foreign_key "stories", "beneficiaries"
+  add_foreign_key "stories", "charities"
+  add_foreign_key "stories", "inventories"
 end

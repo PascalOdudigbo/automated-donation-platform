@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :stories
   resources :charity_beneficiaries
   resources :inventories
   resources :beneficiaries
@@ -27,4 +28,7 @@ Rails.application.routes.draw do
 
   #getting a charitys beneficiaries
   get "/a_charitys_beneficiaries/:charity_id", to: "charity_beneficiaries#charity_beneficiaries"
+
+  #getting benefeciary stories
+  
 end
