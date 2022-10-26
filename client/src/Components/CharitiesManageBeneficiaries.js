@@ -100,6 +100,7 @@ function CharitiesManageBeneficiaries({
           setIsLoadingSave(false);
           console.log(res.data);
           alert("Beneficiary Added!");
+          setBeneficiaries([...allBeneficiaries, res.data])
           handleRefreshData();
 
           axios
@@ -132,9 +133,12 @@ function CharitiesManageBeneficiaries({
   }
 
   function handleDelete() {
-    axios
-      .delete(`/beneficiaries/${targetBeneficiary.id}`)
-      .then(() => alert("Delete successful"));
+    setIsLoadingDelete(true);
+    axios.delete(`/beneficiaries/${targetBeneficiary.id}`)
+      .then(() =>{ 
+        setIsLoadingDelete(false);
+        alert("Delete successful");
+        });
         handleRefreshData();
   }
 

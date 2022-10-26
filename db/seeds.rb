@@ -67,9 +67,9 @@ cb3= CharityBeneficiary.create(charity_id: c1.id, beneficiary_id: b2.id);
 cb4= CharityBeneficiary.create(charity_id: c1.id, beneficiary_id: b3.id);
 
 
-inv1= Inventory.create(item: "sanitary towels", quantity: 1000, beneficiary_id: b1.id, charity_id: 19)
-inv2 = Inventory.create(item: "exercise books", quantity: 500, beneficiary_id: b2.id, charity_id: 20)
-inv3 = Inventory.create(item: "stationery", quantity: 600, beneficiary_id: b3.id, charity_id: 21)
+inv1= Inventory.create(item: "sanitary towels", quantity: 1000, beneficiary_id: b1.id, charity_id:c1.id )
+inv2 = Inventory.create(item: "exercise books", quantity: 500, beneficiary_id: b2.id, charity_id: c1.id)
+inv3 = Inventory.create(item: "stationery", quantity: 600, beneficiary_id: b3.id, charity_id: c1.id)
 
 d1 = Donor.create(first_name: "Mary", last_name: "Coleman", email: "marycole@gmail.com", password: "1234", password_confirmation: "1234", country: "USA")
 d2 = Donor.create(first_name: "Robert", last_name: "Kavai", email: "r.kavai@gmail.com", password: "5678", password_confirmation: "5678", country: "Kenya")
