@@ -64,7 +64,7 @@ function CharitiesDashboard(charityData) {
           >
             MANAGE BENEFICIARIES
           </Link>
-          <Link className="charitiesDasboardNavigationLink" to="">
+          <Link className="charitiesDasboardNavigationLink" to="manage-inventories">
             MANAGE INVENTORIES
           </Link>
           <Link className="charitiesDasboardNavigationLink" to="">
@@ -87,7 +87,8 @@ function CharitiesDashboard(charityData) {
             <CharitiesManageBeneficiaries allBeneficiaries={beneficiaries} setBeneficiaries={setBeneficiaries}/>
           }
         />
-        {/* <Route path=""/> */}
+        {/* CharitiesManageInventories should be in the route below and its the parent component of CharitiesInventoryList*/}
+        {/* <Route path="manage-inventories"/> */}
       </Routes>
     </div>
   );
