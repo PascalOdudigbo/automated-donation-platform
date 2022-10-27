@@ -33,5 +33,6 @@ Rails.application.routes.draw do
   #getting charitys inventories
   get "/charities_inventories/:charity_id", to: "inventories#charity_inventories"
   #getting benefeciary stories
-  
+  get "/a_charitys_stories/:charity_id", to: "stories#charity_stories"
+
 end
