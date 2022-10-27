@@ -1,9 +1,8 @@
 .charitiesManageStoriesContainer{
   margin-left: 350px;
   margin-right: 70px;
-  margin-top: -550px;
-  // background-color: red;
-
+  margin-top: -500px;
+  
   .charitiesManageStoriesStatisticsContainer{
       width: 100%;
       height: 150px;
@@ -24,24 +23,23 @@
           background-color: #fcb500;
           box-shadow: 0px 5px 20px rgb(75, 71, 71);
 
-          h3{
+          h3 {
               margin-left: 5px;
               margin-right: 5px;
-          }
-      }
-
-  }
+           }
+        }
+    }
 
   .charitiesManageAndUpdateStoriesContainer{
-      // background-color: green;
       display: flex;
       flex-direction: row;
+
       .charitiesManageStoriesAllStories{
           background-color: rgb(208, 209, 210);
           border-radius: 5px;
           height: 330px;
 
-          .CMB-AllStoriesTitle{
+          .CMS-AllStoriesTitle{
               text-align: center;
               font-weight: lighter;
               margin-right: 12px;
@@ -51,35 +49,35 @@
               margin-bottom: 20px;
           }
 
-        //   .CMStoriesItemContainer{
-        //       display: flex;
-        //       flex-direction: column;
-        //       width: 420px;
-        //       height: 290px;
-        //       overflow-y: auto;
+          .CMS-StoriesItemContainer{
+              display: flex;
+              flex-direction: column;
+              width: 420px;
+              height: 290px;
+              overflow-y: auto;
 
-        //       .CMStoriesItem{
-        //           color: black;
-        //           background-color: #fcb500;
-        //           width: 380px;
-        //           height: 50px;
-        //           text-align: center;
-        //           margin-left: 10px;
-        //           margin-right: 10px;
-        //           border-radius: 5px;
-        //           margin-bottom: 10px; 
-        //       }
-        //       .CMStoriesItem:hover{
-        //           background-color: #8d5412;
-        //           color: white;
-        //       }
+              .CMS-StoriesItem{
+                  color: black;
+                  background-color: #fcb500;
+                  width: 380px;
+                  height: 50px;
+                  text-align: center;
+                  margin-left: 10px;
+                  margin-right: 10px;
+                  border-radius: 5px;
+                  margin-bottom: 10px; 
+              }
+              .CMS-StoriesItem:hover{
+                  background-color: #8d5412;
+                  color: white;
+              }
           }
 
           
 
       }
 
-      .CMB-UpdateOrAStoriesContainer{
+      .CMS-UpdateOrAddStoryContainer{
           display: flex;
           flex-direction: column;
           margin-left: 40px;
@@ -89,7 +87,7 @@
           height:330px;
 
 
-          .targetStoryName{
+          .targetCharityStoryName{
               text-align: center;
               font-weight: lighter;
               color: black;
@@ -98,7 +96,7 @@
               margin-top: 5px;
           }
 
-          .CMB-UpdateOrAddStoriesForm{
+          .CMS-UpdateOrAddStoryForm{
               display: flex;
               flex-direction: column;
               align-items: center;
@@ -106,70 +104,140 @@
               width: 420px;
               margin-top: -10px;
 
-              .CMS-UpdateOrAddStoriesFormInput{
+              .CMS-UpdateOrAddStoryFormDropDownContainer {
+                position: relative;
+                display: inline-block;
+                align-content: center;
+                align-self: center;
+                font-family: "Lucida Console", "Courier New", monospace;
+
+                // .CMS-dropdownInventoryDropdown {
+                //     position: relative;
+                //     display: inline-block;
+                //     align-content: center;
+                //     align-self: center;
+                //     font-family: "Lucida Console", "Courier New", monospace;
+                // }
+                .CMS-dropdownBeneficiaryDropbtn {
+                    background-color: rgb(6, 143, 255);
+                    color: white;
+                    padding: 10px;
+                    font-size: large;
+                    border: none;
+                    cursor: pointer;
+                    border-radius: 5px;
+                }
+
+                .CMS-dropdownInventoryDropbtn {
+                    background-color: rgb(6, 143, 255);
+                    color: white;
+                    padding: 10px;
+                    font-size: large;
+                    border: none;
+                    cursor: pointer;
+                    border-radius: 5px;
+                }
+
+                .CMS-dropdownBeneficiaryDropdown-content {
+                    display: none;
+                    position: absolute;
+                    background-color: #f9f9f9;
+                    min-width: 160px;
+                    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                    z-index: 1;
+                    overflow-y: auto;
+                    height: 100px;
+                }
+
+                .inventoryDropdown-content p {
+                    color: black;
+                    padding: 12px 16px;
+                    text-decoration: none;
+                    display: block;
+                }
+
+                .inventoryDropdown-content p:hover {
+                    background-color: #fcb500;
+                    cursor: pointer;
+                }
+            }
+
+            .inventoryDropdown:hover .inventoryDropdown-content {
+                display: block;
+            }
+
+            .inventoryDropdown:hover .inventoryDropbtn {
+                background-color: #8d5412;
+            }
+
+            .CMB-UpdateOrAddInventoryFormInputContainer {
+                margin-top: 20px;
+
+
+              .CMS-UpdateOrAddStoryFormInput{
                   margin-bottom: 5px;
                   height: 30px;
                   width: 100%;
                   border-radius: 5px;
                   margin-left: 40px;
                   font-size: large;
-              }
+                }
 
-      //         .CMS-UpdateOrAddStoriesFormTextArea{
-      //             margin-bottom: 10px;
-      //             height: 70px;
-      //             width: 100%;
-      //             border-radius: 5px;
-      //             margin-left: 40px;
-      //             font-size: large;
-      //         }
+              .CMS-UpdateOrAddStoryFormTextArea{
+                  margin-bottom: 10px;
+                  height: 70px;
+                  width: 100%;
+                  border-radius: 5px;
+                  margin-left: 40px;
+                  font-size: large;
+                }
               
 
-      //         // .updateOrDeleteStoriesBtnContainer{
-      //         //     display: flex;
-      //         //     flex-direction: column;
-      //         //     margin-top: -35px;
-      //         //     .saveBtn{
-      //         //         //padding: 8px 12px;
-      //         //         //border: 1px solid #333;
-      //         //         border-radius: 10px;
-      //         //         text-align: center;
-      //         //         margin-top: -5%;
-      //         //         margin-bottom: 5px;
-      //         //         text-decoration: none;
-      //         //         display: inline-block;
-      //         //         margin-left: 30px;
-      //         //         width: 300px;
-      //         //         background-color: #fcb500;
-      //         //         border: none;
-      //         //         font-family: "Courier New", Courier, monospace;
-      //         //     }
+              .updateOrDeleteStoryBtnContainer{
+                  display: flex;
+                  flex-direction: column;
+                  margin-top: -35px;
+                  .saveBtn{
+                      //padding: 8px 12px;
+                      //border: 1px solid #333;
+                      border-radius: 10px;
+                      text-align: center;
+                      margin-top: -5%;
+                      margin-bottom: 5px;
+                      text-decoration: none;
+                      display: inline-block;
+                      margin-left: 30px;
+                      width: 300px;
+                      background-color: #fcb500;
+                      border: none;
+                      font-family: "Courier New", Courier, monospace;
+                    }
       //         //     .saveBtn:hover {
       //         //         background-color: #109232;
       //         //       }
 
   
-      //         //     .deleteBtn{
-      //         //         border-radius: 10px;
-      //         //         text-align: center;
-      //         //         margin-top: 3px;
-      //         //         margin-bottom: 10px;
-      //         //         text-decoration: none;
-      //         //         display: inline-block;
-      //         //         margin-left: 30px;
-      //         //         width: 300px;
-      //         //         background-color: #c51212;
-      //         //         border: none;
-      //         //         font-family: "Courier New", Courier, monospace;
-      //         //     }
+                  .deleteBtn{
+                      border-radius: 10px;
+                      text-align: center;
+                      margin-top: 3px;
+                      margin-bottom: 10px;
+                      text-decoration: none;
+                      display: inline-block;
+                      margin-left: 30px;
+                      width: 300px;
+                      background-color: #c51212;
+                      border: none;
+                      font-family: "Courier New", Courier, monospace;
+                    }
       //         //     .deleteBtn:hover{
       //         //         background-color: #ff0000;
       //         //         color: white;
       //         //     }
-              }
+                  }    }
 
 
-      //     Stories
 
+                }
 }    
-}
+}}

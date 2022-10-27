@@ -168,12 +168,12 @@ function CharitiesManageStories({ allInventories, allBeneficiaries, setAllInvent
           <p>{totalBeneficiaries}</p>
         </div>
 
-        <div className="charitiesManageBeneficiariesStatistic">
+        <div className="charitiesManageStoriesStatistic">
           <h3>TOTAL DONORS</h3>
           <p>{totalDonors}</p>
         </div>
 
-        <div className="charitiesManageBeneficiariesStatistic">
+        <div className="charitiesManageStoriesStatistic">
           <h3>TOTAL DONATIONS</h3>
           <p>{totalAmountDonated}</p>
         </div>
@@ -182,12 +182,14 @@ function CharitiesManageStories({ allInventories, allBeneficiaries, setAllInvent
       <div className="charitiesManageAndUpdateStoriesContainer">
         <div className="charitiesManageStoriesAllStories">
           <h2 className="CMS-AllStoriesTitle">MANAGE STORIES</h2>
+          <div className="CMS-StoriesItemContainer">
           <BeneficiariesStoriesList
             allStories={allStories}
             setTargetStory={setTargetStory}
             setStoryTitle={setStoryTitle}
             setBeneficiaryStory={setBeneficiaryStory}
           />
+          </div>
         </div>
 
         <div className="CMS-UpdateOrAddStoryContainer">
