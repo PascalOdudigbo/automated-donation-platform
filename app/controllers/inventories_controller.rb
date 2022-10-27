@@ -18,7 +18,7 @@ class InventoriesController < ApplicationController
     @inventory = Inventory.new(inventory_params)
 
     if @inventory.save
-      render json: @inventory, status: :created, location: @inventory
+      render json: @inventory, status: :created
     else
       render json: @inventory.errors, status: :unprocessable_entity
     end
@@ -46,6 +46,6 @@ class InventoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def inventory_params
-      params.permit(:item, :quantity, :benefeciaries_id, :charities_id)
+      params.permit(:item, :quantity, :beneficiary_id, :charity_id)
     end
 end

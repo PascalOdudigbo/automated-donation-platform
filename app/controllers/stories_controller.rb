@@ -1,15 +1,14 @@
 class StoriesController < ApplicationController
   before_action :set_story, only: [:show, :update, :destroy]
 
-  #GET /stories/:charity_id
-  # def beneficiaries_stories
-  #   stories = Story.where(charity_id: params[:charity_id])
-  #   if stories.length > 0
-  #     render json: stories, status: :found
-  #   else
-  #     render json: {error: "no stories found"}
-  #   end
-  # end
+  def charity_stories
+    stories = Story.where(charity_id: params[:charity_id])
+    if stories.length > 0
+      render json: stories, status: :found
+    else
+      render json: {error: "no stories found"}
+    end
+  end 
 
   # GET /stories
   def index
@@ -56,6 +55,6 @@ class StoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def story_params
-      params.fetch(:story, {})
+      params.permit(:beneficiary_story, :charity_id, :beneficiary_id, :inventory_id)
     end
 end

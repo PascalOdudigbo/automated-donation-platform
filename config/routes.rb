@@ -30,5 +30,6 @@ Rails.application.routes.draw do
   get "/a_charitys_beneficiaries/:charity_id", to: "charity_beneficiaries#charity_beneficiaries"
 
   #getting benefeciary stories
-  
+  get "/a_charitys_stories/:charity_id", to: "stories#charity_stories"
+
 end

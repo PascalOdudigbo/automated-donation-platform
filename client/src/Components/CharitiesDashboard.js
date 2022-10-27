@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import logo from "../images/logo.png";
 import CharitiesManageBeneficiaries from "./CharitiesManageBeneficiaries";
+import CharitiesManageStories from "./CharitiesManageStories";
 
 function CharitiesDashboard(charityData) {
   const [charity, setCharity] = useState(charityData);
@@ -67,7 +68,7 @@ function CharitiesDashboard(charityData) {
           <Link className="charitiesDasboardNavigationLink" to="manage-inventories">
             MANAGE INVENTORIES
           </Link>
-          <Link className="charitiesDasboardNavigationLink" to="">
+          <Link className="charitiesDasboardNavigationLink" to="manage-stories">
             MANAGE STORIES
           </Link>
           <Link className="charitiesDasboardNavigationLink" to="">
@@ -89,6 +90,15 @@ function CharitiesDashboard(charityData) {
         />
         {/* CharitiesManageInventories should be in the route below and its the parent component of CharitiesInventoryList*/}
         {/* <Route path="manage-inventories"/> */}
+
+
+
+        <Route
+          path="/manage-stories"
+          element={
+            <CharitiesManageStories />
+          }
+        />
       </Routes>
     </div>
   );

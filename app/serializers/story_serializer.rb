@@ -1,3 +1,3 @@
 class StorySerializer < ActiveModel::Serializer
-  attributes :id, :beneficificiary_story 
+  attributes :id, :beneficiary_story, :beneficiary_id, :charity_id, :inventory_id
 end
