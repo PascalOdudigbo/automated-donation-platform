@@ -13,7 +13,6 @@ import Team from "./Team";
 import CharitiesDashboard from "./CharitiesDashboard";
 
 
-
 function App() {
   const [userData, setUserData] = useState({});
   return (
