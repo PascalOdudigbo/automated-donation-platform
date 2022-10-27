@@ -6,7 +6,7 @@ import axios from "axios";
 let targetInventory = {};
 let targetBeneficiary = {};
 
-function CharitiesManageStories({ allInventories, allBeneficiaries, setAllInventories, setAllBeneficiaries }) {
+function CharitiesManageStories({ allInventories, allBeneficiaries, setAllInventories, setAllBeneficiaries, setAllStoriesDadhboard }) {
   console.log("INVENTORIES INSIDE STORIES", allInventories)
   const [allStories, setAllStories] = useState([]);
   const [charityData, setCharityData] = useState({});
@@ -30,11 +30,15 @@ function CharitiesManageStories({ allInventories, allBeneficiaries, setAllInvent
           .then((response) => response.json())
           .then((data) => {
             console.log("STORIES:", data);
-            setAllStories(data);
+            if(!data.error){
+              setAllStories(data);
             // handleDashboardStatistics(res.data)
-            setTotalStories((totalStories) => (totalStories = data?.length));
-            setTargetStory({});
-            handleRefreshData();
+              setTotalStories((totalStories) => (totalStories = data?.length));
+              setAllStoriesDadhboard(data?.length);
+              setTargetStory({});
+              handleRefreshData();
+            }
+            
           })
           .catch((err) => console.error(err));
       })

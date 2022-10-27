@@ -37,11 +37,14 @@ function CharityInventoriesManagement({
           .then((response) => response.json())
           .then((data) => {
             console.log("INVENTORIES:", data);
-            setAllInventories(data);
-            setTotalBeneficiaries(
-              (totalBeneficiaries) => (totalBeneficiaries = data?.length)
-            );
-            // setTargetBeneficiary({});
+            if (!data.error){
+              setAllInventories(data);
+              setTotalBeneficiaries(
+                (totalBeneficiaries) => (totalBeneficiaries = allBeneficiaries?.length)
+              );
+              // setTargetBeneficiary({});
+            }
+           
           })
           .catch((err) => console.error(err));
       })

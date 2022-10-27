@@ -10,7 +10,7 @@ function CharitiesBeneficiaryList({
   //console.log("ALL BENEFICIARIES:", allBeneficiaries)
   return (
     <div>
-      {allBeneficiaries?.map((dataObject) => (
+      { allBeneficiaries?.map((dataObject) => (
         <div className="CMB-BeneficiaryItem"
           key={dataObject?.beneficiary?.id}
           onClick={() => {
