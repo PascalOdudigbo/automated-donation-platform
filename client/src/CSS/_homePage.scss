@@ -3,14 +3,21 @@ body {
 }
 
 .randomImages {
-  width: 100%;
+  // width: 100%;
+  width: 1260px;
   height: 600px;
+  margin-top: 15px;
+  margin-left: 40px;
+  margin-right: 40px;
+  background-color: white;
 }
 
 .NiaAbout {
   text-align: justify;
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: 30px;
+  margin-left: 40px;
+  margin-right: 40px;
   margin-bottom: 30px;
   font-size: larger;
   font-family: "Courier New", Courier, monospace;
@@ -26,7 +33,7 @@ body {
   border-radius: 10px;
   // justify-self: center;
   text-align: center;
-  margin-left: 45%;
+  margin-left: 43%;
   margin-top: 50px;
   margin-bottom: 50%;
   font-style: bold;
@@ -50,6 +57,7 @@ body {
 
 .CharitiesContainer {
   display: grid;
+  // height: 300px;
   gap: 25px 25px;
   grid-template-columns: auto auto auto;
   padding: 10px;
@@ -82,6 +90,7 @@ body {
     margin-top: -7px;
 
     li {
+      margin-left: 20px;
       height: 40px;
       width: 40px;
     }

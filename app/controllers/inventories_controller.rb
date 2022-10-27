@@ -1,6 +1,16 @@
 class InventoriesController < ApplicationController
   before_action :set_inventory, only: [:show, :update, :destroy]
 
+   #GET /inventories/:charity_id
+   def charity_inventories
+    inventories = Inventory.where(charity_id: params[:charity_id])
+    if inventories.length > 0
+      render json: inventories, status: :found
+    else
+      render json: {error: "no inventories found"}
+    end
+  end
+
   # GET /inventories
   def index
     @inventories = Inventory.all

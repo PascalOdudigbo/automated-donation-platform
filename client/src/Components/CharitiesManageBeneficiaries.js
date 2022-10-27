@@ -169,13 +169,16 @@ function CharitiesManageBeneficiaries({
       <div className="charitiesManageAndUpdateBeneficiariesContainer">
         <div className="charitiesManageBeneficiariesAllBeneficiaries">
           <h2 className="CMB-AllBeneficiariesTitle">MANAGE BENEFICIARIES</h2>
-          <CharitiesBeneficiaryList
-            allBeneficiaries={allBeneficiaries}
-            setTargetBeneficiary={setTargetBeneficiary}
-            setBeneficiaryName={setBeneficiaryName}
-            setBeneficiaryLocation={setBeneficiaryLocation}
-            setBeneficiaryDescription={setBeneficiaryDescription}
-          />
+          <div className="CMB-BeneficiaryItemContainer">
+            <CharitiesBeneficiaryList
+              allBeneficiaries={allBeneficiaries}
+              setTargetBeneficiary={setTargetBeneficiary}
+              setBeneficiaryName={setBeneficiaryName}
+              setBeneficiaryLocation={setBeneficiaryLocation}
+              setBeneficiaryDescription={setBeneficiaryDescription}
+            />
+          </div>
+          
         </div>
 
         <div className="CMB-UpdateOrAddBeneficiaryContainer">
@@ -185,12 +188,12 @@ function CharitiesManageBeneficiaries({
               : "ADD OR UPDATE BENEFICIARY"}
           </h2>
           <form className="CMB-UpdateOrAddBeneficiaryForm">
-            <input
+            <input className="CMB-UpdateOrAddBeneficiaryFormInput"
               placeholder="Name"
               value={beneficiaryName}
               onChange={(e) => setBeneficiaryName(e.target.value)}
             />
-            <input
+            <input className="CMB-UpdateOrAddBeneficiaryFormInput"
               placeholder="Location"
               value={beneficairyLocation}
               onChange={(e) => setBeneficiaryLocation(e.target.value)}
@@ -198,6 +201,7 @@ function CharitiesManageBeneficiaries({
 
             <textarea
               id="descriptionTxtArea"
+              className="CMB-UpdateOrAddBeneficiaryFormTextArea"
               name="descriptionTxtArea"
               rows="4"
               cols="50"
@@ -206,7 +210,7 @@ function CharitiesManageBeneficiaries({
               onChange={(e) => setBeneficiaryDescription(e.target.value)}
             />
             <br />
-            <div className="updateOrDeleteCharityBtnContainer">
+            <div className="updateOrDeleteBeneficiaryBtnContainer">
               <button
                 className="saveBtn"
                 type="button"

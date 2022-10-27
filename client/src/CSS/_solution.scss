@@ -21,8 +21,6 @@
     background:url("https://gdb.voanews.com/FFCE7BFC-9815-4332-9EB8-25F8DC60B5F4_w1023_r1_s.jpg") no-repeat ;
     background-size: cover;
     background-position: center;
-    // filter: blur(5px);
-    // -webkit-filter: blur(5px);
     height: 100%;
   }
 }
@@ -34,16 +32,75 @@
     margin-bottom: 2em;
     text-align: center;
     align-items: center;
-    font-weight: 900;
+    font-style: bold;
+    font-weight: bold;
     color:#fcb500 ;
   }
   .sanitary-pads-paragraph{
+    text-align: justify;
+    // font-weight: bold;
+    font-size: larger;
+    font-family: "Courier New", Courier, monospace;
     padding-left: 1em;
     padding-right: 1em;
+    margin-bottom: 15px;
   }
-  .sanitary-pads-list{
-    padding-left: 3em;
+
+  .sanitary-pads-list-container{
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    .sanitary-pads-list{
+      font-weight: bold;
+      padding-left: 3em;
+      margin-bottom: 10px;
+      font-size: larger;
+      font-family: "Courier New", Courier, monospace;
+      margin-bottom: 10px;
+    }
   }
+
+  .footer {
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    color: #fcb500;
+    width: 100%;
+    margin-left: -8px;
+    padding-right: 16px;
+    margin-bottom: -8px;
+    height: 50px;
+    padding-top: 50px;
+  
+    h3 {
+      font-size: larger;
+      font-family: "Courier New", Courier, monospace;
+      margin-top: -7px;
+      margin-left: 25px;
+    }
+  
+    ul {
+      display: flex;
+      flex-direction: row;
+      list-style: none;
+      justify-content: space-evenly;
+      margin-top: -7px;
+  
+      li {
+        margin-left: 20px;
+        height: 40px;
+        width: 40px;
+      }
+    }
+  
+    h4 {
+      text-align: center;
+      margin-top: -7px;
+    }
+  }
+  
 }
+
+
 
 

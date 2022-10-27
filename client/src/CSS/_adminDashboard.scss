@@ -20,7 +20,7 @@
         }
 
         .pageTitle{
-            top: 0px;
+            margin-top: 15px;
             text-align: right;
             margin-right: 10%;
             letter-spacing: 1px;
@@ -37,12 +37,16 @@
         display: flex;
         flex-direction: row;
         margin-top: 2%;
+        
 
         .profileContainer{
             margin-left: 2%;
             margin-right: 2%;
             width: 25%;
             box-shadow: 0px 5px 20px rgb(75, 71, 71);
+            background-color: rgb(226, 221, 221);
+            border-radius: 5px;
+
             .adminImageContainer{
 
                 .adminImage{
@@ -74,6 +78,7 @@
                     color: black;
                     height: fit-content;
                     margin-left: 10px;
+                    margin-top: 19px;
                 }
 
 
@@ -84,7 +89,7 @@
                 //border: 1px solid #333;
                 border-radius: 10px;
                 text-align: center;
-                margin-top: 3px;
+                margin-top: 20px;
                 margin-bottom: 10px;
                 text-decoration: none;
                 display: inline-block;
@@ -101,7 +106,7 @@
                 //border: 1px solid #333;
                 border-radius: 10px;
                 text-align: center;
-                margin-top: 3px;
+                margin-top: 20px;
                 margin-bottom: 10px;
                 text-decoration: none;
                 display: inline-block;
@@ -120,11 +125,16 @@
 
         .statisticsContainer{
             width: 70%;
+            height: 150px;
             display: flex;
             flex-direction: row;
+            background-color: rgb(226, 221, 221);
+            border-radius: 5px;
             
             .statistic{
+                height: 100px;
                 margin-right: 10%;
+                margin-top: 25px;
                 margin-left: 2%;
                 width: 25%;
                 text-align: center;
@@ -185,6 +195,10 @@
                 .charityNameAndStatus{
                     display: flex;
                     flex-direction: row;
+                    height: 60px;
+                    align-items: center;
+                    justify-content: center;
+                    margin-bottom: 20px;
 
                     .charityName{
                         color: black;
@@ -234,73 +248,7 @@
                 text-align: center;
                 margin-left: 10px;
                 border-radius: 5px;
-            }
-
-            .updateOrDeleteCharityBtnContainer{
-                display: flex;
-                flex-direction: column;
-
-                .approveBtn{
-                    padding: 8px 12px;
-                    //border: 1px solid #333;
-                    border-radius: 10px;
-                    text-align: center;
-                    margin-top: 3px;
-                    margin-bottom: 10px;
-                    text-decoration: none;
-                    display: inline-block;
-                    margin-left: 10px;
-                    // font-style: bold;
-                    // font-size: large;
-                    background-color: #fcb500;
-                    border: none;
-                    font-family: "Courier New", Courier, monospace;
-                }
-                .approveBtn:hover {
-                    background-color: #109232;
-                  }
-
-                .rejectBtn{
-                    padding: 8px 12px;
-                    //border: 1px solid #333;
-                    border-radius: 10px;
-                    text-align: center;
-                    margin-top: 3px;
-                    margin-bottom: 10px;
-                    text-decoration: none;
-                    display: inline-block;
-                    margin-left: 10px;
-                    // font-style: bold;
-                    // font-size: large;
-                    background-color: #cccccc;
-                    border: none;
-                    font-family: "Courier New", Courier, monospace;
-                }
-                .rejectBtn:hover{
-                      background-color: #100f0e;
-                      color: white
-                }
-
-                .deleteBtn{
-                    padding: 8px 12px;
-                    //border: 1px solid #333;
-                    border-radius: 10px;
-                    text-align: center;
-                    margin-top: 3px;
-                    margin-bottom: 10px;
-                    text-decoration: none;
-                    display: inline-block;
-                    margin-left: 10px;
-                    // font-style: bold;
-                    // font-size: large;
-                    background-color: #c51212;
-                    border: none;
-                    font-family: "Courier New", Courier, monospace;
-                }
-                .deleteBtn:hover{
-                    background-color: #ff0000;
-                    color: white;
-                }
+                margin-bottom: 15px;
             }
 
         }

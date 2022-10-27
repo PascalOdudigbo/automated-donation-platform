@@ -7,4 +7,5 @@ class Charity < ApplicationRecord
   has_many :stories, through: :beneficiaries
   has_many :inventories
   has_one :charity_profile
+  has_many :inventories
 end
