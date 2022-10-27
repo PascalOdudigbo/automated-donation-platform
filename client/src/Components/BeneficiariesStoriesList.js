@@ -2,15 +2,16 @@ import React, { useState,useEffect} from "react";
 import axios from "axios";
 
 function BeneficiariesStoriesList (){
+  const [allCharities, setAllCharities] = useState([]);
 
-  const [allStories, setAllStories] = useState([]);
+  // const [allStories, setAllStories] = useState([]);
 
   useEffect(() => {
-    axios.get("/stories")
-   
+    axios.get("/charities")
     .then(res => {
         console.log(res.data);
-        setAllStories(allStories => allStories= res.data);
+        setAllCharities(allCharities => allCharities = res.data);
+        // handleDashboardStatistics(res.data);
     })
     .catch(error => {
         if (error.response) {
@@ -20,15 +21,13 @@ function BeneficiariesStoriesList (){
   })
 
 
-
-
   return(
     <>
 
     <div className="beneficiaries-list">
 
     <h3 id="Name" className="storyName">
-              {{allStories}}
+              {/* {{allCharities}} */}
             </h3>
 
     </div>

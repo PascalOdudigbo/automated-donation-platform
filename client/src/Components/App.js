@@ -22,11 +22,12 @@ function App() {
         <Route path="/admin/*" element={<AdminDashboard userData={userData}/>}/>
         <Route path="/" element={<HomePage />} />
         <Route path="/team" element={<Team/>} />
-        <Route path="/login" element={<Login userData={setUserData} />} />
+        <Route path="/donate" element={<Login userData={setUserData} />} />
         <Route path="/signup" element={<SignUp userData={setUserData} />} />
         <Route path="/charitylogin" element={<CharityLogin userData={setUserData} />} />
         <Route path="/charityregister" element={<CharitySignUp userData={setUserData} />} />
         <Route path="/solution" element={<Solution />} />
+        <Route path="/donate" element={<Login userData={setUserData} />} />
         <Route path="/signup" element={<SignUp userData={setUserData} />} />
         <Route path="/research" element={<Research />} />
         <Route path="/charity/*" element={<CharitiesDashboard charityData={userData}/>}/>
