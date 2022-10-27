@@ -8,9 +8,9 @@ function CharityInventoriesList({
 }) {
     return (
         <>
-            <div className="CMB-BeneficiaryItem">
+            <div >
                 {allInventories?.map((inventory) => 
-                    <div
+                    <div className="CMB-InventoryItem"
                         key={inventory?.id}
                         onClick={() => {
                             setTargetInventory(inventory);

@@ -125,72 +125,77 @@ function CharityInventoriesManagement({
 
 
   return (
-    <div className="charitiesInventoriesManagementContainer">
-      <div className="charitiesInventoriesManagementStatisticsContainer">
-        <div className="charitiesInventoriesManagementStatistic">
-          <h3>NO.OF STORIES</h3>
+    <div className="charitiesManageInventoriesContainer">
+      <div className="charitiesManageInventoriesStatisticsContainer">
+        <div className="charitiesManageInventoriesStatistic">
+          <h3>TOTAL STORIES</h3>
           <p>{totalStories}</p>
         </div>
-
-        <div className="charitiesInventoriesManagementStatistic">
-          <h3>NO.OF BENEFICIARIES</h3>
+        <div className="charitiesManageInventoriesStatistic">
+          <h3>TOTAL BENEFICIARIES</h3>
           <p>{totalBeneficiaries}</p>
         </div>
 
-        <div className="charitiesInventoriesManagementStatistic">
-          <h3>NO.OF DONORS</h3>
+        <div className="charitiesManageInventoriesStatistic">
+          <h3>TOTAL DONORS</h3>
           <p>{totalDonors}</p>
         </div>
 
-        <div className="charitiesInventoriesManagementStatistic">
-          <h3>TOTAL AMOUNT DONATED</h3>
+        <div className="charitiesManageInventoriesStatistic">
+          <h3>TOTAL DONATIONS </h3>
           <p>{totalDonations}</p>
         </div>
       </div>
 
       <div className="charitiesManageAndUpdateInventoriesContainer">
         <div className="charitiesManageInventoriesAllInventories">
-          <h2 className="inventoriesTitle">MANAGE INVENTORIES</h2>
+          <h2 className="CMB-AllInventoriesTitle">MANAGE INVENTORIES</h2>
+          <div className="CMB-InventoryItemContainer">
           <CharityInventoriesList
             allInventories={allInventories}
             setTargetInventory={setTargetInventory}
             setInventoryItem={setInventoryItem}
             setInventoryQuantity={setInventoryQuantity}
-          />
+            />
+            </div>
         </div>
-        <div className="CMB-UpdateOrAddBeneficiaryContainer">
-          <h2 className="adminTargetCharityName">
+        <div className="CMB-UpdateOrAddInventoryContainer">
+          <h2 className="adminTargetInventoryName">
             {targetInventory?.item
               ? targetInventory?.item?.toUpperCase()
               : "ADD OR UPDATE INVENTORY"}
           </h2>
-          <form className="CMB-UpdateOrAddBeneficiaryForm">
-            <div class="dropdown">
-              <button class="dropbtn">Select Beneficiary</button>
-              <div class="dropdown-content">
+          <form className="CMB-UpdateOrAddInventoryForm">
+            <div className="inventoryDropdown">
+              <button className="inventoryDropbtn">Select Beneficiary</button>
+              <div className="inventoryDropdown-content">
                {allBeneficiaries?.map(data=>
                <p onClick={()=>{
                 targetBeneficiary=data?.beneficiary
-                console.log("TARGET BENEFICIARY", targetBeneficiary)
+                console.log("TARGET INVENTORY", targetBeneficiary)
                }}>
                 {data?.beneficiary?.name}
                 </p>)}
               </div>
             </div>
+            <div className="CMB-UpdateOrAddInventoryFormInputContainer">
             <input
+               className="CMB-UpdateOrAddInventoryFormInput"
               placeholder="Item"
               value={inventoryItem}
               onChange={(e) => setInventoryItem(e.target.value)}
             />
             <input
+              className="CMB-UpdateOrAddInventoryFormInput"
               placeholder="Quantity"
               value={inventoryQuantity}
               onChange={(e) => setInventoryQuantity(e.target.value)}
-            />
+              />
+            </div>
             <br />
-            <div className="updateOrDeleteCharityBtnContainer">
+            <div className="updateOrDeleteCharityButtonContainer">
               <button
-                className="saveBtn"
+                className="saveButton"
                 type="button"
                 onClick={() => {
                   handleSave();
@@ -199,7 +204,7 @@ function CharityInventoriesManagement({
                 {isLoadingSave ? "Loading..." : "Save"}
               </button>
               <button
-                className="deleteBtn"
+                className="deleteButton"
                 type="button"
                 onClick={() => {
                   handleDelete();
