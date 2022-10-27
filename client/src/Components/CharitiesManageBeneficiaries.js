@@ -57,7 +57,7 @@ function CharitiesManageBeneficiaries({
         console.log("BENEFICIARIES:", data);
         setBeneficiaries(data);
         // handleDashboardStatistics(res.data)
-        setTotalBeneficiaries(totalBeneficiaries=> totalBeneficiaries = data?.length);
+        setTotalBeneficiaries(totalBeneficiaries => totalBeneficiaries = data?.length);
         setTargetBeneficiary({});
         setBeneficiaryName("")
         setBeneficiaryLocation("")
@@ -135,11 +135,11 @@ function CharitiesManageBeneficiaries({
   function handleDelete() {
     setIsLoadingDelete(true);
     axios.delete(`/beneficiaries/${targetBeneficiary.id}`)
-      .then(() =>{ 
+      .then(() => {
         setIsLoadingDelete(false);
         alert("Delete successful");
-        });
-        handleRefreshData();
+      });
+    handleRefreshData();
   }
 
   return (
@@ -178,7 +178,7 @@ function CharitiesManageBeneficiaries({
               setBeneficiaryDescription={setBeneficiaryDescription}
             />
           </div>
-          
+
         </div>
 
         <div className="CMB-UpdateOrAddBeneficiaryContainer">
