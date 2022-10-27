@@ -10,6 +10,7 @@ import Research from "./Research";
 import CharityLogin from "./CharityLogin";
 import CharitySignUp from "./CharitySignUp";
 import Team from "./Team";
+import AboutUs from "./AboutUs";
 import CharitiesDashboard from "./CharitiesDashboard";
 
 
@@ -30,6 +31,7 @@ function App() {
         <Route path="/donate" element={<Login userData={setUserData} />} />
         <Route path="/signup" element={<SignUp userData={setUserData} />} />
         <Route path="/research" element={<Research />} />
+         <Route path="/about-us" element={<AboutUs/>} />
         <Route path="/charity/*" element={<CharitiesDashboard charityData={userData}/>}/>
       </Routes>
 
