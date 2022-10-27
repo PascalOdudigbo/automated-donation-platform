@@ -8,7 +8,7 @@ import AdminDashboard from "./AdminDashboard";
 import Solution from "./Solution";
 import Research from "./Research";
 import CharityLogin from "./CharityLogin";
-import CharitySignUp from "./CharitySignUp";
+import CharityRegister from "./CharityRegister";
 import Team from "./Team";
 import CharitiesDashboard from "./CharitiesDashboard";
 
@@ -25,7 +25,7 @@ function App() {
         <Route path="/login" element={<Login userData={setUserData} />} />
         <Route path="/signup" element={<SignUp userData={setUserData} />} />
         <Route path="/charitylogin" element={<CharityLogin userData={setUserData} />} />
-        <Route path="/charityregister" element={<CharitySignUp userData={setUserData} />} />
+        <Route path="/charity-register" element={<CharityRegister userData={setUserData} />} />
         <Route path="/solution" element={<Solution />} />
         <Route path="/signup" element={<SignUp userData={setUserData} />} />
         <Route path="/research" element={<Research />} />

@@ -18,17 +18,21 @@ function CharitiesDashboard(charityData) {
     fetch("/meCharity")
       .then((response) => response.json())
       .then((data) => {
-        // console.log(data);
+        console.log(data?.charity_profile?.about_us);
         setCharity(data);
 
         if (data?.error) {
           navigate("/login");
         }
         else if(data?.approved === null){
-            alert("Your charity registration is still pending approval!")
+            alert("Your charity registration is still pending approval!");
+            handleLogout();
+            navigate("/");
           }
         else if(data?.approved === false){
             alert("Your charity registration wad denied!")
+            handleLogout()
+            navigate("/");
         }
         else {
           fetch(`/a_charitys_beneficiaries/${data?.id}`)
