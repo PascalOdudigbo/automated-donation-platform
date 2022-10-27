@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import logo from "../images/logo.png";
-
 
 function Login({ userData }) {
   const [email, setEmail] = useState("");
@@ -10,6 +9,23 @@ function Login({ userData }) {
   const [isLoading, setIsLoading] = useState(false);
   const [userType, setUserType] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    fetch("/meCharity")
+      .then((response) => response.json())
+      .then((data) => {
+        if (data?.error) {
+        } else if (data?.approved === null) {
+          alert("Your charity registration is still pending approval!");
+        } else if (data?.approved === false) {
+          alert("Your charity registration wad denied!");
+        } else {
+          navigate("/charity");
+          userData(data);
+        }
+      })
+      .catch((err) => console.error(err));
+  }, []);
 
   function handleOnSubmit(e) {
     e.preventDefault();
@@ -36,8 +52,7 @@ function Login({ userData }) {
             alert(error.response.data.error);
           }
         });
-    }
-    else {
+    } else {
       axios
         .post(`/loginCharity`, {
           email: email,
@@ -48,7 +63,7 @@ function Login({ userData }) {
           console.log(res.data);
           userData(res.data);
           alert("Login successful");
-          navigate("/charity")
+          navigate("/charity");
         })
         .catch((error) => {
           setIsLoading(false);
@@ -57,7 +72,6 @@ function Login({ userData }) {
           }
         });
     }
-
   }
 
   return (
@@ -68,17 +82,24 @@ function Login({ userData }) {
         <div class="dropdown">
           <button class="dropbtn">Select User Type</button>
           <div class="dropdown-content">
-            <p onClick={(e) => {
-              console.log(e.target.innerText);
-              setUserType(e.target.innerText);
-            }}>Donor</p>
-            <p onClick={(e) => {
-              console.log(e.target.innerText);
-              setUserType(e.target.innerText);
-            }}>Charity</p>
+            <p
+              onClick={(e) => {
+                console.log(e.target.innerText);
+                setUserType(e.target.innerText);
+              }}
+            >
+              Donor
+            </p>
+            <p
+              onClick={(e) => {
+                console.log(e.target.innerText);
+                setUserType(e.target.innerText);
+              }}
+            >
+              Charity
+            </p>
           </div>
         </div>
-
 
         <label htmlFor="email">Email: </label>
         <input
@@ -100,10 +121,11 @@ function Login({ userData }) {
           {isLoading ? "Loading..." : "Login"}
         </button>
         <p>______________or ______________</p>
-        <Link className="signUp" to="/signup">SignUp</Link>
+        <Link className="signUp" to="/signup">
+          SignUp
+        </Link>
       </form>
     </div>
-
   );
 }
 export default Login;
