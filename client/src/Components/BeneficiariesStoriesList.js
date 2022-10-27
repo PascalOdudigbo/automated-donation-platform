@@ -7,6 +7,7 @@ function BeneficiariesStoriesList ({allStories, setBeneficiaryStory, setTargetSt
     <>
 
     <div className="beneficiaries-list">
+
               {
                 allStories?.map(story => 
                 <div className="CMS-BeneficiaryStory"
@@ -20,7 +21,6 @@ function BeneficiariesStoriesList ({allStories, setBeneficiaryStory, setTargetSt
                   {story?.title}
                 </div>)
               }
-    
 
     </div>
     
