@@ -23,6 +23,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/team" element={<Team/>} />
         <Route path="/donate" element={<Login userData={setUserData} />} />
+        <Route path="/login" element={<Login userData={setUserData} />} />
         <Route path="/signup" element={<SignUp userData={setUserData} />} />
         <Route path="/charitylogin" element={<CharityLogin userData={setUserData} />} />
         <Route path="/charityregister" element={<CharitySignUp userData={setUserData} />} />
