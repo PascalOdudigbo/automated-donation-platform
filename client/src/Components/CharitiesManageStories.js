@@ -30,15 +30,15 @@ function CharitiesManageStories({ allInventories, allBeneficiaries, setAllInvent
           .then((response) => response.json())
           .then((data) => {
             console.log("STORIES:", data);
-            if(!data.error){
+            if (!data.error) {
               setAllStories(data);
-            // handleDashboardStatistics(res.data)
+              // handleDashboardStatistics(res.data)
               setTotalStories((totalStories) => (totalStories = data?.length));
               setAllStoriesDadhboard(data?.length);
               setTargetStory({});
               handleRefreshData();
             }
-            
+
           })
           .catch((err) => console.error(err));
       })
@@ -56,10 +56,11 @@ function CharitiesManageStories({ allInventories, allBeneficiaries, setAllInvent
           .then((response) => response.json())
           .then((data) => {
             console.log("BENEFICIARIES:", data);
-            setAllBeneficiaries(data);
-            // handleDashboardStatistics(res.data)
-            setTotalBeneficiaries(data?.length);
-            
+            if (!data.error) {
+              setAllBeneficiaries(data);
+              // handleDashboardStatistics(res.data)
+              setTotalBeneficiaries(data?.length);
+            }
           })
           .catch((err) => console.error(err));
 
@@ -67,31 +68,35 @@ function CharitiesManageStories({ allInventories, allBeneficiaries, setAllInvent
           .then((response) => response.json())
           .then((data) => {
             console.log("INVENTORIES:", data);
-            setAllInventories(data);
-            // setTotalBeneficiaries(
-            //   (totalBeneficiaries) => (totalBeneficiaries = data?.length)
-            // );
-            // setTargetBeneficiary({});
+            if (!data.error) {
+              setAllInventories(data);
+              // setTotalBeneficiaries(
+              //   (totalBeneficiaries) => (totalBeneficiaries = data?.length)
+              // );
+              // setTargetBeneficiary({});
+            }
           })
           .catch((err) => console.error(err));
 
-          fetch(`/a_charitys_stories/${data?.id}`)
+        fetch(`/a_charitys_stories/${data?.id}`)
           .then((response) => response.json())
           .then((data) => {
             console.log("STORIES:", data);
-            setAllStories(data);
-            // handleDashboardStatistics(res.data)
-            setTotalStories((totalStories) => (totalStories = data?.length));
-            setTargetStory({});
-            setStoryTitle("");
-            setBeneficiaryStory("");
+            if (!data.error) {
+              setAllStories(data);
+              // handleDashboardStatistics(res.data)
+              setTotalStories((totalStories) => (totalStories = data?.length));
+              setTargetStory({});
+              setStoryTitle("");
+              setBeneficiaryStory("");
+            }
           })
           .catch((err) => console.error(err));
       }
       )
       .catch((err) => console.error(err));
 
-        
+
   }
 
 
