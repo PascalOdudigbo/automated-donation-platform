@@ -11,14 +11,6 @@ import {
 } from "react-icons/bs";
 
 
-import {
-  BsInstagram,
-  BsFacebook,
-  BsGithub,
-  BsTwitter,
-  BsLinkedin,
-} from "react-icons/bs";
-
 function Solution (){
   return(
     <>
@@ -65,34 +57,7 @@ function Solution (){
             <li>Women One</li>
           </ul>
         </div>
-
-        <div className="footer">
-          <h3>follow us</h3>
-          <ul>
-            <li>
-              <BsInstagram />
-            </li>
-            <li>
-              <BsFacebook />
-            </li>
-            <li>
-              <BsTwitter />
-            </li>
-            <li>
-              <BsGithub />
-            </li>
-            <li>
-              <BsLinkedin />
-            </li>
-          </ul>
-          <h4>2022 Copyright NIA Africa Ltd</h4>
-        </div>
-         <ul style={{ marginTop: '.5rem'  }} className="sanitary-pads-list">
-          <li>Zana Africa</li>
-          <li>Hope Africa</li>
-          <li>One Girl Can</li>
-          <li  style={{ marginBottom: '.5rem' }}>Women One</li>
-         </ul>
+         
 
     </div>
 
