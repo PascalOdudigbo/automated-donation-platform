@@ -11,6 +11,14 @@ import {
 } from "react-icons/bs";
 
 
+import {
+  BsInstagram,
+  BsFacebook,
+  BsGithub,
+  BsTwitter,
+  BsLinkedin,
+} from "react-icons/bs";
+
 function Solution (){
   return(
     <>
@@ -37,12 +45,12 @@ function Solution (){
          </p> 
          
 
-         <p className="sanitary-pads-paragraph">
+         <p style={{ marginTop: '.5rem' }} className="sanitary-pads-paragraph">
          Nia Africa encourages women to embrace their bodies and celebrate life. we believe all women and girls have the right to menstruate with confidence, with dignity and with support.  Our objective is to ensure vulnerable adolescent school-going girls are provided with a year’s supply of sanitary towels. As at end of June 2020, 262,417 girls have benefitted from this project since 2008 in various counties of Kenya! With this assistance, girls have remained in school for a whole year, thus
          reducing abseentism, improving academic performance and personal hygiene. This project has been made possible by the contributions of various donors and partners in numerous ways.
          </p> 
 
-         <p className="sanitary-pads-paragraph">
+         <p style={{ marginTop: '.5rem' }} className="sanitary-pads-paragraph">
          Nia Africa is in partnership with these charity organizations to make our dream a reality
          </p>
         
@@ -79,8 +87,37 @@ function Solution (){
           </ul>
           <h4>2022 Copyright NIA Africa Ltd</h4>
         </div>
+         <ul style={{ marginTop: '.5rem'  }} className="sanitary-pads-list">
+          <li>Zana Africa</li>
+          <li>Hope Africa</li>
+          <li>One Girl Can</li>
+          <li  style={{ marginBottom: '.5rem' }}>Women One</li>
+         </ul>
 
     </div>
+
+    <div className="footer">
+          <h3>follow us</h3>
+          <ul>
+            <li>
+              <BsInstagram />
+            </li>
+            <li>
+              <BsFacebook />
+            </li>
+            <li>
+              <BsTwitter />
+            </li>
+            <li>
+              <BsGithub />
+            </li>
+            <li>
+              <BsLinkedin />
+            </li>
+          </ul>
+          <h4>  &copy;{new Date().getFullYear()} Copyright NIA Africa Ltd | All rights reserved |
+            Terms Of Service | Privacy </h4>
+        </div>
 
     </>
   )
