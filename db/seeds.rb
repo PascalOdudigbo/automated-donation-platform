@@ -1,10 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# # This file should contain all the record creation needed to seed the database with its default values.
+# # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
+# #
+# # Examples:
+# #
+# #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+# #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Seeding"
 
@@ -76,8 +76,8 @@ d2 = Donor.create(first_name: "Robert", last_name: "Kavai", email: "r.kavai@gmai
 d3 = Donor.create(first_name: "Susan", last_name: "Kansime", email: "marycole@gmail.com", password: "1357", password_confirmation: "1357", country: "Uganda")
 
 s1 = Story.create(beneficificiary_story: "A form-two student from Kenya Kesho Girls School says she is lucky to get menstrual pads from a local non-governmental organization known as Hope Africa that empowers young girls and women in the country.
-“We can’t access these  pads until we go back to school. Our mum cannot afford to buy us pads and also provide for food. So we mostly depend on what the charity provides,” Consolata said.
-“We are five girls in our house, and the pads are usually not enough for all of us. Sometimes we ask our brothers to chip in.
+'We can’t access these  pads until we go back to school. Our mum cannot afford to buy us pads and also provide for food. So we mostly depend on what the charity provides,' Consolata said.
+'We are five girls in our house, and the pads are usually not enough for all of us. Sometimes we ask our brothers to chip in.'
 Together with he Kenyan government, through the State Department for Gender Affairs, runs a programme to provide free sanitary towels to some 3.7 million girls in public primary schools, special primary and secondary schools in the country.
 The scheme is essential in a country where over 65% of people who menstruate cannot afford sanitary towels, according to figures cited in the 2016 report Menstrual Health in Kenya, published by non-profit consulting firm FSG.
 It also showed that 6 out of 10 girls in Kenya had never heard about menstruation until their first period.
@@ -86,10 +86,10 @@ s2 = Story.create(beneficificiary_story: "While the transition to womanhood shou
 
 Sarah Laku, a student from St. Mary's School for Girls wishes her mother was present to help her navigate this challenging phase of life.
 
-“In absence of my mother, life was hard. I had just started receiving my periods and was not sure of the phase I was getting into since our community undermines girls. But unlike my agemates, I was lucky I had a mentor who walked me through that new phase of my life.’’ said Sarah.
+'In absence of my mother, life was hard. I had just started receiving my periods and was not sure of the phase I was getting into since our community undermines girls. But unlike my agemates, I was lucky I had a mentor who walked me through that new phase of my life.’ said Sarah.
 
 Sarah is one of the beneficiaries of the reusable pads project by Zana Africa. Having been introduced to us by her friend Asha, she has undergone training and is able to make reusable pads.
-“This  project has equipped me with the necessary skills to make alternative pads. The reusable sanitary pads are just as healthy and safe as disposable ones and women need not have any concerns in this regard, in terms of hygiene and infections,” remarks Sarah.
+'This  project has equipped me with the necessary skills to make alternative pads. The reusable sanitary pads are just as healthy and safe as disposable ones and women need not have any concerns in this regard, in terms of hygiene and infections,' remarks Sarah.
 The project funded by Nia Africa aims to enlighten school-going girls on menstruation and the most recommended practices on menstrual hygiene management as well as increasing dependence on reusable products among young girls and women in the community.")
 s3 = Story.create(beneficificiary_story: "MORE THAN 3,500 GIRLS AND STILL COUNTING
 The girls are seated under a tree shielding us from the blistering sun in St. Bernard's Girls School in Meru. Monica smiles confidently as she starts her conversation with a mentor from our One Girl Can team on a bench. She is holding 3 packs of sanitary pads received from the team. She started her menstruation one year ago when she was aged 12 and a class 7 student. “The first time it happened i was too embarrassed to tell anyone. I became withdrawn, quiet and scared. My mum realized something was wrong. I was disgusted with myself due to the continuous bleeding. I missed my classes for a whole week”, She says.
@@ -97,8 +97,8 @@ The girls are seated under a tree shielding us from the blistering sun in St. Be
 Monica is in a school among the 10 which are part of our programs in Meru County.These schools are located in a semi-arid area and poverty stricken region. In addition, they lack enough resources to cater for the girl child needs for example buying sanitary towels for them. We execute our programs to fill the gap and ensure more girls have chances to attend their classes.
 
 So far so good as the One Girl Can team has been able to reach over 3,500 girls by providing them with Sanitary towels and training sessions geared to leadership. This is a big milestone towards the achievement of their studies.")
-s4 = Story.create(beneficificiary_story: "“My name is Kalondu, my mother got married at the age of 12years to a 70years old man, it was ok then and everyone ahead of her had followed the same path. She quickly gave birth to me a year after, and the next year and soon she was a mother of seven, her health has deteriorated over time, and since my father who was the sole bread winner passed on there was no hope for school or an education for me and my siblings.”
+s4 = Story.create(beneficificiary_story: "'My name is Kalondu, my mother got married at the age of 12years to a 70years old man, it was ok then and everyone ahead of her had followed the same path. She quickly gave birth to me a year after, and the next year and soon she was a mother of seven, her health has deteriorated over time, and since my father who was the sole bread winner passed on there was no hope for school or an education for me and my siblings.'
 
 Through Women One Intervention the girls in my school and I have received sanitary towels and reproductive health training. I now have a better understanding of myself and the normal changes happening to my body. I am able to stay in school without fear of soiling myself, and I’m happy that I can get equal reading/study hours with the boys in my class.” ")
-# s5 = Story.create(beneficificiary_story:)
+s5 = Story.create(beneficificiary_story:)
 puts " Done Seeding"
