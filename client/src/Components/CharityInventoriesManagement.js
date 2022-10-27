@@ -178,6 +178,7 @@ function CharityInventoriesManagement({
                 </p>)}
               </div>
             </div>
+            <div className="CMB-UpdateOrAddInventoryFormInputContainer">
             <input
                className="CMB-UpdateOrAddInventoryFormInput"
               placeholder="Item"
@@ -190,6 +191,7 @@ function CharityInventoriesManagement({
               value={inventoryQuantity}
               onChange={(e) => setInventoryQuantity(e.target.value)}
               />
+            </div>
             <br />
             <div className="updateOrDeleteCharityButtonContainer">
               <button

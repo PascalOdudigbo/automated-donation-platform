@@ -1,10 +1,10 @@
-.charitiesManageInventoriesContainer{
+.charitiesManageInventoriesContainer {
     margin-left: 350px;
     margin-right: 70px;
     margin-top: -500px;
     // background-color: red;
 
-    .charitiesManageInventoriesStatisticsContainer{
+    .charitiesManageInventoriesStatisticsContainer {
         width: 100%;
         height: 150px;
         display: flex;
@@ -13,7 +13,7 @@
         border-radius: 5px;
         margin-bottom: 20px;
 
-        .charitiesManageInventoriesStatistic{
+        .charitiesManageInventoriesStatistic {
             height: 100px;
             margin-right: 10%;
             margin-top: 25px;
@@ -24,7 +24,7 @@
             background-color: #fcb500;
             box-shadow: 0px 5px 20px rgb(75, 71, 71);
 
-            h3{
+            h3 {
                 margin-left: 5px;
                 margin-right: 5px;
             }
@@ -32,16 +32,16 @@
 
     }
 
-    .charitiesManageAndUpdateInventoriesContainer{
-        // background-color: green;
+    .charitiesManageAndUpdateInventoriesContainer {
         display: flex;
         flex-direction: row;
-        .charitiesManageInventoriesAllInventories{
+
+        .charitiesManageInventoriesAllInventories {
             background-color: rgb(208, 209, 210);
             border-radius: 5px;
             height: 330px;
 
-            .CMB-AllInventoriesTitle{
+            .CMB-AllInventoriesTitle {
                 text-align: center;
                 font-weight: lighter;
                 margin-right: 12px;
@@ -51,14 +51,14 @@
                 margin-bottom: 20px;
             }
 
-            .CMB-InventoryItemContainer{
+            .CMB-InventoryItemContainer {
                 display: flex;
                 flex-direction: column;
                 width: 420px;
                 height: 290px;
                 overflow-y: auto;
 
-                .CMB-InventoryItem{
+                .CMB-InventoryItem {
                     color: black;
                     background-color: #fcb500;
                     width: 380px;
@@ -67,29 +67,30 @@
                     margin-left: 10px;
                     margin-right: 10px;
                     border-radius: 5px;
-                    margin-bottom: 10px; 
+                    margin-bottom: 10px;
                 }
-                .CMB-InventoryItem:hover{
+
+                .CMB-InventoryItem:hover {
                     background-color: #8d5412;
                     color: white;
                 }
             }
 
-            
+
 
         }
 
-        .CMB-UpdateOrAddInventoryContainer{
+        .CMB-UpdateOrAddInventoryContainer {
             display: flex;
             flex-direction: column;
             margin-left: 40px;
             background-color: rgb(208, 209, 210);
             width: 500px;
             border-radius: 5px;
-            height:330px;
+            height: 330px;
 
 
-            .adminTargetInventoryName{
+            .adminTargetInventoryName {
                 text-align: center;
                 font-weight: lighter;
                 color: black;
@@ -98,7 +99,7 @@
                 margin-top: 5px;
             }
 
-            .CMB-UpdateOrAddInventoryForm{
+            .CMB-UpdateOrAddInventoryForm {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -106,56 +107,117 @@
                 width: 420px;
                 margin-top: -10px;
 
-                .CMB-UpdateOrAddInventoryFormInput{
-                    margin-bottom: 5px;
-                    height: 30px;
-                    width: 100%;
-                    border-radius: 5px;
-                    margin-left: 40px;
-                    font-size: large;
+                .inventoryDropdown {
+                    position: relative;
+                    display: inline-block;
+                    align-content: center;
+                    align-self: center;
+                    font-family: "Lucida Console", "Courier New", monospace;
+
+                    .inventoryDropbtn {
+                        background-color: rgb(6, 143, 255);
+                        color: white;
+                        padding: 10px;
+                        font-size: large;
+                        border: none;
+                        cursor: pointer;
+                        border-radius: 5px;
+                    }
+
+                    .inventoryDropdown-content {
+                        display: none;
+                        position: absolute;
+                        background-color: #f9f9f9;
+                        min-width: 160px;
+                        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                        z-index: 1;
+                    }
+
+                    .inventoryDropdown-content p {
+                        color: black;
+                        padding: 12px 16px;
+                        text-decoration: none;
+                        display: block;
+                    }
+
+                    .inventoryDropdown-content p:hover {
+                        background-color: #fcb500;
+                        cursor: pointer;
+                    }
+                }
+
+                .inventoryDropdown:hover .inventoryDropdown-content {
+                    display: block;
+                }
+
+                .inventoryDropdown:hover .inventoryDropbtn {
+                    background-color: #8d5412;
+                }
+
+                .CMB-UpdateOrAddInventoryFormInputContainer {
+                        margin-top: 20px;
+
+                    .CMB-UpdateOrAddInventoryFormInput {
+                        margin-bottom: 10px;
+                        height: 30px;
+                        width: 90%;
+                        border-radius: 5px;
+                        margin-left: 10px;
+                        font-size: large;
+                    }
+
                 }
 
 
-                .updateOrDeleteCharityButtonContainer{
+
+                .updateOrDeleteCharityButtonContainer {
                     display: flex;
                     flex-direction: column;
-                    margin-top: -35px;
-                    .saveButton{
-                        //padding: 8px 12px;
-                        //border: 1px solid #333;
+                    margin-top: 80px;
+
+                    .saveButton {
+
+                        padding: 8px 12px;
                         border-radius: 10px;
+                        margin-top: -50px;
+                        width: 70px;
+                        margin-left: 100px;
+                        margin-right: 100px;
+                        margin-bottom: 10px;
                         text-align: center;
-                        margin-top: -5%;
-                        margin-bottom: 5px;
                         text-decoration: none;
                         display: inline-block;
-                        margin-left: 30px;
-                        width: 300px;
                         background-color: #fcb500;
                         border: none;
                         font-family: "Courier New", Courier, monospace;
                     }
+
                     .saveButton:hover {
                         background-color: #109232;
-                      }
+                        cursor: pointer;
+                    }
 
-    
-                    .deleteButton{
+
+                    .deleteButton {
+                        padding: 8px 12px;
                         border-radius: 10px;
-                        text-align: center;
-                        margin-top: 3px;
+                        margin-top: 0px;
+                        width: 70px;
+                        margin-left: 100px;
+                        margin-right: 10px;
                         margin-bottom: 10px;
+                        text-align: center;
                         text-decoration: none;
                         display: inline-block;
-                        margin-left: 30px;
-                        width: 300px;
                         background-color: #c51212;
                         border: none;
                         font-family: "Courier New", Courier, monospace;
                     }
-                    .deleteButton:hover{
+
+                    .deleteButton:hover {
                         background-color: #ff0000;
                         color: white;
+                        cursor: pointer;
                     }
                 }
 
@@ -166,4 +228,4 @@
         }
     }
 
-}    
+}
