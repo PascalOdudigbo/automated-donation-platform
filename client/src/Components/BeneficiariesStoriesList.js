@@ -1,34 +1,26 @@
-import React, { useState,useEffect} from "react";
-import axios from "axios";
+import React from "react";
 
-function BeneficiariesStoriesList (){
-  const [allCharities, setAllCharities] = useState([]);
 
-  // const [allStories, setAllStories] = useState([]);
-
-  useEffect(() => {
-    axios.get("/charities")
-    .then(res => {
-        console.log(res.data);
-        setAllCharities(allCharities => allCharities = res.data);
-        // handleDashboardStatistics(res.data);
-    })
-    .catch(error => {
-        if (error.response) {
-            alert(error.response.data.error);
-        }
-    });
-  })
-
+function BeneficiariesStoriesList ({allStories, setBeneficiaryStory, setTargetStory, setStoryTitle}){
 
   return(
     <>
 
     <div className="beneficiaries-list">
 
-    <h3 id="Name" className="storyName">
-              {/* {{allCharities}} */}
-            </h3>
+              {
+                allStories?.map(story => 
+                <div className="CMS-BeneficiaryStory"
+                key={story?.id} 
+                onClick={() => {
+                  setTargetStory(story);
+                  setBeneficiaryStory(story?.beneficiary_story);
+                  setStoryTitle(story?.title);
+                }}
+                >
+                  {story?.title}
+                </div>)
+              }
 
     </div>
     

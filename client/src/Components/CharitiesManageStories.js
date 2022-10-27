@@ -1,132 +1,159 @@
 import React, { useState, useEffect } from "react";
+import BeneficiariesStoriesList from "./BeneficiariesStoriesList";
+import axios from "axios";
 
-let targetInventory = {}
-let targetBeneficiary = {}
 
-function CharitiesManageStories() {
-  const [story, setStory] = useState({});
+let targetInventory = {};
+let targetBeneficiary = {};
+
+function CharitiesManageStories({ allInventories, allBeneficiaries, setAllInventories, setAllBeneficiaries }) {
+  console.log("INVENTORIES INSIDE STORIES", allInventories)
+  const [allStories, setAllStories] = useState([]);
   const [charityData, setCharityData] = useState({});
   const [isLoadingSave, setIsLoadingSave] = useState(false);
   const [isLoadingDelete, setIsLoadingDelete] = useState(false);
   const [totalStories, setTotalStories] = useState(0);
-  const [totalBeneficiaries, setTotalBeneficiaries] = useState(0);
+  const [totalBeneficiaries, setTotalBeneficiaries] = useState(allBeneficiaries?.length);
   const [totalDonors, setTotalDonors] = useState(0);
   const [totalAmountDonated, setTotalAmountDonated] = useState(0);
   const [beneficiaryStory, setBeneficiaryStory] = useState("");
   const [targetStory, setTargetStory] = useState({});
+  const [storyTitle, setStoryTitle] = useState("");
+
 
   useEffect(() => {
     fetch("/meCharity")
       .then((response) => response.json())
       .then((data) => {
         // setCharityData(data);
-        fetch(`/a_charitys_beneficiaries/${data?.id}`)
+        fetch(`/a_charitys_stories/${data?.id}`)
           .then((response) => response.json())
           .then((data) => {
             console.log("STORIES:", data);
-            setStory(data);
+            setAllStories(data);
             // handleDashboardStatistics(res.data)
             setTotalStories((totalStories) => (totalStories = data?.length));
             setTargetStory({});
+            handleRefreshData();
           })
           .catch((err) => console.error(err));
       })
       .catch((err) => console.error(err));
   }, []);
 
-  //   function handleRefreshData() {
-//   fetch(`/a_charitys_beneficiaries/${charityData?.id}`)
-//     .then((response) => response.json())
-//     .then((data) => {
-//       console.log("BENEFICIARIES:", data);
-//       setBeneficiaries(data);
-//       // handleDashboardStatistics(res.data)
-//       setTotalBeneficiaries(
-//         (totalBeneficiaries) => (totalBeneficiaries = data?.length)
-//       );
-//       setTargetBeneficiary({});
-//       setBeneficiaryName("");
-//       setBeneficiaryLocation("");
-//       setBeneficiaryDescription("");
-//     })
-//     .catch((err) => console.error(err));
-  //   }
+  function handleRefreshData() {
+    fetch("/meCharity")
+      .then((response) => response.json())
+      .then((data) => {
+        // console.log(data);
+        setCharityData(data);
 
-  //   function handleSave() {
-  //     if (targetBeneficiary?.id) {
-  //       setIsLoadingSave(true);
-  //       axios
-  //         .put(`/beneficiaries/${targetBeneficiary.id}`, {
-  //           name: beneficiaryName,
-  //           location: beneficairyLocation,
-  //           description: beneficiaryDescription,
-  //         })
-  //         .then((res) => {
-  //           setIsLoadingSave(false);
-  //           console.log(res.data);
-  //           alert("Beneficiary Updated!");
-  //           handleRefreshData();
-  //         })
-  //         .catch((error) => {
-  //           setIsLoadingSave(false);
-  //           if (error.response) {
-  //             //console.log(error?.response?.data?.error)
-  //             alert(error.response.data.error);
-  //           }
-  //         });
-  //     } else {
-  //       setIsLoadingSave(true);
-  //       axios
-  //         .post(`/beneficiaries`, {
-  //           name: beneficiaryName,
-  //           location: beneficairyLocation,
-  //           description: beneficiaryDescription,
-  //         })
-  //         .then((res) => {
-  //           setIsLoadingSave(false);
-  //           console.log(res.data);
-  //           alert("Beneficiary Added!");
-  //           setBeneficiaries([...allBeneficiaries, res.data])
-  //           handleRefreshData();
+        fetch(`/a_charitys_beneficiaries/${data?.id}`)
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("BENEFICIARIES:", data);
+            setAllBeneficiaries(data);
+            // handleDashboardStatistics(res.data)
+            setTotalBeneficiaries(data?.length);
+            
+          })
+          .catch((err) => console.error(err));
 
-  //           axios
-  //             .post(`/charity_beneficiaries/`, {
-  //               beneficiary_id: res.data.id,
-  //               charity_id: charityData.id,
-  //             })
-  //             .then((res) => {
-  //               setIsLoadingSave(false);
-  //               console.log(res.data);
-  //               // alert("Beneficiary Added!")
-  //               // handleEditProject()
-  //             })
-  //             .catch((error) => {
-  //               setIsLoadingSave(false);
-  //               if (error.response) {
-  //                 //console.log(error?.response?.data?.error)
-  //                 alert(error.response.data.error);
-  //               }
-  //             });
-  //         })
-  //         .catch((error) => {
-  //           setIsLoadingSave(false);
-  //           if (error.response) {
-  //             //console.log(error?.response?.data?.error)
-  //             alert(error.response.data.error);
-  //           }
-  //         });
-  //     }
-  //   }
+        fetch(`/charities_inventories/${data?.id}`)
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("INVENTORIES:", data);
+            setAllInventories(data);
+            // setTotalBeneficiaries(
+            //   (totalBeneficiaries) => (totalBeneficiaries = data?.length)
+            // );
+            // setTargetBeneficiary({});
+          })
+          .catch((err) => console.error(err));
 
-  //   function handleDelete() {
-  //     setIsLoadingDelete(true);
-  //     axios.delete(`/beneficiaries/${targetBeneficiary.id}`)
-  //       .then(() =>{
-  //         setIsLoadingDelete(false);
-  //         alert("Delete successful");
-  //         });
-  //         handleRefreshData();
-  //   }
+          fetch(`/a_charitys_stories/${data?.id}`)
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("STORIES:", data);
+            setAllStories(data);
+            // handleDashboardStatistics(res.data)
+            setTotalStories((totalStories) => (totalStories = data?.length));
+            setTargetStory({});
+            setStoryTitle("");
+            setBeneficiaryStory("");
+          })
+          .catch((err) => console.error(err));
+      }
+      )
+      .catch((err) => console.error(err));
+
+        
+  }
+
+
+
+  function handleSave() {
+    if (targetStory?.id) {
+      setIsLoadingSave(true);
+
+      axios
+        .put(`/stories/${targetStory?.id}`, {
+          title: storyTitle,
+          beneficiary_story: beneficiaryStory,
+          beneficiary_id: targetBeneficiary?.id,
+          charity_id: charityData?.id,
+          inventory_id: targetInventory?.id
+        })
+        .then((res) => {
+          setIsLoadingSave(false);
+          console.log(res.data);
+          alert("Story Updated!");
+          handleRefreshData();
+        })
+        .catch((error) => {
+          setIsLoadingSave(false);
+          if (error.response) {
+            //console.log(error?.response?.data?.error)
+            alert(error.response.data.error);
+          }
+        });
+    } else {
+      setIsLoadingSave(true);
+      axios
+        .post(`/stories`, {
+          title: storyTitle,
+          beneficiary_story: beneficiaryStory,
+          beneficiary_id: targetBeneficiary?.id,
+          charity_id: charityData?.id,
+          inventory_id: targetInventory?.id
+        })
+        .then((res) => {
+          setIsLoadingSave(false);
+          console.log(res.data);
+          alert("Story Added!");
+          setAllStories([...allStories, res.data])
+          handleRefreshData();
+
+        })
+        .catch((error) => {
+          setIsLoadingSave(false);
+          if (error.response) {
+            //console.log(error?.response?.data?.error)
+            alert(error.response.data.error);
+          }
+        });
+    }
+  }
+
+  function handleDelete() {
+    setIsLoadingDelete(true);
+    axios.delete(`/stories/${targetStory.id}`)
+      .then(() => {
+        setIsLoadingDelete(false);
+        alert("Delete successful");
+      });
+    handleRefreshData();
+  }
 
   return (
     <div className="charitiesManageStoriesContainer">
@@ -155,13 +182,12 @@ function CharitiesManageStories() {
       <div className="charitiesManageAndUpdateStoriesContainer">
         <div className="charitiesManageStoriesAllStories">
           <h2 className="CMS-AllStoriesTitle">MANAGE STORIES</h2>
-          {/* <CharitiesBeneficiaryList
-                allStories={allStories}
-                setTargetBeneficiary={setTargetBeneficiary}
-                setBeneficiaryName={setBeneficiaryName}
-                // setBeneficiaryLocation={setBeneficiaryLocation}
-                // setBeneficiaryDescription={setBeneficiaryDescription}
-              /> */}
+          <BeneficiariesStoriesList
+            allStories={allStories}
+            setTargetStory={setTargetStory}
+            setStoryTitle={setStoryTitle}
+            setBeneficiaryStory={setBeneficiaryStory}
+          />
         </div>
 
         <div className="CMS-UpdateOrAddStoryContainer">
@@ -171,7 +197,7 @@ function CharitiesManageStories() {
               : "ADD OR UPDATE STORY"}
           </h2>
           <form className="CMS-UpdateOrAddStoryForm">
-            {/* <div className="CMS-UpdateOrAddStoryFormDropDownContainer">
+            <div className="CMS-UpdateOrAddStoryFormDropDownContainer">
               <div className="CMS-dropdownBeneficiary">
                 <button className="CMS-dropdownBeneficiaryDropbtn">Select Beneficiary</button>
                 <div className="CMS-dropdownBeneficiaryDropdown-content">
@@ -193,22 +219,27 @@ function CharitiesManageStories() {
                     {allInventories?.map((data) => (
                       <p
                         onClick={() => {
-                          targetInventory = data?.inventory;
+                          targetInventory = data;
                           console.log("TARGET INVENTORY", targetInventory);
                         }}
                       >
-                        {data?.inventory?.name}
+                        {data?.item}
                       </p>
                     ))}
                   </div>
                 </div>
               </div>
-            </div> */}
+            </div>
 
-
+            <input className="CMS-UpdateOrAddStoryFormInput"
+              placeholder="Name"
+              value={storyTitle}
+              onChange={(e) => setStoryTitle(e.target.value)}
+            />
             <textarea
-              id="descriptionTxtArea"
-              name="descriptionTxtArea"
+              id="storyTxtArea"
+              className="CMS-UpdateOrAddStoryFormTextArea"
+              name="storyTxtArea"
               rows="4"
               cols="50"
               placeholder="Beneficiary story"
@@ -221,7 +252,7 @@ function CharitiesManageStories() {
                 className="saveBtn"
                 type="button"
                 onClick={() => {
-                //   handleSave();
+                  handleSave();
                 }}
               >
                 {isLoadingSave ? "Loading..." : "Save"}
@@ -230,7 +261,7 @@ function CharitiesManageStories() {
                 className="deleteBtn"
                 type="button"
                 onClick={() => {
-                //   handleDelete();
+                  handleDelete();
                 }}
               >
                 {isLoadingDelete ? "Loading..." : "Delete"}
