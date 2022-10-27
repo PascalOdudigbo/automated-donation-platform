@@ -91,13 +91,10 @@ The project funded by Nia Africa aims to enlighten school-going girls on menstru
 
 s3 = Story.create(beneficiary_story: "MORE THAN 3,500 GIRLS AND STILL COUNTING
 The girls are seated under a tree shielding us from the blistering sun in St. Bernard's Girls School in Meru. Monica smiles confidently as she starts her conversation with a mentor from our One Girl Can team on a bench. She is holding 3 packs of sanitary pads received from the team. She started her menstruation one year ago when she was aged 12 and a class 7 student. “The first time it happened i was too embarrassed to tell anyone. I became withdrawn, quiet and scared. My mum realized something was wrong. I was disgusted with myself due to the continuous bleeding. I missed my classes for a whole week”, She says.
-
 Monica is in a school among the 10 which are part of our programs in Meru County.These schools are located in a semi-arid area and poverty stricken region. In addition, they lack enough resources to cater for the girl child needs for example buying sanitary towels for them. We execute our programs to fill the gap and ensure more girls have chances to attend their classes.
-
 So far so good as the One Girl Can team has been able to reach over 3,500 girls by providing them with Sanitary towels and training sessions geared to leadership. This is a big milestone towards the achievement of their studies.", charity_id: c1.id, beneficiary_id: b1.id, inventory_id: inv1.id)
 
 s4 = Story.create(beneficiary_story: "“My name is Kalondu, my mother got married at the age of 12years to a 70years old man, it was ok then and everyone ahead of her had followed the same path. She quickly gave birth to me a year after, and the next year and soon she was a mother of seven, her health has deteriorated over time, and since my father who was the sole bread winner passed on there was no hope for school or an education for me and my siblings.”
-
 Through Women One Intervention the girls in my school and I have received sanitary towels and reproductive health training. I now have a better understanding of myself and the normal changes happening to my body. I am able to stay in school without fear of soiling myself, and I’m happy that I can get equal reading/study hours with the boys in my class.” ", charity_id: c1.id, beneficiary_id: b1.id, inventory_id: inv1.id)
 
 # s5 = Story.create(beneficificiary_story:)
