@@ -37,9 +37,8 @@ function CharityInventoriesManagement({ setBeneficiaries, allBeneficiaries }) {
         fetch(`/a_charitys_beneficiaries/${data?.id}`)
           .then((response) => response.json())
           .then((data) => {
-            console.log("BENEFICIARIES:", data);
+            console.log("BENEFICIARIES FROM INVENTORIES:", data);
             if (!data?.error) {
-              setBeneficiaries(data);
               setTotalBeneficiaries(data?.length);
             }
           })
@@ -51,13 +50,12 @@ function CharityInventoriesManagement({ setBeneficiaries, allBeneficiaries }) {
             console.log("STORIES:", data);
             if (!data?.error) {
               setTotalStories(data?.length);
-              handleRefreshData();
             }
           })
           .catch((err) => console.error(err));
       })
       .catch((err) => console.error(err));
-
+      handleRefreshData();
   }, []);
 
 
@@ -67,13 +65,13 @@ function CharityInventoriesManagement({ setBeneficiaries, allBeneficiaries }) {
       .then((response) => response.json())
       .then((data) => {
         setCharityData(data);
+
         fetch(`/charities_inventories/${data?.id}`)
           .then((response) => response.json())
           .then((data) => {
             console.log("INVENTORIES:", data);
             if (!data?.error) {
               setAllInventories(data);
-              setTotalBeneficiaries(data?.length);
               setTargetInventory({});
               setInventoryItem("")
               setInventoryQuantity("")
@@ -86,7 +84,6 @@ function CharityInventoriesManagement({ setBeneficiaries, allBeneficiaries }) {
           .then((data) => {
             console.log("BENEFICIARIES:", data);
             if (!data?.error) {
-              setBeneficiaries(data);
               setTotalBeneficiaries(data?.length);
             }
           })
@@ -160,8 +157,9 @@ function CharityInventoriesManagement({ setBeneficiaries, allBeneficiaries }) {
       .then(() => {
         setIsLoadingDelete(false);
         alert("Delete successful");
+        handleRefreshData();
       });
-    handleRefreshData();
+    
   }
 
 

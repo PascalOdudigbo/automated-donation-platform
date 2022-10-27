@@ -49,7 +49,7 @@ function CharitiesManageBeneficiaries({
           .then((data) => {
             console.log("STORIES:", data);
             if (!data?.error) {
-              setTotalStories((totalStories) => (totalStories = data?.length));
+              setTotalStories(data?.length);
             }
           })
           .catch((err) => console.error(err));
@@ -62,23 +62,26 @@ function CharitiesManageBeneficiaries({
     fetch("/meCharity")
       .then((response) => response.json())
       .then((data) => {
-        fetch(`/a_charitys_beneficiaries/${charityData?.id}`)
+        fetch(`/a_charitys_beneficiaries/${data?.id}`)
           .then((response) => response.json())
           .then((data) => {
             console.log("BENEFICIARIES:", data);
-            setBeneficiaries(data);
-            setTotalBeneficiaries(data?.length);
-            setTargetBeneficiary({});
-            setBeneficiaryName("")
-            setBeneficiaryLocation("")
-            setBeneficiaryDescription("")
-
+            if(!data.error){
+              setBeneficiaries(data);
+              setTotalBeneficiaries(data?.length);
+              setTargetBeneficiary({});
+              setBeneficiaryName("")
+              setBeneficiaryLocation("")
+              setBeneficiaryDescription("")
+            }
 
             fetch(`/a_charitys_stories/${data?.id}`)
               .then((response) => response.json())
               .then((data) => {
                 console.log("STORIES:", data);
-                setTotalStories(data?.length);
+                if(!data.error){
+                  setTotalStories(data?.length);
+                }
               })
               .catch((err) => console.error(err));
 
@@ -121,10 +124,10 @@ function CharitiesManageBeneficiaries({
         })
         .then((res) => {
           setIsLoadingSave(false);
-          console.log(res.data);
+          console.log("NEW BENEFICIARY",res.data);
           alert("Beneficiary Added!");
-          setBeneficiaries([...allBeneficiaries, res.data])
-          handleRefreshData();
+          setBeneficiaries([...allBeneficiaries, {beneficiary: res.data}])
+          // handleRefreshData();
 
           axios
             .post(`/charity_beneficiaries/`, {
@@ -133,9 +136,8 @@ function CharitiesManageBeneficiaries({
             })
             .then((res) => {
               setIsLoadingSave(false);
-              console.log(res.data);
-              // alert("Beneficiary Added!")
-              // handleEditProject()
+              // console.log(res.data);
+              
             })
             .catch((error) => {
               setIsLoadingSave(false);
@@ -157,12 +159,13 @@ function CharitiesManageBeneficiaries({
 
   function handleDelete() {
     setIsLoadingDelete(true);
+    console.log(targetBeneficiary);
     axios.delete(`/beneficiaries/${targetBeneficiary.id}`)
       .then(() => {
         setIsLoadingDelete(false);
         alert("Delete successful");
+        handleRefreshData();
       });
-    handleRefreshData();
   }
 
   return (
