@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 2022_10_26_104430) do
   end
 
   create_table "stories", force: :cascade do |t|
+    t.string "title"
     t.text "beneficiary_story"
     t.bigint "beneficiary_id", null: false
     t.bigint "charity_id", null: false

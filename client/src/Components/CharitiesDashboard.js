@@ -10,6 +10,7 @@ import CharityInventoriesManagement from "./CharityInventoriesManagement";
 function CharitiesDashboard(charityData) {
   const [charity, setCharity] = useState(charityData);
   const [beneficiaries, setBeneficiaries] = useState([]);
+  const [allInventories, setAllInventories] = useState([]);
 
   const navigate = useNavigate();
 
@@ -38,9 +39,23 @@ function CharitiesDashboard(charityData) {
               // handleDashboardStatistics(res.data)
             })
             .catch((err) => console.error(err));
+
+            fetch(`/charities_inventories/${data?.id}`)
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("INVENTORIES:", data);
+            setAllInventories(data);
+            // setTotalBeneficiaries(
+            //   (totalBeneficiaries) => (totalBeneficiaries = data?.length)
+            // );
+            // setTargetBeneficiary({});
+          })
+          .catch((err) => console.error(err));
         }
       })
       .catch((err) => console.error(err));
+
+      
   }, []);
 
   function handleLogout() {
@@ -98,15 +113,10 @@ function CharitiesDashboard(charityData) {
           
           }
         />
-        {/* CharitiesManageInventories should be in the route below and its the parent component of CharitiesInventoryList*/}
-        {/* <Route path="manage-inventories"/> */}
-
-
-
         <Route
           path="/manage-stories"
           element={
-            <CharitiesManageStories />
+            <CharitiesManageStories allInventories={allInventories} allBeneficiaries={beneficiaries} setAllBeneficiaries={setBeneficiaries} setAllInventories={setAllInventories}/>
           }
         />
         <Route path="/manage-inventories" element={<CharityInventoriesManagement allBeneficiaries={beneficiaries}/>}/>
