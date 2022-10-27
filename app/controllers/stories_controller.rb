@@ -27,7 +27,7 @@ class StoriesController < ApplicationController
     @story = Story.new(story_params)
 
     if @story.save
-      render json: @story, status: :created, location: @story
+      render json: @story, status: :created
     else
       render json: @story.errors, status: :unprocessable_entity
     end
@@ -55,6 +55,6 @@ class StoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def story_params
-      params.permit(:beneficiary_story, :charity_id, :beneficiary_id, :inventory_id)
+      params.permit(:title, :beneficiary_story, :charity_id, :beneficiary_id, :inventory_id)
     end
 end
