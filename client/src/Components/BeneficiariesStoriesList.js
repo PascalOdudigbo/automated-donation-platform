@@ -10,7 +10,7 @@ function BeneficiariesStoriesList ({allStories, setBeneficiaryStory, setTargetSt
 
               {
                 allStories?.map(story => 
-                <div className="CMS-BeneficiaryStory"
+                <div className="CMS-StoriesItem"
                 key={story?.id} 
                 onClick={() => {
                   setTargetStory(story);
