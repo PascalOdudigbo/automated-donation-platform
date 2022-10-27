@@ -1,53 +1,79 @@
 body {
-  justify-content: center;
-  overflow-x: hidden;
- 
+    justify-content: center;
+    overflow-x: hidden;
+
 }
 
-.AboutusContainer{
-  height: 100vh;
-  width: 100vw;
+.AboutusContainer {
+    height: 100vh;
+    width: 100vw;
+
+    .AboutusContainerTitle {
+        margin-top: 50px;
+        margin-left: 40px;
+        margin-right: 40px;
+
+        .AboutusTitle {
+            text-align: center;
+            color: #fcb500;
+
+        }
+    }
+
+    .AboutusParagraphContainer {
+        margin-left: 30px;
 
 
-.footer {
-    display: flex;
-    flex-direction: row;
-    background-color: black;
-    color: #fcb500;
-    width: 100%;
-    margin-left: -8px;
-    padding-right: 16px;
-    margin-bottom: -8px;
-    height: 50px;
-    padding-top: 50px;
-  
-    h3 {
-      font-size: larger;
-      font-family: "Courier New", Courier, monospace;
-      margin-top: -7px;
-      margin-left: 25px;
+        .AboutusParagraph {
+            margin-top: 30px;
+        }
+
+        .aboutusTag {
+            line-height: 1.5;
+        }
+
     }
-  
-    ul {
-      display: flex;
-      flex-direction: row;
-      list-style: none;
-      justify-content: space-evenly;
-      margin-top: -7px;
-  
-      li {
-        margin-left: 20px;
-        height: 40px;
-        width: 40px;
-      }
+
+
+    .footer {
+        display: flex;
+        flex-direction: row;
+        background-color: black;
+        color: #fcb500;
+        width: 100%;
+        margin-left: -8px;
+        padding-right: 16px;
+        margin-bottom: -8px;
+        height: 50px;
+        padding-top: 50px;
+
+        h3 {
+            font-size: larger;
+            font-family: "Courier New", Courier, monospace;
+            margin-top: -7px;
+            margin-left: 25px;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            justify-content: space-evenly;
+            margin-top: -7px;
+
+            li {
+                margin-left: 20px;
+                height: 40px;
+                width: 40px;
+            }
+        }
+
+        h4 {
+            text-align: center;
+            margin-top: -7px;
+        }
+
     }
-  
-    h4 {
-      text-align: center;
-      margin-top: -7px;
-    }
-  
-}
 
 
 
