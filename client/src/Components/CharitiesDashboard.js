@@ -11,6 +11,7 @@ function CharitiesDashboard(charityData) {
   const [charity, setCharity] = useState(charityData);
   const [beneficiaries, setBeneficiaries] = useState([]);
   const [allInventories, setAllInventories] = useState([]);
+  const [allStories, setAllStories] = useState([]);
 
   const navigate = useNavigate();
 
@@ -18,24 +19,30 @@ function CharitiesDashboard(charityData) {
     fetch("/meCharity")
       .then((response) => response.json())
       .then((data) => {
-        // console.log(data);
+        console.log(data?.charity_profile?.about_us);
         setCharity(data);
 
         if (data?.error) {
           navigate("/login");
         }
         else if(data?.approved === null){
-            alert("Your charity registration is still pending approval!")
+            alert("Your charity registration is still pending approval!");
+            handleLogout();
+            navigate("/");
           }
         else if(data?.approved === false){
             alert("Your charity registration wad denied!")
+            handleLogout()
+            navigate("/");
         }
         else {
           fetch(`/a_charitys_beneficiaries/${data?.id}`)
             .then((response) => response.json())
             .then((data) => {
               console.log("BENEFICIARIES:", data);
-              setBeneficiaries(data);
+              if(!data?.error){
+                setBeneficiaries(data);
+              }
               // handleDashboardStatistics(res.data)
             })
             .catch((err) => console.error(err));
@@ -44,7 +51,9 @@ function CharitiesDashboard(charityData) {
           .then((response) => response.json())
           .then((data) => {
             console.log("INVENTORIES:", data);
-            setAllInventories(data);
+            if(!data?.error){
+              setAllInventories(data);
+            }
             // setTotalBeneficiaries(
             //   (totalBeneficiaries) => (totalBeneficiaries = data?.length)
             // );
@@ -116,7 +125,7 @@ function CharitiesDashboard(charityData) {
         <Route
           path="/manage-stories"
           element={
-            <CharitiesManageStories allInventories={allInventories} allBeneficiaries={beneficiaries} setAllBeneficiaries={setBeneficiaries} setAllInventories={setAllInventories}/>
+            <CharitiesManageStories allInventories={allInventories} allBeneficiaries={beneficiaries} setAllBeneficiaries={setBeneficiaries} setAllInventories={setAllInventories} setAllStories={setAllStories}/>
           }
         />
         <Route path="/manage-inventories" element={<CharityInventoriesManagement allBeneficiaries={beneficiaries}/>}/>

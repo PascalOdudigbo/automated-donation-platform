@@ -4,18 +4,15 @@ import CharitiesBeneficiaryList from "./CharitiesBeneficiaryList";
 
 function CharitiesManageBeneficiaries({
   allBeneficiaries,
-  allStories,
-  allDonors,
-  allDonations,
   setBeneficiaries,
 }) {
   const [charityData, setCharityData] = useState({});
   const [totalBeneficiaries, setTotalBeneficiaries] = useState(
     allBeneficiaries?.length
   );
-  const [totalStories, setTotalStories] = useState(allStories?.length);
-  const [totalDonors, setTotalDonors] = useState(allDonors?.length);
-  const [totalDonations, setTotalDonations] = useState(allDonations?.length);
+  const [totalStories, setTotalStories] = useState(0);
+  const [totalDonors, setTotalDonors] = useState(0);
+  const [totalDonations, setTotalDonations] = useState(0);
   const [targetBeneficiary, setTargetBeneficiary] = useState({});
   const [beneficiaryName, setBeneficiaryName] = useState(
     targetBeneficiary?.name
@@ -38,14 +35,24 @@ function CharitiesManageBeneficiaries({
           .then((response) => response.json())
           .then((data) => {
             console.log("BENEFICIARIES:", data);
-            setBeneficiaries(data);
-            // handleDashboardStatistics(res.data)
-            setTotalBeneficiaries(
-              (totalBeneficiaries) => (totalBeneficiaries = data?.length)
-            );
-            setTargetBeneficiary({});
+            if(!data?.error){
+              setBeneficiaries(data);
+              setTotalBeneficiaries(data?.length);
+              setTargetBeneficiary({});
+            }
           })
           .catch((err) => console.error(err));
+
+          fetch(`/a_charitys_stories/${data?.id}`)
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("STORIES:", data);
+            if(!data?.error){
+              setTotalStories((totalStories) => (totalStories = data?.length));
+            }  
+          })
+          .catch((err) => console.error(err));
+          
       })
       .catch((err) => console.error(err));
   }, []);
@@ -56,14 +63,25 @@ function CharitiesManageBeneficiaries({
       .then((data) => {
         console.log("BENEFICIARIES:", data);
         setBeneficiaries(data);
-        // handleDashboardStatistics(res.data)
-        setTotalBeneficiaries(totalBeneficiaries => totalBeneficiaries = data?.length);
+        setTotalBeneficiaries(data?.length);
         setTargetBeneficiary({});
         setBeneficiaryName("")
         setBeneficiaryLocation("")
         setBeneficiaryDescription("")
+
+
+      fetch(`/a_charitys_stories/${data?.id}`)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("STORIES:", data);
+        setTotalStories(data?.length);
       })
       .catch((err) => console.error(err));
+
+      })
+      .catch((err) => console.error(err));
+
+      
   }
 
   function handleSave() {

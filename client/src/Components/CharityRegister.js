@@ -3,16 +3,14 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import logo from "../images/logo.png";
 
-function CharitySignUp({ userData }) {
+function CharityRegister({ userData }) {
     const [name, setName] = useState("");
-    const [isLoading, setIsLoading] = useState(false);
     const [email, setEmail] = useState("");
     const [address, setAddress] = useState("");
-    // const [country, setCountry] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
-    const [approved, setApproved] = useState()
-    const navigate = useNavigate
+    const [isLoading, setIsLoading] = useState(false);
+    const navigate = useNavigate()
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -21,8 +19,8 @@ function CharitySignUp({ userData }) {
             {
                 name: name,
                 email: email,
-                address,
-                // country,
+                address: address,
+                approved: null,
                 password: password,
                 password_confirmation: passwordConfirmation
             })
@@ -30,8 +28,8 @@ function CharitySignUp({ userData }) {
                 setIsLoading(false);
                 console.log(res.data)
                 userData(res.data)
-                alert("Signup successful!")
-                // navigate("/")
+                alert("Charity Registered Successfully!");
+                navigate("/")
             })
             .catch(error => {
                 setIsLoading(false);
@@ -44,15 +42,15 @@ function CharitySignUp({ userData }) {
     return (
         <div className="signUpContainer">
             <form onSubmit={handleSubmit} className="form">
-                <img src={logo} alt="logo" />
-                <h2>Register Charity</h2>
-                    <label htmlFor="name" className="labelName">Name</label>
-                    <input className="textInput"
-                        type="text"
-                        id="name"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                    />
+                <img className={"charityRegisterLogo"} src={logo} alt="logo" />
+                <h2 className="registerCharityPageTitle">REGISTER CHARITY</h2>
+                <label htmlFor="name" className="labelName">Name</label>
+                <input className="textInput"
+                    type="text"
+                    id="name"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                />
                 <label htmlFor="email">Email: </label>
                 <input
                     type="email"
@@ -68,13 +66,7 @@ function CharitySignUp({ userData }) {
                     value={address}
                     onChange={(e) => setAddress(e.target.value)}
                 />
-                <label htmlFor="approved">Approved</label>
-                <input
-                    type="text"
-                    id="approved"
-                    value={approved}
-                    onChange={(e) => setApproved(e.target.value)}
-                />
+                
                 <label htmlFor="password">Password</label>
                 <input
                     type="password"
@@ -93,11 +85,13 @@ function CharitySignUp({ userData }) {
                     autoComplete="current-password"
                     required
                 />
-                <p>______________________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;______________________</p>
+                 <br/>
+                <p className="charityRegisterSpaceline">______________________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;______________________</p>
+                <br/>
                 <button type="submit" className="signUp"> {isLoading ? "Loading..." : "Register"}</button>
             </form>
         </div>
     )
 }
 
-export default CharitySignUp
+export default CharityRegister;
