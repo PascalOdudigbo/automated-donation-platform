@@ -128,21 +128,21 @@ function CharityInventoriesManagement({
     <div className="charitiesManageInventoriesContainer">
       <div className="charitiesManageInventoriesStatisticsContainer">
         <div className="charitiesManageInventoriesStatistic">
-          <h3>NO.OF STORIES</h3>
+          <h3>TOTAL STORIES</h3>
           <p>{totalStories}</p>
         </div>
         <div className="charitiesManageInventoriesStatistic">
-          <h3>NO.OF BENEFICIARIES</h3>
+          <h3>TOTAL BENEFICIARIES</h3>
           <p>{totalBeneficiaries}</p>
         </div>
 
         <div className="charitiesManageInventoriesStatistic">
-          <h3>NO.OF DONORS</h3>
+          <h3>TOTAL DONORS</h3>
           <p>{totalDonors}</p>
         </div>
 
         <div className="charitiesManageInventoriesStatistic">
-          <h3>TOTAL AMOUNT DONATED</h3>
+          <h3>TOTAL DONATIONS </h3>
           <p>{totalDonations}</p>
         </div>
       </div>
