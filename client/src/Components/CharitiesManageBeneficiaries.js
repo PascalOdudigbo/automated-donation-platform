@@ -35,53 +35,58 @@ function CharitiesManageBeneficiaries({
           .then((response) => response.json())
           .then((data) => {
             console.log("BENEFICIARIES:", data);
-            if(!data?.error){
+            if (!data?.error) {
               setBeneficiaries(data);
               setTotalBeneficiaries(data?.length);
               setTargetBeneficiary({});
+              handleRefreshData();
             }
           })
           .catch((err) => console.error(err));
 
-          fetch(`/a_charitys_stories/${data?.id}`)
+        fetch(`/a_charitys_stories/${data?.id}`)
           .then((response) => response.json())
           .then((data) => {
             console.log("STORIES:", data);
-            if(!data?.error){
+            if (!data?.error) {
               setTotalStories((totalStories) => (totalStories = data?.length));
-            }  
+            }
           })
           .catch((err) => console.error(err));
-          
+
       })
       .catch((err) => console.error(err));
   }, []);
 
   function handleRefreshData() {
-    fetch(`/a_charitys_beneficiaries/${charityData?.id}`)
+    fetch("/meCharity")
       .then((response) => response.json())
       .then((data) => {
-        console.log("BENEFICIARIES:", data);
-        setBeneficiaries(data);
-        setTotalBeneficiaries(data?.length);
-        setTargetBeneficiary({});
-        setBeneficiaryName("")
-        setBeneficiaryLocation("")
-        setBeneficiaryDescription("")
+        fetch(`/a_charitys_beneficiaries/${charityData?.id}`)
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("BENEFICIARIES:", data);
+            setBeneficiaries(data);
+            setTotalBeneficiaries(data?.length);
+            setTargetBeneficiary({});
+            setBeneficiaryName("")
+            setBeneficiaryLocation("")
+            setBeneficiaryDescription("")
 
 
-      fetch(`/a_charitys_stories/${data?.id}`)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("STORIES:", data);
-        setTotalStories(data?.length);
+            fetch(`/a_charitys_stories/${data?.id}`)
+              .then((response) => response.json())
+              .then((data) => {
+                console.log("STORIES:", data);
+                setTotalStories(data?.length);
+              })
+              .catch((err) => console.error(err));
+
+          })
+          .catch((err) => console.error(err));
+
       })
       .catch((err) => console.error(err));
-
-      })
-      .catch((err) => console.error(err));
-
-      
   }
 
   function handleSave() {

@@ -3,30 +3,19 @@ import CharityInventoriesList from './CharityInventoriesList';
 import axios from "axios";
 
 let targetBeneficiary = {};
-function CharityInventoriesManagement({
-  allBeneficiaries,
-  allStories,
-  allDonors,
-  allDonations,
-  setBeneficiaries,
-}) {
-  const [allInventories, setAllInventories] = useState([]);
-  const [totalBeneficiaries, setTotalBeneficiaries] = useState(
-    allBeneficiaries?.length
-  );
+function CharityInventoriesManagement({ setBeneficiaries, allBeneficiaries }) {
+
   const [charityData, setCharityData] = useState({});
-  const [totalStories, setTotalStories] = useState(allStories?.length);
-  const [totalDonors, setTotalDonors] = useState(allDonors?.length);
-  const [totalDonations, setTotalDonations] = useState(allDonations?.length);
+  const [allInventories, setAllInventories] = useState([]);
+  const [totalBeneficiaries, setTotalBeneficiaries] = useState(0);
+  const [totalStories, setTotalStories] = useState(0);
+  const [totalDonors, setTotalDonors] = useState(0);
+  const [totalDonations, setTotalDonations] = useState(0);
   const [targetInventory, setTargetInventory] = useState({});
   const [isLoadingSave, setIsLoadingSave] = useState(false);
   const [isLoadingDelete, setIsLoadingDelete] = useState(false);
-  const [inventoryItem, setInventoryItem] = useState(
-    targetInventory?.item
-  );
-  const [inventoryQuantity, setInventoryQuantity] = useState(
-    targetInventory?.quantity
-  );
+  const [inventoryItem, setInventoryItem] = useState(targetInventory?.item);
+  const [inventoryQuantity, setInventoryQuantity] = useState(targetInventory?.quantity);
 
   useEffect(() => {
     fetch("/meCharity")
@@ -37,32 +26,81 @@ function CharityInventoriesManagement({
           .then((response) => response.json())
           .then((data) => {
             console.log("INVENTORIES:", data);
-            if (!data.error){
+            if (!data.error) {
               setAllInventories(data);
-              setTotalBeneficiaries(
-                (totalBeneficiaries) => (totalBeneficiaries = allBeneficiaries?.length)
-              );
               // setTargetBeneficiary({});
             }
-           
+
+          })
+          .catch((err) => console.error(err));
+
+        fetch(`/a_charitys_beneficiaries/${data?.id}`)
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("BENEFICIARIES:", data);
+            if (!data?.error) {
+              setBeneficiaries(data);
+              setTotalBeneficiaries(data?.length);
+            }
+          })
+          .catch((err) => console.error(err));
+
+        fetch(`/a_charitys_stories/${data?.id}`)
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("STORIES:", data);
+            if (!data?.error) {
+              setTotalStories(data?.length);
+              handleRefreshData();
+            }
           })
           .catch((err) => console.error(err));
       })
       .catch((err) => console.error(err));
+
   }, []);
 
 
 
   function handleRefreshData() {
-    fetch(`/charities_inventories/${charityData?.id}`)
+    fetch("/meCharity")
       .then((response) => response.json())
       .then((data) => {
-        console.log("INVENTORIES:", data);
-        setAllInventories(data);
-        setTotalBeneficiaries(totalBeneficiaries => totalBeneficiaries = data?.length);
-        setTargetInventory({});
-        setInventoryItem("")
-        setInventoryQuantity("")
+        setCharityData(data);
+        fetch(`/charities_inventories/${data?.id}`)
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("INVENTORIES:", data);
+            if (!data?.error) {
+              setAllInventories(data);
+              setTotalBeneficiaries(data?.length);
+              setTargetInventory({});
+              setInventoryItem("")
+              setInventoryQuantity("")
+            }
+          })
+          .catch((err) => console.error(err));
+
+        fetch(`/a_charitys_beneficiaries/${data?.id}`)
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("BENEFICIARIES:", data);
+            if (!data?.error) {
+              setBeneficiaries(data);
+              setTotalBeneficiaries(data?.length);
+            }
+          })
+          .catch((err) => console.error(err));
+
+        fetch(`/a_charitys_stories/${data?.id}`)
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("STORIES:", data);
+            if (!data?.error) {
+              setTotalStories((totalStories) => (totalStories = data?.length));
+            }
+          })
+          .catch((err) => console.error(err));
       })
       .catch((err) => console.error(err));
   }
@@ -105,7 +143,7 @@ function CharityInventoriesManagement({
           setAllInventories([...allInventories, res.data])
           handleRefreshData();
 
-         
+
         })
         .catch((error) => {
           setIsLoadingSave(false);
@@ -154,13 +192,13 @@ function CharityInventoriesManagement({
         <div className="charitiesManageInventoriesAllInventories">
           <h2 className="CMB-AllInventoriesTitle">MANAGE INVENTORIES</h2>
           <div className="CMB-InventoryItemContainer">
-          <CharityInventoriesList
-            allInventories={allInventories}
-            setTargetInventory={setTargetInventory}
-            setInventoryItem={setInventoryItem}
-            setInventoryQuantity={setInventoryQuantity}
+            <CharityInventoriesList
+              allInventories={allInventories}
+              setTargetInventory={setTargetInventory}
+              setInventoryItem={setInventoryItem}
+              setInventoryQuantity={setInventoryQuantity}
             />
-            </div>
+          </div>
         </div>
         <div className="CMB-UpdateOrAddInventoryContainer">
           <h2 className="adminTargetInventoryName">
@@ -172,27 +210,27 @@ function CharityInventoriesManagement({
             <div className="inventoryDropdown">
               <button className="inventoryDropbtn">Select Beneficiary</button>
               <div className="inventoryDropdown-content">
-               {allBeneficiaries?.map(data=>
-               <p onClick={()=>{
-                targetBeneficiary=data?.beneficiary
-                console.log("TARGET INVENTORY", targetBeneficiary)
-               }}>
-                {data?.beneficiary?.name}
-                </p>)}
+                {allBeneficiaries?.map(data =>
+                  <p onClick={() => {
+                    targetBeneficiary = data?.beneficiary
+                    console.log("TARGET INVENTORY", targetBeneficiary)
+                  }}>
+                    {data?.beneficiary?.name}
+                  </p>)}
               </div>
             </div>
             <div className="CMB-UpdateOrAddInventoryFormInputContainer">
-            <input
-               className="CMB-UpdateOrAddInventoryFormInput"
-              placeholder="Item"
-              value={inventoryItem}
-              onChange={(e) => setInventoryItem(e.target.value)}
-            />
-            <input
-              className="CMB-UpdateOrAddInventoryFormInput"
-              placeholder="Quantity"
-              value={inventoryQuantity}
-              onChange={(e) => setInventoryQuantity(e.target.value)}
+              <input
+                className="CMB-UpdateOrAddInventoryFormInput"
+                placeholder="Item"
+                value={inventoryItem}
+                onChange={(e) => setInventoryItem(e.target.value)}
+              />
+              <input
+                className="CMB-UpdateOrAddInventoryFormInput"
+                placeholder="Quantity"
+                value={inventoryQuantity}
+                onChange={(e) => setInventoryQuantity(e.target.value)}
               />
             </div>
             <br />
