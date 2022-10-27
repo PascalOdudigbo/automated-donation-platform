@@ -21,32 +21,26 @@ function AboutUs() {
                 </div>
                 <div className='AboutusParagraphContainer'>
                     <div className='AboutusParagraph'>
-                    <p className='aboutusTag'>
-                        Nairobi - October 27, 2022 -  Today we are thrilled to announce that we have received a $750,000 <br/>grant from #StartSmall, Jack Dorsey’s philanthropic initiative.<br/>
+                        <p className='aboutusTag'>
+                           <strong> Nairobi - October 27, 2022 </strong>-  Today we are thrilled to announce that we have received a <strong>$750,000 </strong><br />grant from <strong>#StartSmall</strong>, Jack Dorsey’s philanthropic initiative.<br />
 
-                        This is one of the largest single gifts that we have ever received and will make a profound <br/>difference in the lives of those we serve, strengthening our ability to provide life-saving health <br/>and rights education, pads, and sanitation facilities to our young girls across Kenya.<br/>
+                            This is one of the largest single gifts that we have ever received and will make a profound <br />difference in the lives of those we serve, strengthening our ability to provide life-saving health <br />and rights education, pads, and sanitation facilities to our young girls across Kenya.<br />
                         </p>
                     </div>
-                    <div className='AboutusParagraph2'>
+                    <div className='AboutusParagraph'>
                         <p className='aboutusTag'>
-                        This gift comes at a time of great need for our programs, as girls and women across Kenya have been <br/>disproportionately affected by the social and economic impacts of Covid-19, evidenced by<br/> staggering rates of sexual and gender-based violence, adolescent pregnancy, and transactional sex <br/>for commodities like sanitary pads.<br/>
+                           <strong>This gift comes at a time of great need for our programs,</strong>  as girls and women across Kenya have been <br />disproportionately affected by the social and economic impacts of Covid-19, evidenced by<br /> staggering rates of sexual and gender-based violence, adolescent pregnancy, and transactional sex <br />for commodities like sanitary pads.<br />
                         </p>
-                    </div>      
-                     <div className='AboutusParagraph2'>
+                    </div>
+                    <div className='AboutusParagraph'>
                         <p className='aboutusTag'>
-                     We are so grateful to our community of supporters who have walked alongside us and supported<br/> NiaAfrica’s efforts every step of the way.  Today we celebrate and share this milestone with each of you.<br/> Thank you for all you have done and continue to enable our efforts and drive our impact forward.<br/> We look forward to continuing our partnership with each of you as we co-create the <br/>change we wish to see for girls in sub-saharan Africa. <br/>
+                            We are so grateful to our community of supporters who have walked alongside us and supported<br /> NiaAfrica’s efforts every step of the way.  Today we celebrate and share this milestone with each of you.<br /> Thank you for all you have done and continue to enable our efforts and drive our impact forward.<br /> We look forward to continuing our partnership with each of you as we co-create the <br />change we wish to see for girls in <em>sub-saharan Africa.</em> <br />
                         </p>
                     </div>
                 </div>
             </div>
-            {/* <div className='AboutusPartner'>
-                <h2 className='partnersTitle'>Our Partners</h2>
-                <p className='partnersDeets'>We are grateful to the following organizations for their generous support of our work!</p>
-                <div> 
-                </div>
-            </div> */}
-            
-            
+
+
             {/* footer section */}
             <div className="footer">
                 <h3>follow us</h3>
