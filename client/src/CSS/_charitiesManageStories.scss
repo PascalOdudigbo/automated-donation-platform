@@ -1,251 +1,251 @@
-.charitiesManageStoriesContainer{
+.charitiesManageStoriesContainer {
   margin-left: 350px;
   margin-right: 70px;
   margin-top: -500px;
-  
-  .charitiesManageStoriesStatisticsContainer{
-      width: 100%;
-      height: 150px;
-      display: flex;
-      flex-direction: row;
-      background-color: rgb(226, 221, 221);
+
+  .charitiesManageStoriesStatisticsContainer {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(226, 221, 221);
+    border-radius: 5px;
+    margin-bottom: 20px;
+
+    .charitiesManageStoriesStatistic {
+      height: 100px;
+      margin-right: 10%;
+      margin-top: 25px;
+      margin-left: 2%;
+      width: 200px;
+      text-align: center;
       border-radius: 5px;
-      margin-bottom: 20px;
+      background-color: #fcb500;
+      box-shadow: 0px 5px 20px rgb(75, 71, 71);
 
-      .charitiesManageStoriesStatistic{
-          height: 100px;
-          margin-right: 10%;
-          margin-top: 25px;
-          margin-left: 2%;
-          width: 200px;
-          text-align: center;
-          border-radius: 5px;
-          background-color: #fcb500;
-          box-shadow: 0px 5px 20px rgb(75, 71, 71);
-
-          h3 {
-              margin-left: 5px;
-              margin-right: 5px;
-           }
-        }
+      h3 {
+        margin-left: 5px;
+        margin-right: 5px;
+      }
     }
+  }
 
-  .charitiesManageAndUpdateStoriesContainer{
-      display: flex;
-      flex-direction: row;
+  .charitiesManageAndUpdateStoriesContainer {
+    display: flex;
+    flex-direction: row;
 
-      .charitiesManageStoriesAllStories{
-          background-color: rgb(208, 209, 210);
-          border-radius: 5px;
-          height: 330px;
+    .charitiesManageStoriesAllStories {
+      background-color: rgb(208, 209, 210);
+      border-radius: 5px;
+      height: 330px;
 
-          .CMS-AllStoriesTitle{
-              text-align: center;
-              font-weight: lighter;
-              margin-right: 12px;
-              color: black;
-              font-family: "Courier New", Courier, monospace;
-              margin-top: 5px;
-              margin-bottom: 20px;
-          }
-
-          .CMS-StoriesItemContainer{
-              display: flex;
-              flex-direction: column;
-              width: 420px;
-              height: 290px;
-              overflow-y: auto;
-
-              .CMS-StoriesItem{
-                  color: black;
-                  background-color: #fcb500;
-                  width: 380px;
-                  height: 50px;
-                  text-align: center;
-                  margin-left: 10px;
-                  margin-right: 10px;
-                  border-radius: 5px;
-                  margin-bottom: 10px; 
-              }
-              .CMS-StoriesItem:hover{
-                  background-color: #8d5412;
-                  color: white;
-              }
-          }
-
-          
-
+      .CMS-AllStoriesTitle {
+        text-align: center;
+        font-weight: lighter;
+        margin-right: 12px;
+        color: black;
+        font-family: "Courier New", Courier, monospace;
+        margin-top: 5px;
+        margin-bottom: 20px;
       }
 
-      .CMS-UpdateOrAddStoryContainer{
-          display: flex;
-          flex-direction: column;
-          margin-left: 40px;
-          background-color: rgb(208, 209, 210);
-          width: 500px;
-          border-radius: 5px;
-          height:330px;
-
-
-          .targetCharityStoryName{
-              text-align: center;
-              font-weight: lighter;
-              color: black;
-              font-family: "Courier New", Courier, monospace;
-              margin-bottom: 10px;
-              margin-top: 5px;
-          }
-
-          .CMS-UpdateOrAddStoryForm{
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              width: 420px;
-              margin-top: -10px;
-
-              .CMS-dropdownBeneficiary {
-                position: relative;
-                display: inline-block;
-                align-content: center;
-                align-self: center;
-                font-family: "Lucida Console", "Courier New", monospace;
-
-                .CMS-dropdownInventoryDropdown {
-                    position: relative;
-                    display: inline-block;
-                    align-content: center;
-                    margin-left: 13px;
-                    align-self: center;
-                    font-family: "Lucida Console", "Courier New", monospace;
-                }
-                .CMS-dropdownBeneficiaryDropbtn {
-                    background-color: rgb(6, 143, 255);
-                    color: white;
-                    padding: 10px;
-                    font-size: large;
-                    border: none;
-                    cursor: pointer;
-                    border-radius: 5px;
-                }
-
-                .CMS-dropdownInventoryDropbtn {
-                    background-color: rgb(6, 143, 255);
-                    color: white;
-                    padding: 10px;
-                    font-size: large;
-                    border: none;
-                    cursor: pointer;
-                    border-radius: 5px;
-                }
-
-                .CMS-dropdownBeneficiaryDropdown-content {
-                    display: none;
-                    position: absolute;
-                    background-color: #f9f9f9;
-                    min-width: 160px;
-                    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-                    z-index: 1;
-                    overflow-y: auto;
-                    height: 100px;
-                }
-
-                .CMS-dropdownBeneficiaryDropdown-content p {
-                    color: black;
-                    padding: 12px 16px;
-                    text-decoration: none;
-                    display: block;
-                }
-
-                .CMS-dropdownBeneficiaryDropdown-content p:hover {
-                    background-color: #fcb500;
-                    cursor: pointer;
-                }
-            }
-
-            .CMS-dropdownBeneficiary:hover .CMS-dropdownBeneficiaryDropdown-content {
-                display: block;
-            }
-
-            .CMS-dropdownBeneficiary:hover .CMS-dropdownBeneficiaryDropbtn {
-                background-color: #8d5412;
-            }
-
-            .CMS-dropdownBeneficiary:hover .CMS-dropdownInventoryDropbtn  {
-                background-color: #8d5412;
-            }
-
-            .CMB-UpdateOrAddInventoryFormInputContainer {
-                margin-top: 20px;
-
-
-              .CMS-UpdateOrAddStoryFormInput{
-                  margin-bottom: 15px;
-                  height: 30px;
-                  width: 100%;
-                  border-radius: 5px;
-                  margin-left: 40px;
-                  font-size: large;
-                }
-
-              .CMS-UpdateOrAddStoryFormTextArea{
-                  margin-bottom: 10px;
-                  height: 70px;
-                  width: 100%;
-                  border-radius: 5px;
-                  margin-left: 40px;
-                  font-size: large;
-                }
-              
-
-    }
-    .updateOrDeleteStoryBtnContainer{
+      .CMS-StoriesItemContainer {
         display: flex;
         flex-direction: column;
-        margin-top: 10px;
-        .saveBtn{
-            //padding: 8px 12px;
-            //border: 1px solid #333;
-            border-radius: 10px;
+        width: 420px;
+        height: 290px;
+        margin-top: -25px;
+        overflow-y: auto;
+
+        .CMS-StoriesItem {
+          color: black;
+          background-color: #fcb500;
+          width: 380px;
+          height: 40px;
+          text-align: center;
+          margin-left: 10px;
+          margin-right: 10px;
+          border-radius: 5px;
+          margin-bottom: 10px;
+        }
+        .CMS-StoriesItem:hover {
+          background-color: #8d5412;
+          color: white;
+        }
+      }
+    }
+
+    .CMS-UpdateOrAddStoryContainer{
+        display: flex;
+        flex-direction: column;
+        margin-left: 40px;
+        background-color: rgb(208, 209, 210);
+        width: 500px;
+        border-radius: 5px;
+        height:330px;
+
+
+        .targetCharityStoryName{
             text-align: center;
-            margin-top: -5%;
-            margin-bottom: 5px;
-            text-decoration: none;
-            display: inline-block;
-            margin-left: 30px;
-            width: 300px;
-            background-color: #fcb500;
-            border: none;
-            height: 30px;
+            font-weight: lighter;
+            color: black;
             font-family: "Courier New", Courier, monospace;
-          }
-//         //     .saveBtn:hover {
-//         //         background-color: #109232;
-//         //       }
-
-
-        .deleteBtn{
-            border-radius: 10px;
-            text-align: center;
-            margin-top: 3px;
             margin-bottom: 10px;
-            text-decoration: none;
-            display: inline-block;
-            margin-left: 30px;
-            height: 30px;
-            width: 300px;
-            background-color: #c51212;
-            border: none;
-            font-family: "Courier New", Courier, monospace;
-          }
-//         //     .deleteBtn:hover{
-//         //         background-color: #ff0000;
-//         //         color: white;
-//         //     }
+            margin-top: 5px;
         }
 
+        .CMS-UpdateOrAddStoryForm{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 420px;
+            margin-top: -10px;
+
+            .CMS-dropdownBeneficiary {
+              position: relative;
+              display: inline-block;
+              align-content: center;
+              align-self: center;
+              font-family: "Lucida Console", "Courier New", monospace;
+
+              .CMS-dropdownInventoryDropdown {
+                  position: relative;
+                  display: inline-block;
+                  align-content: center;
+                  margin-left: 70px;
+                  margin-right: -30px;
+                  align-self: center;
+                  font-family: "Lucida Console", "Courier New", monospace;
+              }
+              .CMS-dropdownBeneficiaryDropbtn {
+                  background-color: #fcb500;
+                  color: black;
+                  padding: 10px;
+                  font-size: large;
+                  border: none;
+                  cursor: pointer;
+                  border-radius: 5px;
+              }
+
+              .CMS-dropdownInventoryDropbtn {
+                  background-color: #fcb500;
+                  color: black;
+                  padding: 10px;
+                  font-size: large;
+                  border: none;
+                  cursor: pointer;
+                  border-radius: 5px;
+              }
+
+              .CMS-dropdownBeneficiaryDropdown-content {
+                  display: none;
+                  position: absolute;
+                  background-color: #f9f9f9;
+                  width: 170px;
+                  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                  z-index: 1;
+                  overflow-y: auto;
+                  height: 150px;
+              }
+
+              .CMS-dropdownBeneficiaryDropdown-content p {
+                  color: black;
+                  padding: 12px 16px;
+                  text-decoration: none;
+                  display: block;
+              }
+
+              .CMS-dropdownBeneficiaryDropdown-content p:hover {
+                  background-color: #fcb500;
+                  cursor: pointer;
+              }
+          }
+
+          .CMS-dropdownBeneficiary:hover .CMS-dropdownBeneficiaryDropdown-content {
+              display: block;
+          }
+
+          .CMS-dropdownBeneficiary:hover .CMS-dropdownBeneficiaryDropbtn {
+              background-color: #8d5412;
+          }
+
+          .CMS-dropdownBeneficiary:hover .CMS-dropdownInventoryDropbtn  {
+              background-color: #8d5412;
+          }
+
+          .CMB-UpdateOrAddInventoryFormInputContainer {
+              margin-top: 20px;
 
 
-                }
+            .CMS-UpdateOrAddStoryFormInput{
+                margin-bottom: 15px;
+                height: 30px;
+                width: 100%;
+                border-radius: 5px;
+                margin-left: 30px;
+                margin-right: 30px;
+                font-size: large;
+              }
+
+            .CMS-UpdateOrAddStoryFormTextArea{
+                margin-bottom: 10px;
+                height: 90px;
+                width: 100%;
+                border-radius: 5px;
+                margin-left: 30px;
+                font-size: large;
+              }
+            
+
+  }
+  .updateOrDeleteStoryBtnContainer{
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+      .saveBtn{
+          //padding: 8px 12px;
+          //border: 1px solid #333;
+          border-radius: 10px;
+          text-align: center;
+          margin-top: -5%;
+          margin-bottom: 5px;
+          text-decoration: none;
+          display: inline-block;
+          margin-left: 30px;
+          width: 300px;
+          background-color: #fcb500;
+          border: none;
+          height: 30px;
+          font-family: "Courier New", Courier, monospace;
+        }
+        .saveBtn:hover {
+            background-color: #109232;
+            }
+
+
+      .deleteBtn{
+          border-radius: 10px;
+          text-align: center;
+          margin-top: 3px;
+          margin-bottom: 10px;
+          text-decoration: none;
+          display: inline-block;
+          margin-left: 30px;
+          height: 30px;
+          width: 300px;
+          background-color: #fcb500;
+          border: none;
+          font-family: "Courier New", Courier, monospace;
+        }
+        .deleteBtn:hover{
+            background-color: #ff0000;
+            color: white;
+        }
+      }
+
+
+
+              }
 }    
 }}
