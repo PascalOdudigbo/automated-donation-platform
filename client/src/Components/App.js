@@ -21,7 +21,7 @@ function App() {
       <Routes>
         <Route path="/adminlogin" element={<AdministratorLogin userData={setUserData} />} />
         <Route path="/admin/*" element={<AdminDashboard userData={userData}/>}/>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/*" element={<HomePage />} />
         <Route path="/team" element={<Team/>} />
         <Route path="/donate" element={<Login userData={setUserData} />} />
         <Route path="/login" element={<Login userData={setUserData} />} />

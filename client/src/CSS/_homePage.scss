@@ -10,6 +10,7 @@ body {
   margin-left: 40px;
   margin-right: 40px;
   background-color: white;
+  border-radius: 5px;
 }
 
 .NiaAbout {
@@ -41,6 +42,9 @@ body {
   background-color: #fcb500;
   border: none;
   font-family: "Lucida Console", "Courier New", monospace;
+}
+.registerCharity:hover{
+  background-color: #8d5412;
 }
 
 
