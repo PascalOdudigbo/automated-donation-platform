@@ -173,21 +173,21 @@ function CharitiesManageStories({ allInventories, allBeneficiaries, setAllInvent
       .then(() => {
         setIsLoadingDelete(false);
         alert("Delete successful");
+        handleRefreshData();
       });
-    handleRefreshData();
   }
 
   return (
     <div className="charitiesManageStoriesContainer">
       <div className="charitiesManageStoriesStatisticsContainer">
         <div className="charitiesManageStoriesStatistic">
-          <h3>TOTAL STORIES</h3>
-          <p>{totalStories}</p>
+          <h3>TOTAL BENEFICIARIES</h3>
+          <p>{totalBeneficiaries}</p>
         </div>
 
         <div className="charitiesManageStoriesStatistic">
-          <h3>TOTAL BENEFICIARIES</h3>
-          <p>{totalBeneficiaries}</p>
+          <h3>TOTAL STORIES</h3>
+          <p>{totalStories}</p>
         </div>
 
         <div className="charitiesManageStoriesStatistic">

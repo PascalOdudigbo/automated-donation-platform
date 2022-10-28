@@ -38,9 +38,6 @@
         // margin-right: 0px;
         margin-top: -17px;
       }
-      .textInput {
-        background-color: red;
-      }
 
       .charityRegisterSpaceline {
         margin-top: 15px;
@@ -57,8 +54,11 @@
         display: inline-block;
         margin-left: 10%;
         margin-right: 14%;
-        background-color: rgb(6, 143, 255);
+        background-color: #fcb500;
         font-family: "Lucida Console", "Courier New", monospace;
+      }
+      .charityRegisterSignUp:hover{
+        background-color: #8d5412;
       }
     }
   }

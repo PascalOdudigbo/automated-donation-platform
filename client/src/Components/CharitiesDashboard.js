@@ -76,7 +76,7 @@ function CharitiesDashboard(charityData) {
   return (
     <div className="charitiesDasboardContainer">
       <div className="charitiesDasboardLogoAndTitleContainer">
-        <img className="charitiesDasboardLogo"src={logo} alt="logo"/>
+        <img onClick={() => navigate("/")} className="charitiesDasboardLogo"src={logo} alt="logo"/>
         <h1 className="charitiesDasboardTitle">CHARITIES PORTAL</h1>
       </div>
 

@@ -9,6 +9,7 @@
   left: 0;
   right: 0;
   top: 0;
+  margin-left: 10px;
   margin-top: 10px;
 
   img {
@@ -37,6 +38,26 @@
     font-family: "Lucida Console", "Courier New", monospace;
   }
   .link:hover{
+    background-color: #8d5412;
+  }
+
+  .RegisterCharityNavLink{
+    list-style-type: none;
+    text-decoration: none;
+    width:100px;
+    height:40px;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 3px;
+    font-style: bold;
+    font-size: large;
+    background-color: #fcb500;
+    border: none;
+    font-family: "Lucida Console", "Courier New", monospace;
+  }
+  .RegisterCharityNavLink:hover{
     background-color: #8d5412;
   }
 }
