@@ -109,20 +109,20 @@ function CharityProfile() {
 
 
     return (
-        <div>
+        <div className='CMB-UpdateCharityProfileContainer'>
 
-            <h1>{`${charity?.name?.toUpperCase()}'s PROFILE`}</h1>
+            <h1 className='UpdateCharityProfileTitle'>{`${charity?.name?.toUpperCase()}'s PROFILE`}</h1>
 
 
 
-            <form className="CMS-UpdateOrAddStoryForm">
+            <form className="CMS-UpdateCharityProfileForm">
 
-                <div className="CMB-UpdateOrAddInventoryFormInputContainer">
+                <div className="CMB-UpdateCharityProfileFormContainer">
 
 
                     <textarea
                         id="storyTxtArea"
-                        className="CMS-UpdateOrAddStoryFormTextArea"
+                        className="CMS-UpdateCharityProfileFormTextArea"
                         name="storyTxtArea"
                         rows="4"
                         cols="50"
@@ -132,7 +132,7 @@ function CharityProfile() {
                     />
                     <br />
                 </div>
-                <div className="updateOrDeleteStoryBtnContainer">
+                <div className="UpdateCharityProfileBtnContainer">
                     <button
                         className="saveBtn"
                         type="button"
