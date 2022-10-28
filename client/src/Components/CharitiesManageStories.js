@@ -208,7 +208,7 @@ function CharitiesManageStories({ allInventories, allBeneficiaries, setAllInvent
               : "ADD OR UPDATE STORY"}
           </h2>
           <form className="CMS-UpdateOrAddStoryForm">
-            <div className="CMS-UpdateOrAddStoryFormDropDownContainer">
+            {/* <div className="CMS-UpdateOrAddStoryFormDropDownContainer"> */}
               <div className="CMS-dropdownBeneficiary">
                 <button className="CMS-dropdownBeneficiaryDropbtn">Select Beneficiary</button>
                 <div className="CMS-dropdownBeneficiaryDropdown-content">
@@ -240,7 +240,8 @@ function CharitiesManageStories({ allInventories, allBeneficiaries, setAllInvent
                   </div>
                 </div>
               </div>
-            </div>
+            {/* </div> */}
+            <div className="CMB-UpdateOrAddInventoryFormInputContainer">
 
             <input className="CMS-UpdateOrAddStoryFormInput"
               placeholder="Name"
@@ -258,6 +259,7 @@ function CharitiesManageStories({ allInventories, allBeneficiaries, setAllInvent
               onChange={(e) => setBeneficiaryStory(e.target.value)}
             />
             <br />
+            </div>
             <div className="updateOrDeleteStoryBtnContainer">
               <button
                 className="saveBtn"
@@ -277,6 +279,7 @@ function CharitiesManageStories({ allInventories, allBeneficiaries, setAllInvent
               >
                 {isLoadingDelete ? "Loading..." : "Delete"}
               </button>
+              
             </div>
           </form>
         </div>
