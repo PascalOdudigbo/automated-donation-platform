@@ -76,7 +76,7 @@ function Login({ userData }) {
 
   return (
     <div className="loginContainer">
-      <img src={logo} alt="logo" />
+      <img onClick={() => navigate("/")} src={logo} alt="logo" />
       <h2>LOGIN</h2>
       <form onSubmit={handleOnSubmit} className="form">
         <div class="dropdown">
