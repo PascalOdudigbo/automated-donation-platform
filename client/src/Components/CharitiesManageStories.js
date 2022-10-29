@@ -29,7 +29,7 @@ function CharitiesManageStories({ allInventories, allBeneficiaries, setAllInvent
         fetch(`/a_charitys_stories/${data?.id}`)
           .then((response) => response.json())
           .then((data) => {
-            console.log("STORIES:", data);
+            // console.log("STORIES:", data);
             if (!data.error) {
               setAllStories(data);
               // handleDashboardStatistics(res.data)
@@ -45,15 +45,15 @@ function CharitiesManageStories({ allInventories, allBeneficiaries, setAllInvent
         fetch(`/a_charitys_beneficiaries/${data?.id}`)
           .then((response) => response.json())
           .then((data) => {
-            console.log("BENEFICIARIES:", data);
+            // console.log("BENEFICIARIES:", data);
             if (!data?.error) {
               setTotalBeneficiaries(data?.length);
               handleRefreshData();
             }
           })
-          .catch((err) => console.error(err));
+          // .catch((err) => console.error(err));
       })
-      .catch((err) => console.error(err));
+      // .catch((err) => console.error(err));
   }, []);
 
   function handleRefreshData() {
@@ -64,29 +64,29 @@ function CharitiesManageStories({ allInventories, allBeneficiaries, setAllInvent
         fetch(`/a_charitys_beneficiaries/${data?.id}`)
           .then((response) => response.json())
           .then((data) => {
-            console.log("BENEFICIARIES:", data);
+            // console.log("BENEFICIARIES:", data);
             if (!data.error) {
               setAllBeneficiaries(data);
               // handleDashboardStatistics(res.data)
               setTotalBeneficiaries(data?.length);
             }
           })
-          .catch((err) => console.error(err));
+          // .catch((err) => console.error(err));
 
         fetch(`/charities_inventories/${data?.id}`)
           .then((response) => response.json())
           .then((data) => {
-            console.log("INVENTORIES:", data);
+            // console.log("INVENTORIES:", data);
             if (!data.error) {
               setAllInventories(data);
             }
           })
-          .catch((err) => console.error(err));
+          // .catch((err) => console.error(err));
 
         fetch(`/a_charitys_stories/${data?.id}`)
           .then((response) => response.json())
           .then((data) => {
-            console.log("STORIES:", data);
+            // console.log("STORIES:", data);
             if (!data.error) {
               setAllStories(data);
               setTotalStories((totalStories) => (totalStories = data?.length));
@@ -95,10 +95,10 @@ function CharitiesManageStories({ allInventories, allBeneficiaries, setAllInvent
               setBeneficiaryStory("");
             }
           })
-          .catch((err) => console.error(err));
+          // .catch((err) => console.error(err));
       }
       )
-      .catch((err) => console.error(err));
+      // .catch((err) => console.error(err));
 
 
   }
@@ -123,7 +123,7 @@ function CharitiesManageStories({ allInventories, allBeneficiaries, setAllInvent
             })
             .then((res) => {
               setIsLoadingSave(false);
-              console.log(res.data);
+              // console.log(res.data);
               alert("Story Updated!");
               handleRefreshData();
             })
@@ -148,7 +148,7 @@ function CharitiesManageStories({ allInventories, allBeneficiaries, setAllInvent
             .post(`/stories`, postData)
             .then((res) => {
               setIsLoadingSave(false);
-              console.log(res.data);
+              // console.log(res.data);
               alert("Story Added!");
               setAllStories([...allStories, res.data])
               handleRefreshData();
@@ -229,7 +229,7 @@ function CharitiesManageStories({ allInventories, allBeneficiaries, setAllInvent
                   <p
                     onClick={() => {
                       targetBeneficiary = data?.beneficiary;
-                      console.log("TARGET BENEFICIARY", targetBeneficiary);
+                      // console.log("TARGET BENEFICIARY", targetBeneficiary);
                     }}
                   >
                     {data?.beneficiary?.name}
@@ -244,7 +244,7 @@ function CharitiesManageStories({ allInventories, allBeneficiaries, setAllInvent
                     <p
                       onClick={() => {
                         targetInventory = data;
-                        console.log("TARGET INVENTORY", targetInventory);
+                        // console.log("TARGET INVENTORY", targetInventory);
                       }}
                     >
                       {data?.item}

@@ -7,7 +7,6 @@ function CharitiesBeneficiaryList({
   setBeneficiaryLocation,
   setBeneficiaryDescription,
 }) {
-  //console.log("ALL BENEFICIARIES:", allBeneficiaries)
   return (
     <div>
       { allBeneficiaries?.map((dataObject) => (
@@ -18,8 +17,6 @@ function CharitiesBeneficiaryList({
             setBeneficiaryName(dataObject?.beneficiary?.name);
             setBeneficiaryLocation(dataObject?.beneficiary?.location);
             setBeneficiaryDescription(dataObject?.beneficiary?.description);
-
-            //console.log("TARGET BENEFICIARY:", dataObject?.beneficiary)
           }}
         >
           {dataObject?.beneficiary?.name}
