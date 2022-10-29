@@ -99,7 +99,7 @@ function HomePage() {
               charity on this platform.
             </p>
 
-            <Link className="registerCharity" to="/charity-register">Register Charity</Link>
+            {/* <Link className="registerCharity" to="/charity-register">Register Charity</Link> */}
 
             <h1 className="charitiesTitle">CHARITIES</h1>
 
