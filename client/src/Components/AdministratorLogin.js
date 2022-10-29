@@ -32,7 +32,7 @@ function AdministratorLogin({ userData }) {
       })
       .then((res) => {
         setIsLoading(false);
-        console.log(res.data);
+        //console.log(res.data);
         userData(res.data);
         // localStorage.setItem("userId", JSON.stringify(res.data.id));
         alert("Login successful");

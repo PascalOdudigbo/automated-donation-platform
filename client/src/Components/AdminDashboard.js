@@ -24,7 +24,7 @@ function AdminDashboard({ userData }) {
         fetch('/meAdministrator')
             .then(response => response.json())
             .then(data => {
-                console.log(data)
+               // console.log(data)
                 setUser(data);
 
                 if ((data?.error)) {
@@ -74,7 +74,7 @@ function AdminDashboard({ userData }) {
         if (searchData === "") {
             axios.get("/charities")
                 .then(res => {
-                    console.log(res.data);
+                   // console.log(res.data);
                     setAllCharities(res.data)
                 })
                 .catch(error => {
@@ -102,7 +102,7 @@ function AdminDashboard({ userData }) {
     function handleCharityEdit() {
         axios.get("/charities")
             .then(res => {
-                console.log(res.data);
+               // console.log(res.data);
                 setAllCharities(allCharities => allCharities = res.data);
                 handleDashboardStatistics(res.data);
             })
