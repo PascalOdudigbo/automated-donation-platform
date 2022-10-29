@@ -55,7 +55,7 @@ function CharityInventoriesManagement({ setBeneficiaries, allBeneficiaries }) {
           .catch((err) => console.error(err));
       })
       .catch((err) => console.error(err));
-      handleRefreshData();
+    handleRefreshData();
   }, []);
 
 
@@ -159,7 +159,7 @@ function CharityInventoriesManagement({ setBeneficiaries, allBeneficiaries }) {
         alert("Delete successful");
         handleRefreshData();
       });
-    
+
   }
 
 
@@ -167,12 +167,13 @@ function CharityInventoriesManagement({ setBeneficiaries, allBeneficiaries }) {
     <div className="charitiesManageInventoriesContainer">
       <div className="charitiesManageInventoriesStatisticsContainer">
         <div className="charitiesManageInventoriesStatistic">
-          <h3>TOTAL STORIES</h3>
-          <p>{totalStories}</p>
-        </div>
-        <div className="charitiesManageInventoriesStatistic">
           <h3>TOTAL BENEFICIARIES</h3>
           <p>{totalBeneficiaries}</p>
+        </div>
+
+        <div className="charitiesManageInventoriesStatistic">
+          <h3>TOTAL STORIES</h3>
+          <p>{totalStories}</p>
         </div>
 
         <div className="charitiesManageInventoriesStatistic">

@@ -1,0 +1,38 @@
+.CMB-UpdateCharityProfileContainer{
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    background-color: rgb(208, 209, 210);
+    width: 500px;
+    height:300px;
+    border-radius: 5px;
+    margin-top: 70px;
+
+    .UpdateCharityProfileTitle{
+        background-color: #fcb500;
+        font-family: "Courier New", Courier, monospace;
+    }
+    .CMS-UpdateCharityProfileForm{
+        margin-top: 40px;
+        margin-left: 40px;
+        .CMS-UpdateCharityProfileFormTextArea{
+            height: 100px;
+            background-color:white;
+        }
+    }
+}
+
+.saveBtn{
+    border-radius: 10px;
+            text-align: center;
+            margin-top: 30px;
+            // margin-bottom: 5px;
+            // text-decoration: none;
+            // display: inline-block;
+            margin-left: 40px;
+            width: 300px;
+            background-color: #fcb500;
+            border: none;
+            height: 30px;
+            font-family: "Courier New", Courier, monospace;
+}

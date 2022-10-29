@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import logo from "../images/logo.png";
@@ -8,6 +8,18 @@ function AdministratorLogin({ userData }) {
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    fetch("/meAdministrator")
+      .then((response) => response.json())
+      .then((data) => {
+        if (!data?.error) {
+          navigate("/admin");
+          userData(data);
+        }
+      })
+      .catch((err) => console.error(err));
+  }, []);
 
   function handleOnSubmit(e) {
     e.preventDefault();
@@ -38,7 +50,7 @@ function AdministratorLogin({ userData }) {
   return (
     <div className="adminLoginContainer">
       <form onSubmit={handleOnSubmit} className="form">
-        <img src={logo} alt="logo" />
+        <img onClick={() => navigate("/")} src={logo} alt="logo" />
         <h2>LOGIN</h2>
         <label htmlFor="email">Email: </label>
         <input

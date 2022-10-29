@@ -24,7 +24,7 @@ class StoriesController < ApplicationController
 
   # POST /stories
   def create
-    @story = Story.new(story_params)
+    @story = Story.new(story_params.except(:story))
 
     if @story.save
       render json: @story, status: :created
@@ -55,6 +55,6 @@ class StoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def story_params
-      params.permit(:title, :beneficiary_story, :charity_id, :beneficiary_id, :inventory_id)
+      params.permit(:title, :beneficiary_story, :charity_id, :beneficiary_id, :inventory_id, :story)
     end
 end

@@ -123,7 +123,7 @@ function AdminDashboard({ userData }) {
     return (
         <div className="adminDashboardContainer">
             <div className="logoAndTitle">
-                <img src={logo} alt="logo" />
+                <img onClick={() => navigate("/")} src={logo} alt="logo" />
                 <h1 className="pageTitle">ADMIN DASHBOARD</h1>
             </div>
 
