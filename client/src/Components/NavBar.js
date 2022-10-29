@@ -26,14 +26,15 @@ function NavBar() {
       <NavLink className={"link"} to={"/about-us"}>
         About Us
       </NavLink>
-      
+     
       <NavLink className={"link"} to={"/login"}>
         Login
       </NavLink>
 
       <NavLink className={"RegisterCharityNavLink"} to={"/charity-register"}>
-        Register Charity
+         Register Charity
       </NavLink>
+
     </div>
   );
 }

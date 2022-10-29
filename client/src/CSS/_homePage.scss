@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Amethysta&family=EB+Garamond&display=swap');
+
 body {
   justify-content: center;
 }
@@ -15,11 +17,14 @@ body {
 
 .NiaAbout {
   text-align: justify;
+  font-weight: medium;
   // font-weight: bold;
   margin-top: 30px;
   margin-left: 40px;
   margin-right: 40px;
   margin-bottom: 30px;
+  font-size: larger;
+  font-family: "Amethysta', serif";
   // font-size: larger;
   font-family: "Courier New", Courier, monospace;
 }
@@ -41,7 +46,7 @@ body {
   font-size: large;
   background-color: #fcb500;
   border: none;
-  font-family: "Lucida Console", "Courier New", monospace;
+  font-family: "Amethysta', serif";
 }
 .registerCharity:hover{
   background-color: #8d5412;
@@ -56,7 +61,7 @@ body {
   margin-bottom: 2rem;
   margin-top: 5rem;
   color: #fcb500;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Amethysta', serif";
 }
 
 .CharitiesContainer {
@@ -81,7 +86,7 @@ body {
 
   h3 {
     font-size: larger;
-    font-family: "Courier New", Courier, monospace;
+    font-family: "Amethysta', serif";
     margin-top: -7px;
     margin-left: 25px;
   }

@@ -11,7 +11,11 @@ import CharityRegister from "./CharityRegister";
 import Team from "./Team";
 import AboutUs from "./AboutUs";
 import CharitiesDashboard from "./CharitiesDashboard";
+
 import DonorsDonateToCharity from "./DonorsDonateToCharity";
+
+import CharityProfile from "./CharityProfile";
+
 
 
 function App() {
@@ -28,6 +32,7 @@ function App() {
         <Route path="/signup" element={<SignUp userData={setUserData} />} />
         <Route path="/charity-register" element={<CharityRegister userData={setUserData} />} />
         <Route path="/solution" element={<Solution />} />
+         <Route path="/edit-profile" element={< CharityProfile/>} />
         <Route path="/donate" element={<Login userData={setUserData} />} />
         <Route path="/signup" element={<SignUp userData={setUserData} />} />
         <Route path="/research" element={<Research />} />

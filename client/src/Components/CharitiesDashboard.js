@@ -19,7 +19,7 @@ function CharitiesDashboard(charityData) {
     fetch("/meCharity")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data?.charity_profile?.about_us);
+        // console.log(data?.charity_profile?.about_us);
         setCharity(data);
 
         if (data?.error) {
@@ -39,18 +39,18 @@ function CharitiesDashboard(charityData) {
           fetch(`/a_charitys_beneficiaries/${data?.id}`)
             .then((response) => response.json())
             .then((data) => {
-              console.log("BENEFICIARIES:", data);
+              // console.log("BENEFICIARIES:", data);
               if(!data?.error){
                 setBeneficiaries(data);
               }
               // handleDashboardStatistics(res.data)
             })
-            .catch((err) => console.error(err));
+            // .catch((err) => console.error(err));
 
             fetch(`/charities_inventories/${data?.id}`)
           .then((response) => response.json())
           .then((data) => {
-            console.log("INVENTORIES:", data);
+            // console.log("INVENTORIES:", data);
             if(!data?.error){
               setAllInventories(data);
             }
@@ -59,10 +59,10 @@ function CharitiesDashboard(charityData) {
             // );
             // setTargetBeneficiary({});
           })
-          .catch((err) => console.error(err));
+          // .catch((err) => console.error(err));
         }
       })
-      .catch((err) => console.error(err));
+      // .catch((err) => console.error(err));
 
       
   }, []);
@@ -88,7 +88,7 @@ function CharitiesDashboard(charityData) {
               {charity?.name}
             </h3>
           </div>
-          <button className="charityEditProfileBtn">Edit Profile</button>
+         <Link  to="/edit-profile"> <button className="charityEditProfileBtn">Edit Profile</button></Link>
         </div>
 
         <div className="charitiesDasboardNavigationContainer">
@@ -113,7 +113,7 @@ function CharitiesDashboard(charityData) {
           Logout
         </button>
       </div>
-
+      {/* <CharityProfile charity={ charity} setCharity={setCharity} /> */}
       <Routes>
         <Route
           path="/manage-beneficiaries"
@@ -128,7 +128,8 @@ function CharitiesDashboard(charityData) {
             <CharitiesManageStories allInventories={allInventories} allBeneficiaries={beneficiaries} setAllBeneficiaries={setBeneficiaries} setAllInventories={setAllInventories} setAllStories={setAllStories}/>
           }
         />
-        <Route path="/manage-inventories" element={<CharityInventoriesManagement allBeneficiaries={beneficiaries}/>}/>
+        <Route path="/manage-inventories" element={<CharityInventoriesManagement allBeneficiaries={beneficiaries} />} />
+         {/* <Route path="/edit-profile" element={<CharityProfile allBeneficiaries={beneficiaries}/>}/> */}
       </Routes>
     </div>
   );

@@ -43,7 +43,7 @@ function Solution (){
          </p> 
 
          <p style={{ marginTop: '.5rem' }} className="sanitary-pads-paragraph">
-         Nia Africa is in partnership with these charity organizations to make our dream a reality
+         Nia Africa is in partnership with the following charity organizations to make our dream a reality
          </p>
         
         <div className="sanitary-pads-list-container">
