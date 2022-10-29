@@ -26,7 +26,7 @@ function CharityRegister({ userData }) {
             })
             .then(res => {
                 setIsLoading(false);
-                console.log(res.data)
+                // console.log(res.data)
                 userData(res.data)
                 alert("Charity Registered Successfully!");
                 navigate("/")

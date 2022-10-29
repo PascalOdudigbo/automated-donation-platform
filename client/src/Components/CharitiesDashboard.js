@@ -5,7 +5,6 @@ import logo from "../images/logo.png";
 import CharitiesManageBeneficiaries from "./CharitiesManageBeneficiaries";
 import CharitiesManageStories from "./CharitiesManageStories";
 import CharityInventoriesManagement from "./CharityInventoriesManagement";
-// import CharityProfile from "./CharityProfile";
 
 
 function CharitiesDashboard(charityData) {
@@ -20,7 +19,7 @@ function CharitiesDashboard(charityData) {
     fetch("/meCharity")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data?.charity_profile?.about_us);
+        // console.log(data?.charity_profile?.about_us);
         setCharity(data);
 
         if (data?.error) {
@@ -40,18 +39,18 @@ function CharitiesDashboard(charityData) {
           fetch(`/a_charitys_beneficiaries/${data?.id}`)
             .then((response) => response.json())
             .then((data) => {
-              console.log("BENEFICIARIES:", data);
+              // console.log("BENEFICIARIES:", data);
               if(!data?.error){
                 setBeneficiaries(data);
               }
               // handleDashboardStatistics(res.data)
             })
-            .catch((err) => console.error(err));
+            // .catch((err) => console.error(err));
 
             fetch(`/charities_inventories/${data?.id}`)
           .then((response) => response.json())
           .then((data) => {
-            console.log("INVENTORIES:", data);
+            // console.log("INVENTORIES:", data);
             if(!data?.error){
               setAllInventories(data);
             }
@@ -60,10 +59,10 @@ function CharitiesDashboard(charityData) {
             // );
             // setTargetBeneficiary({});
           })
-          .catch((err) => console.error(err));
+          // .catch((err) => console.error(err));
         }
       })
-      .catch((err) => console.error(err));
+      // .catch((err) => console.error(err));
 
       
   }, []);

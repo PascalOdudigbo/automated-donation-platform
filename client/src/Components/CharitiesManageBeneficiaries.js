@@ -34,7 +34,7 @@ function CharitiesManageBeneficiaries({
         fetch(`/a_charitys_beneficiaries/${data?.id}`)
           .then((response) => response.json())
           .then((data) => {
-            console.log("BENEFICIARIES:", data);
+            // console.log("BENEFICIARIES:", data);
             if (!data?.error) {
               setBeneficiaries(data);
               setTotalBeneficiaries(data?.length);
@@ -42,20 +42,20 @@ function CharitiesManageBeneficiaries({
               handleRefreshData();
             }
           })
-          .catch((err) => console.error(err));
+          // .catch((err) => console.error(err));
 
         fetch(`/a_charitys_stories/${data?.id}`)
           .then((response) => response.json())
           .then((data) => {
-            console.log("STORIES:", data);
+            // console.log("STORIES:", data);
             if (!data?.error) {
               setTotalStories(data?.length);
             }
           })
-          .catch((err) => console.error(err));
+          // .catch((err) => console.error(err));
 
       })
-      .catch((err) => console.error(err));
+      // .catch((err) => console.error(err));
   }, []);
 
   function handleRefreshData() {
@@ -65,7 +65,7 @@ function CharitiesManageBeneficiaries({
         fetch(`/a_charitys_beneficiaries/${data?.id}`)
           .then((response) => response.json())
           .then((data) => {
-            console.log("BENEFICIARIES:", data);
+            // console.log("BENEFICIARIES:", data);
             if(!data.error){
               setBeneficiaries(data);
               setTotalBeneficiaries(data?.length);
@@ -78,18 +78,18 @@ function CharitiesManageBeneficiaries({
             fetch(`/a_charitys_stories/${data?.id}`)
               .then((response) => response.json())
               .then((data) => {
-                console.log("STORIES:", data);
+                // console.log("STORIES:", data);
                 if(!data.error){
                   setTotalStories(data?.length);
                 }
               })
-              .catch((err) => console.error(err));
+              // .catch((err) => console.error(err));
 
           })
-          .catch((err) => console.error(err));
+          // .catch((err) => console.error(err));
 
       })
-      .catch((err) => console.error(err));
+      // .catch((err) => console.error(err));
   }
 
   function handleSave() {
@@ -103,7 +103,7 @@ function CharitiesManageBeneficiaries({
         })
         .then((res) => {
           setIsLoadingSave(false);
-          console.log(res.data);
+          // console.log(res.data);
           alert("Beneficiary Updated!");
           handleRefreshData();
         })
@@ -124,7 +124,7 @@ function CharitiesManageBeneficiaries({
         })
         .then((res) => {
           setIsLoadingSave(false);
-          console.log("NEW BENEFICIARY",res.data);
+          // console.log("NEW BENEFICIARY",res.data);
           alert("Beneficiary Added!");
           setBeneficiaries([...allBeneficiaries, {beneficiary: res.data}])
           // handleRefreshData();
@@ -159,7 +159,7 @@ function CharitiesManageBeneficiaries({
 
   function handleDelete() {
     setIsLoadingDelete(true);
-    console.log(targetBeneficiary);
+    // console.log(targetBeneficiary);
     axios.delete(`/beneficiaries/${targetBeneficiary.id}`)
       .then(() => {
         setIsLoadingDelete(false);

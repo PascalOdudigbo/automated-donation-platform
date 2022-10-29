@@ -13,8 +13,8 @@ function CharityProfile() {
         fetch("/meCharity")
             .then((response) => response.json())
             .then((data) => {
-                console.log("DATA", data);
-                console.log("CHARITY ABOUT:", data?.charity_profile?.about_us);
+                // console.log("DATA", data);
+                // console.log("CHARITY ABOUT:", data?.charity_profile?.about_us);
                 setCharity(data);
                 setAboutUs(data?.charity_profile?.about_us);
                 setTargetProfile(data?.charity_profile)
@@ -43,7 +43,7 @@ function CharityProfile() {
         fetch("/meCharity")
             .then((response) => response.json())
             .then((data) => {
-                console.log("DATA", data);
+                // console.log("DATA", data);
                 setCharity(data);
                 setAboutUs(data?.charity_profile?.about_us);
                 setTargetProfile(data?.charity_profile)
@@ -56,7 +56,7 @@ function CharityProfile() {
 
 
     function handleSave() {
-        console.log("Charity", charity)
+        // console.log("Charity", charity)
         if (charity?.charity_profile?.about_us != undefined) {
             setIsLoadingSave(true);
 
@@ -68,7 +68,7 @@ function CharityProfile() {
                 })
                 .then((res) => {
                     setIsLoadingSave(false);
-                    console.log(res.data);
+                    // console.log(res.data);
                     alert("profile Updated!");
                     handleRefreshData();
                 })
@@ -90,7 +90,7 @@ function CharityProfile() {
                 })
                 .then((res) => {
                     setIsLoadingSave(false);
-                    console.log(res.data);
+                    // console.log(res.data);
                     alert("Charity Profile saved!");
                     // setTargetProfile([...charity, res.data])
                     handleRefreshData();
