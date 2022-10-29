@@ -6,12 +6,12 @@ import { useNavigate } from "react-router-dom";
 
 // get our footer icon imports
 import {
-    BsInstagram,
-    BsFacebook,
-    BsGithub,
-    BsTwitter,
-    BsLinkedin,
-  } from "react-icons/bs";
+  BsInstagram,
+  BsFacebook,
+  BsGithub,
+  BsTwitter,
+  BsLinkedin,
+} from "react-icons/bs";
 
 let charityData = JSON.parse(localStorage.getItem("selectedCharity"));
 let donorData = JSON.parse(localStorage.getItem("donorData"));
@@ -43,12 +43,13 @@ function DonorsDonateToCharity() {
       .post("/donations", donationData)
       .then((res) => {
         // console.log(res.data);
-        alert(`Thanks ${donorData?.first_name} for your ${ donationFrequency === "once"
-        ? "one-time"
-        : donationFrequency} donation to ${charityData.name}`);
+        alert(
+          `Thanks ${donorData?.first_name} for your ${
+            donationFrequency === "once" ? "one-time" : donationFrequency
+          } donation to ${charityData.name}`
+        );
 
         // navigate("")
-
       })
       .catch((error) => {
         if (error.response) {
@@ -61,73 +62,73 @@ function DonorsDonateToCharity() {
       <NavBar />
       <p className="DonationPageText">
         Thank you for supporting <em>NiaAfrica’s</em> efforts to ensure that
-        girls can safely navigate puberty and step into their potential. <br />
-        You may donate once, monthly or give in honor or memory of someone.{" "}
+        girls can safely navigate puberty and step into their potential. You may
+        donate once, monthly or give in honor or memory of someone.
         <br />
         Your donation will help us bring smiles to the faces of the
         underprivileged by meeting the guidelines for proper menstrual hygiene
-        as defined by UNICEF.
-        <br />
-        This donation is tax-deductible.
+        as defined by UNICEF. This donation is tax-deductible.
       </p>
-      <h3 className="charityBeingDonatedTo">{`A DONATION TO ${charityData?.name?.toUpperCase()}`}</h3>
+      <h1 className="charityBeingDonatedTo">{`A DONATION TO ${charityData?.name?.toUpperCase()}`}</h1>
       <div className="donationFrequencyContainer">
-        <h1
+        <h3
           className="donationFrequencyOnce"
           onClick={() => setDonationFrequency("once")}
         >
           ONE TIME
-        </h1>
-        <h1
+        </h3>
+        <h3
           className="donationFrequencyMonthly"
           onClick={() => setDonationFrequency("monthly")}
         >
           MONTHLY
-        </h1>
+        </h3>
       </div>
 
       <br />
-      <p>{`choose a ${
-        donationFrequency === "once" ? "one-time" : "monthly"
+      <p className="paragraphForPrice">{`Choose a ${
+        donationFrequency === "once"
+          ? "one-time"
+          : donationFrequency === "monthly"
+          ? "monthly"
+          : "donation"
       } amount`}</p>
       <div className="donationAmountContainer">
         <div className="donationAmount" onClick={() => setDonationAmount(500)}>
-          <h3>500</h3>
+          <h3 className="donationText">500</h3>
         </div>
 
         <div className="donationAmount" onClick={() => setDonationAmount(250)}>
-          <h3>250</h3>
+          <h3 className="donationText">250</h3>
         </div>
 
         <div className="donationAmount" onClick={() => setDonationAmount(125)}>
-          <h3>125</h3>
+          <h3 className="donationText">125</h3>
         </div>
 
         <div className="donationAmount" onClick={() => setDonationAmount(50)}>
-          <h3>50</h3>
+          <h3 className="donationText">50</h3>
         </div>
 
         <div className="donationAmount">
-          <h3>USD</h3>
+          <h3 className="donationText">USD</h3>
         </div>
       </div>
 
-      <form className="AnonymousDonorOrNot">
+      <form className="anonymousDonorOrNot">
         <label>
           <input
             type="radio"
             name="react-tips"
             value="true"
             checked={anonymousOrNot === true}
-            onClick={() =>{
-                if (anonymousOrNot === true){
-                    setAnonymousOrNot(false)
-                } 
-                else{
-                    setAnonymousOrNot(true)
-                }
-            }
-            }
+            onClick={() => {
+              if (anonymousOrNot === true) {
+                setAnonymousOrNot(false);
+              } else {
+                setAnonymousOrNot(true);
+              }
+            }}
             className="form-check-input"
           />
           Make this donation anonymously
@@ -154,36 +155,39 @@ function DonorsDonateToCharity() {
             onApprove={handleDonation}
           />
         </PayPalScriptProvider> */}
-        <button className="donateBtn" onClick={handleDonation}>DONATE</button>
-      </div>
 
-      <h3 className="donationDetails">{`${
+        <h3 className="donationDetails">{`${
           donationFrequency === "once"
             ? "ONE-TIME"
             : donationFrequency.toUpperCase()
         } DONATION $${donationAmount} USD`}</h3>
 
-<div className="footer">
-              <h3>follow us</h3>
-              <ul>
-                <li>
-                  <BsInstagram />
-                </li>
-                <li>
-                  <BsFacebook />
-                </li>
-                <li>
-                  <BsTwitter />
-                </li>
-                <li>
-                  <BsGithub />
-                </li>
-                <li>
-                  <BsLinkedin />
-                </li>
-              </ul>
-              <h4>2022 Copyright NIA Africa Ltd</h4>
-            </div>
+        <button className="donateBtn" onClick={handleDonation}>
+          DONATE
+        </button>
+      </div>
+
+      <div className="footer">
+        <h3>follow us</h3>
+        <ul>
+          <li>
+            <BsInstagram />
+          </li>
+          <li>
+            <BsFacebook />
+          </li>
+          <li>
+            <BsTwitter />
+          </li>
+          <li>
+            <BsGithub />
+          </li>
+          <li>
+            <BsLinkedin />
+          </li>
+        </ul>
+        <h4>2022 Copyright NIA Africa Ltd</h4>
+      </div>
     </div>
   );
 }
