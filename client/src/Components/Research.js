@@ -68,22 +68,22 @@ function Research() {
           </p>
           <ul>
             <li>
-              Reproductive health knowledge: knowledge of pregnancy, of sexually
+              <strong>Reproductive health knowledge:</strong> knowledge of pregnancy, of sexually
               transmitted diseases, and of modern contraceptives
             </li>
             <li>
-              Pride and comfort about managing menstruation, including reduced
-              leakage and embarrassment{" "}
+              <strong>Pride and comfort about managing menstruation, including reduced
+              leakage and embarrassment{" "}</strong>
             </li>
 
             <li>
-              Self-efficacy, self-confidence, and general resilience to address
-              life’s challenges{" "}
+              <strong>Self-efficacy, self-confidence, and general resilience to address
+              life’s challenges{" "}</strong>
             </li>
 
             <li>
-              Shifts to equitable social and gender norms, including reduced
-              acceptance of spousal violence as a norm{" "}
+              <strong>Shifts to equitable social and gender norms, including reduced
+              acceptance of spousal violence as a norm{" "}</strong>
             </li>
           </ul>
           <p>

@@ -23,18 +23,18 @@
   .link {
     list-style-type: none;
     text-decoration: none;
-    width:100px;
-    height:20px;
-    color: white;
+    // width:100px;
+    // height:20px;
+    color: #fcb500;
     padding: 8px 12px;
     border-radius: 10px;
     text-align: center;
-    margin-top: 3px;
+    // margin-top: 3px;
     font-style: bold;
-    font-size: large;
-    background-color: #fcb500;
+    font-size: larger;
+    // background-color: #fcb500;
     border: none;
-    font-family: "Lucida Console", "Courier New", monospace;
+    font-family: "Amethysta', serif";
   }
   .link:hover{
     background-color: #8d5412;
