@@ -27,11 +27,11 @@ function NavBar() {
         About Us
       </NavLink>
       
-      <NavLink className={"link"} to={"/charity-register"}>
+      <NavLink className={"link"} to={"/login"}>
         Login
       </NavLink>
 
-      <NavLink className={"RegisterCharityNavLink"} to={"/login"}>
+      <NavLink className={"RegisterCharityNavLink"} to={"/charity-register"}>
         Register Charity
       </NavLink>
     </div>

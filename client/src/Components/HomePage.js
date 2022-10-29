@@ -60,7 +60,18 @@ function HomePage() {
     // setSelectedCharity(charity);
     localStorage.clear();
     localStorage.setItem("selectedCharity", JSON.stringify(charity));
-    console.log("Charity being donated to:", charity);
+    //console.log("Charity being donated to:", charity);
+
+    fetch("/meDonor")
+      .then((response) => response.json())
+      .then((data) => {
+        data.error ? navigate("/login") : navigate("/donate-to-charity")
+        if (!data.error){
+          localStorage.setItem("donorData", JSON.stringify(data));
+        }
+       
+      })
+      .catch((err) => console.error(err));
   }
 
   function handleSetSelectedCharity(charity) {

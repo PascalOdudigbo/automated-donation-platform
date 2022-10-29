@@ -11,6 +11,7 @@ import CharityRegister from "./CharityRegister";
 import Team from "./Team";
 import AboutUs from "./AboutUs";
 import CharitiesDashboard from "./CharitiesDashboard";
+import DonorsDonateToCharity from "./DonorsDonateToCharity";
 
 
 function App() {
@@ -19,9 +20,9 @@ function App() {
     <>
       <Routes>
         <Route path="/adminlogin" element={<AdministratorLogin userData={setUserData} />} />
-        <Route path="/admin/*" element={<AdminDashboard userData={userData}/>}/>
+        <Route path="/admin/*" element={<AdminDashboard userData={userData} />} />
         <Route path="/*" element={<HomePage />} />
-        <Route path="/team" element={<Team/>} />
+        <Route path="/team" element={<Team />} />
         <Route path="/donate" element={<Login userData={setUserData} />} />
         <Route path="/login" element={<Login userData={setUserData} />} />
         <Route path="/signup" element={<SignUp userData={setUserData} />} />
@@ -30,8 +31,9 @@ function App() {
         <Route path="/donate" element={<Login userData={setUserData} />} />
         <Route path="/signup" element={<SignUp userData={setUserData} />} />
         <Route path="/research" element={<Research />} />
-         <Route path="/about-us" element={<AboutUs/>} />
-        <Route path="/charity/*" element={<CharitiesDashboard charityData={userData}/>}/>
+        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/charity/*" element={<CharitiesDashboard charityData={userData} />} />
+        <Route path="/donate-to-charity" element={<DonorsDonateToCharity/>}/>
       </Routes>
 
     </>

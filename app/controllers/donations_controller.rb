@@ -15,7 +15,7 @@ class DonationsController < ApplicationController
 
   # POST /donations
   def create
-    @donation = Donation.new(donation_params)
+    @donation = Donation.new(donation_params.except(:donation))
 
     if @donation.save
       render json: @donation, status: :created, location: @donation
@@ -46,6 +46,6 @@ class DonationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def donation_params
-      params.permit(:donors_id, :charities_id, :amount)
+      params.permit(:donor_id, :charity_id, :donation_frequency, :amount, :anonymous, :donation)
     end
 end
