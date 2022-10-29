@@ -5,7 +5,7 @@ import logo from "../images/logo.png";
 import CharitiesManageBeneficiaries from "./CharitiesManageBeneficiaries";
 import CharitiesManageStories from "./CharitiesManageStories";
 import CharityInventoriesManagement from "./CharityInventoriesManagement";
-import CharityProfile from "./CharityProfile";
+// import CharityProfile from "./CharityProfile";
 
 
 function CharitiesDashboard(charityData) {
@@ -114,7 +114,7 @@ function CharitiesDashboard(charityData) {
           Logout
         </button>
       </div>
-      <CharityProfile charity={ charity} setCharity={setCharity} />
+      {/* <CharityProfile charity={ charity} setCharity={setCharity} /> */}
       <Routes>
         <Route
           path="/manage-beneficiaries"
