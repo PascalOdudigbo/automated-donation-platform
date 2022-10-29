@@ -5,6 +5,7 @@ import logo from "../images/logo.png";
 import CharitiesManageBeneficiaries from "./CharitiesManageBeneficiaries";
 import CharitiesManageStories from "./CharitiesManageStories";
 import CharityInventoriesManagement from "./CharityInventoriesManagement";
+import CharityProfile from "./CharityProfile";
 
 
 function CharitiesDashboard(charityData) {
@@ -88,7 +89,7 @@ function CharitiesDashboard(charityData) {
               {charity?.name}
             </h3>
           </div>
-          <button className="charityEditProfileBtn">Edit Profile</button>
+         <Link  to="/edit-profile"> <button className="charityEditProfileBtn">Edit Profile</button></Link>
         </div>
 
         <div className="charitiesDasboardNavigationContainer">
@@ -113,7 +114,7 @@ function CharitiesDashboard(charityData) {
           Logout
         </button>
       </div>
-
+      <CharityProfile charity={ charity} setCharity={setCharity} />
       <Routes>
         <Route
           path="/manage-beneficiaries"
@@ -128,7 +129,8 @@ function CharitiesDashboard(charityData) {
             <CharitiesManageStories allInventories={allInventories} allBeneficiaries={beneficiaries} setAllBeneficiaries={setBeneficiaries} setAllInventories={setAllInventories} setAllStories={setAllStories}/>
           }
         />
-        <Route path="/manage-inventories" element={<CharityInventoriesManagement allBeneficiaries={beneficiaries}/>}/>
+        <Route path="/manage-inventories" element={<CharityInventoriesManagement allBeneficiaries={beneficiaries} />} />
+         {/* <Route path="/edit-profile" element={<CharityProfile allBeneficiaries={beneficiaries}/>}/> */}
       </Routes>
     </div>
   );
