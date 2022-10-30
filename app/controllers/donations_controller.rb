@@ -1,6 +1,16 @@
 class DonationsController < ApplicationController
   before_action :set_donation, only: [:show, :update, :destroy]
 
+  #GET /a_charitys_donations/:charity_id
+  def charity_donations
+    donations = Donation.where(charity_id: params[:charity_id])
+    if donations.length > 0
+      render json: donations, status: :found
+    else
+      render json: {error: "no donations found"}
+    end
+  end
+
   # GET /donations
   def index
     @donations = Donation.all

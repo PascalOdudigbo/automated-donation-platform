@@ -51,9 +51,29 @@ function CharitiesManageStories({ allInventories, allBeneficiaries, setAllInvent
               handleRefreshData();
             }
           })
-          // .catch((err) => console.error(err));
+          .catch((err) => console.error(err));
+
+          fetch(`/a_charitys_donations/${data?.id}`)
+          .then((response) => response.json())
+          .then((data) => {
+            // console.log("INVENTORIES:", data);
+            if (!data?.error) {
+              // setAllDonations(data);
+              let idArray = [];
+              let totalAmount = 0;
+              data.forEach(donation => {
+                totalAmount += donation.amount;
+                idArray.push(donation?.donor?.id);
+              })
+              setTotalAmountDonated(totalAmount);
+              let unique = [... new Set(idArray)]
+              setTotalDonors(unique?.length)
+
+            }
+          })
+          .catch((err) => console.error(err));
       })
-      // .catch((err) => console.error(err));
+      .catch((err) => console.error(err));
   }, []);
 
   function handleRefreshData() {
@@ -71,7 +91,7 @@ function CharitiesManageStories({ allInventories, allBeneficiaries, setAllInvent
               setTotalBeneficiaries(data?.length);
             }
           })
-          // .catch((err) => console.error(err));
+          .catch((err) => console.error(err));
 
         fetch(`/charities_inventories/${data?.id}`)
           .then((response) => response.json())
@@ -81,7 +101,7 @@ function CharitiesManageStories({ allInventories, allBeneficiaries, setAllInvent
               setAllInventories(data);
             }
           })
-          // .catch((err) => console.error(err));
+          .catch((err) => console.error(err));
 
         fetch(`/a_charitys_stories/${data?.id}`)
           .then((response) => response.json())
@@ -95,10 +115,30 @@ function CharitiesManageStories({ allInventories, allBeneficiaries, setAllInvent
               setBeneficiaryStory("");
             }
           })
-          // .catch((err) => console.error(err));
+          .catch((err) => console.error(err));
+
+          fetch(`/a_charitys_donations/${data?.id}`)
+          .then((response) => response.json())
+          .then((data) => {
+            // console.log("INVENTORIES:", data);
+            if (!data?.error) {
+              // setAllDonations(data);
+              let idArray = [];
+              let totalAmount = 0;
+              data.forEach(donation => {
+                totalAmount += donation.amount;
+                idArray.push(donation?.donor?.id);
+              })
+              setTotalAmountDonated(totalAmount);
+              let unique = [... new Set(idArray)]
+              setTotalDonors(unique?.length)
+
+            }
+          })
+          .catch((err) => console.error(err));
       }
       )
-      // .catch((err) => console.error(err));
+      .catch((err) => console.error(err));
 
 
   }
@@ -197,7 +237,7 @@ function CharitiesManageStories({ allInventories, allBeneficiaries, setAllInvent
 
         <div className="charitiesManageStoriesStatistic">
           <h3>TOTAL DONATIONS</h3>
-          <p>{totalAmountDonated}</p>
+          <p>{`$${totalAmountDonated}`}</p>
         </div>
       </div>
 
