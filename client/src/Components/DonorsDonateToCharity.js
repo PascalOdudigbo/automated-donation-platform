@@ -14,21 +14,30 @@ import {
 } from "react-icons/bs";
 
 let charityData = JSON.parse(localStorage.getItem("selectedCharity"));
-let donorData = JSON.parse(localStorage.getItem("donorData"));
+let donorData = JSON.parse(localStorage.getItem("donorData"));  
 function DonorsDonateToCharity() {
   const [donationFrequency, setDonationFrequency] = useState("");
   const [donationAmount, setDonationAmount] = useState(0);
   const [anonymousOrNot, setAnonymousOrNot] = useState(false);
   const navigate = useNavigate();
 
+
   useEffect(() => {
     fetch("/meDonor")
       .then((response) => response.json())
       .then((data) => {
         data.error ? navigate("/login") : navigate("/donate-to-charity");
+        localStorage.setItem("donorData", JSON.stringify(data));
+        donorData = JSON.parse(localStorage.getItem("donorData"));
+        // const reloadOnce = setInterval(()=>window.location.reload(), 0);
+        // const myTimeout = setTimeout(clearInterval(reloadOnce), 1000);
+        // clearTimeout(myTimeout)
+       
       })
       .catch((err) => console.error(err));
   }, []);
+
+  
 
   function handleDonation() {
     let donationData = {
@@ -56,6 +65,8 @@ function DonorsDonateToCharity() {
           alert(error.response.data.error);
         }
       });
+
+      
   }
   return (
     <div className="donorsDonateToCharityContainer">

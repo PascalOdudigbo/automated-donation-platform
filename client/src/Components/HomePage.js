@@ -33,7 +33,7 @@ function HomePage() {
 
   useEffect(() => {
     axios.get("/charities").then((res) => {
-      console.log(`Charities Data:`, res.data);
+      // console.log(`Charities Data:`, res.data);
       setAllCharities(res.data);
     });
 
@@ -50,7 +50,7 @@ function HomePage() {
     const interval = setInterval(() => {
       let randomIndex = Math.floor(Math.random() * picturesUrlArray?.length);
       setImageUrl(picturesUrlArray[randomIndex]);
-      console.log("Changed image");
+      // console.log("Changed image");
     }, 7000);
 
     return () => clearInterval(interval);

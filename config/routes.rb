@@ -29,6 +29,8 @@ Rails.application.routes.draw do
   #getting a charitys beneficiaries
   get "/a_charitys_beneficiaries/:charity_id", to: "charity_beneficiaries#charity_beneficiaries"
 
+  #getting a charitys donations
+  get "/a_charitys_donations/:charity_id", to: "donations#charity_donations"
 
   #getting charitys inventories
   get "/charities_inventories/:charity_id", to: "inventories#charity_inventories"

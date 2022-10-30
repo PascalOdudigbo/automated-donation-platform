@@ -4,6 +4,7 @@ import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import logo from "../images/logo.png";
 import CharitiesManageBeneficiaries from "./CharitiesManageBeneficiaries";
 import CharitiesManageStories from "./CharitiesManageStories";
+import CharitiesViewDonations from "./CharitiesViewDonations";
 import CharityInventoriesManagement from "./CharityInventoriesManagement";
 
 
@@ -45,7 +46,7 @@ function CharitiesDashboard(charityData) {
               }
               // handleDashboardStatistics(res.data)
             })
-            // .catch((err) => console.error(err));
+            .catch((err) => console.error(err));
 
             fetch(`/charities_inventories/${data?.id}`)
           .then((response) => response.json())
@@ -59,10 +60,10 @@ function CharitiesDashboard(charityData) {
             // );
             // setTargetBeneficiary({});
           })
-          // .catch((err) => console.error(err));
+          .catch((err) => console.error(err));
         }
       })
-      // .catch((err) => console.error(err));
+      .catch((err) => console.error(err));
 
       
   }, []);
@@ -104,8 +105,8 @@ function CharitiesDashboard(charityData) {
           <Link className="charitiesDasboardNavigationLink" to="manage-stories">
             MANAGE STORIES
           </Link>
-          <Link className="charitiesDasboardNavigationLink" to="">
-            VIEW DONORS
+          <Link className="charitiesDasboardNavigationLink" to="view-donations">
+            VIEW DONATIONS
           </Link>
         </div>
 
@@ -129,7 +130,7 @@ function CharitiesDashboard(charityData) {
           }
         />
         <Route path="/manage-inventories" element={<CharityInventoriesManagement allBeneficiaries={beneficiaries} />} />
-         {/* <Route path="/edit-profile" element={<CharityProfile allBeneficiaries={beneficiaries}/>}/> */}
+        <Route path="/view-donations" element={<CharitiesViewDonations />}/>
       </Routes>
     </div>
   );

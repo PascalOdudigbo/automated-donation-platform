@@ -25,18 +25,6 @@ function CharityProfile() {
             })
             .catch((err) => console.error(err));
 
-        // fetch(`/charity_profiles/${charity?.id}`)
-        //   .then((response) => response.json())
-        //   .then((data) => {
-        //     console.log("CHARITY PROFILE:", data);
-        //     if (!data?.error) {
-        //       setCharity(data?.length);
-        //     }
-        //   })
-        //   .catch((err) => console.error(err));
-
-
-
     }, []);
 
     function handleRefreshData() {

@@ -42,7 +42,7 @@ function CharitiesManageBeneficiaries({
               handleRefreshData();
             }
           })
-          // .catch((err) => console.error(err));
+          .catch((err) => console.error(err));
 
         fetch(`/a_charitys_stories/${data?.id}`)
           .then((response) => response.json())
@@ -52,10 +52,30 @@ function CharitiesManageBeneficiaries({
               setTotalStories(data?.length);
             }
           })
-          // .catch((err) => console.error(err));
+          .catch((err) => console.error(err));
+
+        fetch(`/a_charitys_donations/${data?.id}`)
+          .then((response) => response.json())
+          .then((data) => {
+            // console.log("INVENTORIES:", data);
+            if (!data?.error) {
+              // setAllDonations(data);
+              let idArray = [];
+              let totalAmount = 0;
+              data.forEach(donation => {
+                totalAmount += donation.amount;
+                idArray.push(donation?.donor?.id);
+              })
+              setTotalDonations(totalAmount);
+              let unique = [... new Set(idArray)]
+              setTotalDonors(unique?.length)
+
+            }
+          })
+          .catch((err) => console.error(err));
 
       })
-      // .catch((err) => console.error(err));
+      .catch((err) => console.error(err));
   }, []);
 
   function handleRefreshData() {
@@ -66,7 +86,7 @@ function CharitiesManageBeneficiaries({
           .then((response) => response.json())
           .then((data) => {
             // console.log("BENEFICIARIES:", data);
-            if(!data.error){
+            if (!data.error) {
               setBeneficiaries(data);
               setTotalBeneficiaries(data?.length);
               setTargetBeneficiary({});
@@ -75,21 +95,41 @@ function CharitiesManageBeneficiaries({
               setBeneficiaryDescription("")
             }
 
-            fetch(`/a_charitys_stories/${data?.id}`)
+          })
+          .catch((err) => console.error(err));
+
+          fetch(`/a_charitys_stories/${data?.id}`)
               .then((response) => response.json())
               .then((data) => {
                 // console.log("STORIES:", data);
-                if(!data.error){
+                if (!data.error) {
                   setTotalStories(data?.length);
                 }
               })
-              // .catch((err) => console.error(err));
+              .catch((err) => console.error(err));
 
+          fetch(`/a_charitys_donations/${data?.id}`)
+          .then((response) => response.json())
+          .then((data) => {
+            // console.log("INVENTORIES:", data);
+            if (!data?.error) {
+              // setAllDonations(data);
+              let idArray = [];
+              let totalAmount = 0;
+              data.forEach(donation => {
+                totalAmount += donation.amount;
+                idArray.push(donation?.donor?.id);
+              })
+              setTotalDonations(totalAmount);
+              let unique = [... new Set(idArray)]
+              setTotalDonors(unique?.length)
+
+            }
           })
-          // .catch((err) => console.error(err));
+          .catch((err) => console.error(err));
 
       })
-      // .catch((err) => console.error(err));
+      .catch((err) => console.error(err));
   }
 
   function handleSave() {
@@ -126,7 +166,7 @@ function CharitiesManageBeneficiaries({
           setIsLoadingSave(false);
           // console.log("NEW BENEFICIARY",res.data);
           alert("Beneficiary Added!");
-          setBeneficiaries([...allBeneficiaries, {beneficiary: res.data}])
+          setBeneficiaries([...allBeneficiaries, { beneficiary: res.data }])
           // handleRefreshData();
 
           axios
@@ -137,7 +177,7 @@ function CharitiesManageBeneficiaries({
             .then((res) => {
               setIsLoadingSave(false);
               // console.log(res.data);
-              
+
             })
             .catch((error) => {
               setIsLoadingSave(false);
@@ -188,7 +228,7 @@ function CharitiesManageBeneficiaries({
 
         <div className="charitiesManageBeneficiariesStatistic">
           <h3>TOTAL DONATIONS</h3>
-          <p>{totalDonations}</p>
+          <p>{`$${totalDonations}`}</p>
         </div>
       </div>
 
@@ -249,6 +289,7 @@ function CharitiesManageBeneficiaries({
               <button
                 className="deleteBtn"
                 type="button"
+                style={{backgroundColor: "#fcb500"}}
                 onClick={() => {
                   handleDelete();
                 }}
