@@ -19,10 +19,10 @@ Use vscode to open it
 
 
 ## Technologies Used
-ReactJs
+ReactJs(Frontend)
 PostgreSQL
-Ruby on Rails
-CSS
+Ruby on Rails(Backend)
+SCSS
 Figma
 <!-- Heroku
 Netlify -->
