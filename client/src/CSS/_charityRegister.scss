@@ -49,7 +49,10 @@
         //border: 1px solid #333;
         border-radius: 10px;
         text-align: center;
+        margin-top: 3px;
         text-decoration: none;
+        font-size: large;
+        border: none;
         font-style: bold;
         display: inline-block;
         margin-left: 10%;
@@ -57,7 +60,9 @@
         background-color: #fcb500;
         font-family: "Lucida Console", "Courier New", monospace;
       }
-      .charityRegisterSignUp:hover{
+
+      .charityRegisterSignUp:hover {
+        cursor: pointer;
         background-color: #8d5412;
       }
     }
