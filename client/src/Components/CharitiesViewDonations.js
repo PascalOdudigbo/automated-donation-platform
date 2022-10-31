@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import CharityViewDonorsList from "./CharityViewDonorsList";
+import CharityViewDonorsList from "./CharityViewDonationsList";
 
 function CharitiesViewDonations() {
     const [totalStories, setTotalStories] = useState(0);
@@ -35,7 +35,7 @@ function CharitiesViewDonations() {
                             let idArray = [];
                             let totalAmount = 0;
                             data.forEach(donation => {
-                                totalAmount += donation.amount;
+                                totalAmount += donation?.amount;
                                 idArray.push(donation?.donor?.id);
                             })
                             setTotalAmountDonated(totalAmount);

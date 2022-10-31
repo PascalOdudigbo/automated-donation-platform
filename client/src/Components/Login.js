@@ -42,7 +42,7 @@ function Login({ userData }) {
     e.preventDefault();
     setIsLoading(true);
 
-    if (userType === "donor") {
+    if (userType === "Donor") {
       axios
         .post(`/loginDonor`, {
           email: email,
@@ -54,7 +54,7 @@ function Login({ userData }) {
           userData(res.data);
           localStorage.setItem("donorData", JSON.stringify(res.data));
           alert("Login successful");
-          // navigate("home")
+          navigate("/donors-donations")
         })
         .catch((error) => {
           setIsLoading(false);

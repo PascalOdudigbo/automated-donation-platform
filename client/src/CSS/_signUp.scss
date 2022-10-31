@@ -28,6 +28,7 @@ body {
     text-align: center;
     letter-spacing: 1px;
     margin-top: 15px;
+    margin-bottom: 15px;
     color: #fcb500;
     font-family: "Courier New", Courier, monospace;
   }
@@ -36,7 +37,7 @@ body {
     display: flex;
     flex-direction: column;
     text-align: left;
-    margin-top: 25px;
+    margin-top: 35px;
 
     .namesInput {
       display: flex;
