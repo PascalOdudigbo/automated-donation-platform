@@ -4,8 +4,8 @@ import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import logo from "../images/logo.png";
 import CharitiesManageBeneficiaries from "./CharitiesManageBeneficiaries";
 import CharitiesManageStories from "./CharitiesManageStories";
+import CharitiesViewDonations from "./CharitiesViewDonations";
 import CharityInventoriesManagement from "./CharityInventoriesManagement";
-// import CharityProfile from "./CharityProfile";
 
 
 function CharitiesDashboard(charityData) {
@@ -20,7 +20,7 @@ function CharitiesDashboard(charityData) {
     fetch("/meCharity")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data?.charity_profile?.about_us);
+        // console.log(data?.charity_profile?.about_us);
         setCharity(data);
 
         if (data?.error) {
@@ -40,7 +40,7 @@ function CharitiesDashboard(charityData) {
           fetch(`/a_charitys_beneficiaries/${data?.id}`)
             .then((response) => response.json())
             .then((data) => {
-              console.log("BENEFICIARIES:", data);
+              // console.log("BENEFICIARIES:", data);
               if(!data?.error){
                 setBeneficiaries(data);
               }
@@ -51,7 +51,7 @@ function CharitiesDashboard(charityData) {
             fetch(`/charities_inventories/${data?.id}`)
           .then((response) => response.json())
           .then((data) => {
-            console.log("INVENTORIES:", data);
+            // console.log("INVENTORIES:", data);
             if(!data?.error){
               setAllInventories(data);
             }
@@ -105,8 +105,8 @@ function CharitiesDashboard(charityData) {
           <Link className="charitiesDasboardNavigationLink" to="manage-stories">
             MANAGE STORIES
           </Link>
-          <Link className="charitiesDasboardNavigationLink" to="">
-            VIEW DONORS
+          <Link className="charitiesDasboardNavigationLink" to="view-donations">
+            VIEW DONATIONS
           </Link>
         </div>
 
@@ -130,7 +130,7 @@ function CharitiesDashboard(charityData) {
           }
         />
         <Route path="/manage-inventories" element={<CharityInventoriesManagement allBeneficiaries={beneficiaries} />} />
-         {/* <Route path="/edit-profile" element={<CharityProfile allBeneficiaries={beneficiaries}/>}/> */}
+        <Route path="/view-donations" element={<CharitiesViewDonations />}/>
       </Routes>
     </div>
   );

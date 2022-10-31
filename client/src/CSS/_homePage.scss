@@ -30,6 +30,7 @@ body {
 }
 
 
+<<<<<<< HEAD
 // .registerCharity {
 //   text-decoration: none;
 //   width: 100px;
@@ -51,6 +52,29 @@ body {
 // .registerCharity:hover{
 //   background-color: #8d5412;
 // }
+=======
+.registerCharity {
+  text-decoration: none;
+  width: 100px;
+  height: 20px;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 10px;
+  // justify-self: center;
+  text-align: center;
+  margin-left: 45%;
+  margin-top: 50px;
+  margin-bottom: 50%;
+  font-style: bold;
+  font-size: large;
+  background-color: #fcb500;
+  border: none;
+  font-family: "Amethysta', serif";
+}
+.registerCharity:hover{
+  background-color: #8d5412;
+}
+>>>>>>> 2f3919f70a3cf32b61a79549674fd321646209b7
 
 
 
@@ -77,8 +101,8 @@ body {
   flex-direction: row;
   background-color: black;
   color: #fcb500;
-  width: 100%;
-  margin-left: -8px;
+  width: 100vw;
+  margin-left: 0px;
   padding-right: 16px;
   margin-bottom: -8px;
   height: 50px;
@@ -88,7 +112,7 @@ body {
     font-size: larger;
     font-family: "Amethysta', serif";
     margin-top: -7px;
-    margin-left: 25px;
+    margin-left: 50px;
   }
 
   ul {

@@ -33,7 +33,7 @@ function HomePage() {
 
   useEffect(() => {
     axios.get("/charities").then((res) => {
-      console.log(`Charities Data:`, res.data);
+      // console.log(`Charities Data:`, res.data);
       setAllCharities(res.data);
     });
 
@@ -50,7 +50,7 @@ function HomePage() {
     const interval = setInterval(() => {
       let randomIndex = Math.floor(Math.random() * picturesUrlArray?.length);
       setImageUrl(picturesUrlArray[randomIndex]);
-      console.log("Changed image");
+      // console.log("Changed image");
     }, 7000);
 
     return () => clearInterval(interval);
@@ -60,7 +60,18 @@ function HomePage() {
     // setSelectedCharity(charity);
     localStorage.clear();
     localStorage.setItem("selectedCharity", JSON.stringify(charity));
-    console.log("Charity being donated to:", charity);
+    //console.log("Charity being donated to:", charity);
+
+    fetch("/meDonor")
+      .then((response) => response.json())
+      .then((data) => {
+        data.error ? navigate("/login") : navigate("/donate-to-charity")
+        if (!data.error){
+          localStorage.setItem("donorData", JSON.stringify(data));
+        }
+       
+      })
+      .catch((err) => console.error(err));
   }
 
   function handleSetSelectedCharity(charity) {

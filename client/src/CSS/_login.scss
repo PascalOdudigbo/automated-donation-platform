@@ -1,7 +1,7 @@
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -75,8 +75,10 @@ body{
 
       .dropdown-content p:hover {
         background-color: #fcb500;
+        cursor: pointer;
+      }
     }
-    }
+
     .dropdown:hover .dropdown-content {
       display: block;
     }
@@ -117,9 +119,11 @@ body{
       font-size: large;
       background-color: #fcb500;
       border: none;
-      font-family: "Lucida Console", "Courier New", monospace;
+      // font-family: "Lucida Console", "Courier New", monospace;
     }
+
     .loginbtn:hover {
+      cursor: pointer;
       background-color: #8d5412;
     }
 
@@ -144,10 +148,12 @@ body{
       background-color: #fcb500;
       font-family: "Lucida Console", "Courier New", monospace;
     }
-    .signUp:hover {
-        background-color: #8d5412;
-      }
 
-   
+    .signUp:hover {
+      background-color: #8d5412;
+      cursor: pointer;
+    }
+
+
   }
 }

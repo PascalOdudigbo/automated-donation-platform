@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import {Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import logo from "../images/logo.png";
 
@@ -97,7 +97,7 @@ function SignUp({ userData }) {
                     required
                 />
                 <p>______________________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;______________________</p>
-                <button type="submit" className="signUp"> {isLoading ? "Loading..." : "SignUp"}</button>
+                <button type="submit" className="signUp"  style={{marginLeft: "-1px"}}> {isLoading ? "Loading..." : "SignUp"}</button>
             </form>
         </div>
     );

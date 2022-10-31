@@ -25,13 +25,24 @@ function Login({ userData }) {
         }
       })
       .catch((err) => console.error(err));
+
+      fetch("/meDonor")
+      .then((response) => response.json())
+      .then((data) => {
+        // data.error ? navigate("/login") : navigate("/donate-to-charity")
+        if (!data.error){
+          localStorage.setItem("donorData", JSON.stringify(data));
+        }
+       
+      })
+      .catch((err) => console.error(err));
   }, []);
 
   function handleOnSubmit(e) {
     e.preventDefault();
     setIsLoading(true);
 
-    if (userType === "donor") {
+    if (userType === "Donor") {
       axios
         .post(`/loginDonor`, {
           email: email,
@@ -41,9 +52,9 @@ function Login({ userData }) {
           setIsLoading(false);
           console.log(res.data);
           userData(res.data);
-          // localStorage.setItem("userId", JSON.stringify(res.data.id));
+          localStorage.setItem("donorData", JSON.stringify(res.data));
           alert("Login successful");
-          // navigate("home")
+          navigate("/donors-donations")
         })
         .catch((error) => {
           setIsLoading(false);

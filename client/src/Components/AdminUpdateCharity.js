@@ -9,7 +9,7 @@ import axios from "axios";
 let approvalStatus = false;
 
 function AdminUpdateCharity({ selectedItem, handleDataEdit, handleDataDelete, displayData }) {
-    console.log("SELECTED ITEM:", selectedItem)
+  //  console.log("SELECTED ITEM:", selectedItem)
     // const [approvalStatus, setApprovalStatus] = useState("");
    
     const [isLoadingApproved, setIsLoadingApproved] = useState(false);
@@ -38,7 +38,7 @@ function AdminUpdateCharity({ selectedItem, handleDataEdit, handleDataDelete, di
             .then(res => {
                 setIsLoadingApproved(false);
                 setIsLoadingReject(false);
-                console.log(res.data)
+               // console.log(res.data)
                 alert("Approval Status Updated!")
                 handleDataEdit();
             })

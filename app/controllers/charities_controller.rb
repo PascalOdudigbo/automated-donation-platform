@@ -1,7 +1,7 @@
 class CharitiesController < ApplicationController
   before_action :set_charity, only: [:show, :update, :destroy]
 
-  #Login donor
+  #Login charity
   def login
     user = Charity.find_by(email: params[:email])
     if user&.authenticate(params[:password])
