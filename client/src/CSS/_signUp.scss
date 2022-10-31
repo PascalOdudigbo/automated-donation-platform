@@ -21,13 +21,13 @@ body {
     width: 100px;
     background: rgba(243, 232, 232, 0.8);
     border-radius: 55%;
-    margin-bottom: 22px;
+    margin-top: 10px;
   }
 
   h2 {
     text-align: center;
     letter-spacing: 1px;
-    margin-bottom: 20px;
+    margin-top: 15px;
     color: #fcb500;
     font-family: "Courier New", Courier, monospace;
   }
@@ -36,6 +36,7 @@ body {
     display: flex;
     flex-direction: column;
     text-align: left;
+    margin-top: 25px;
 
     .namesInput {
       display: flex;
@@ -96,14 +97,14 @@ body {
       //border: 1px solid #333;
       border-radius: 10px;
       text-align: center;
-      margin-top: 3px;
+      margin-top: 10px;
       text-decoration: none;
       font-size: large;
       border: none;
       font-style: bold;
       display: inline-block;
-      margin-left: 10%;
-      margin-right: 14%;
+      margin-left: 40%;
+      //margin-right: 14%;
       background-color: #fcb500;
       font-family: "Lucida Console", "Courier New", monospace;
     }
