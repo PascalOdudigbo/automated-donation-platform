@@ -97,7 +97,7 @@ function SignUp({ userData }) {
                     required
                 />
                 <p>______________________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;______________________</p>
-               <Link to="/donate-to-charity"> <button type="submit" className="signUp"> {isLoading ? "Loading..." : "SignUp"}</button></Link>
+                <button type="submit" className="signUp"  style={{marginLeft: "-1px"}}> {isLoading ? "Loading..." : "SignUp"}</button>
             </form>
         </div>
     );

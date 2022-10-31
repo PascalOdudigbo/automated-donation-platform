@@ -1,4 +1,4 @@
-function CharityViewDonorsList({donorName, donorEmail, amountDonated, donationFrequency, donationDate}){
+function CharityViewDonationsList({donorName, donorEmail, amountDonated, donationFrequency, donationDate}){
     return(
         <tr>
             <td>{donorName}</td>
@@ -9,4 +9,4 @@ function CharityViewDonorsList({donorName, donorEmail, amountDonated, donationFr
         </tr>
     );
 }
-export default CharityViewDonorsList;
+export default CharityViewDonationsList;

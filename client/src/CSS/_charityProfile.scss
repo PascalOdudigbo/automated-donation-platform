@@ -17,7 +17,7 @@
 }
 
 .Back:hover {
-    background-color: #ff0000;
+    background-color: #8d5412;
     color: white;
     cursor: pointer;
 }
@@ -55,12 +55,17 @@
         // margin-bottom: 5px;
         // text-decoration: none;
         // display: inline-block;
-        margin-left: 40px;
+        margin-left: 50px;
         width: 300px;
         background-color: #fcb500;
         border: none;
         height: 30px;
         font-family: "Courier New", Courier, monospace;
+    }
+    .saveBtn:hover{
+        background-color: #8d5412;
+        color: white;
+        cursor: pointer;
     }
 
 

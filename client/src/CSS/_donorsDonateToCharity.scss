@@ -90,6 +90,15 @@ body {
     .donationAmount:hover {
       background-color: #fcb500;
     }
+
+    .donationCurrency{
+      text-align: center;
+      height: 60px;
+      width: 400px;
+      border-left: 5px;
+      border-left-color: black;
+      border-radius: 5px;
+    }
   }
 
   .anonymousDonorOrNot {

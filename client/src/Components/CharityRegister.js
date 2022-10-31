@@ -88,7 +88,7 @@ function CharityRegister({ userData }) {
                  <br/>
                 <p className="charityRegisterSpaceline">______________________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;______________________</p>
                 <br/>
-                <button style={{backgroundColor: "#fcb500"}} type="submit" className="signUp"> {isLoading ? "Loading..." : "Register"}</button>
+                <button style={{backgroundColor: "#fcb500", marginLeft: "-5px"}} type="submit" className="signUp"> {isLoading ? "Loading..." : "Register"}</button>
             </form>
         </div>
     )
