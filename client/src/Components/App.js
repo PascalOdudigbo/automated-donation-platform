@@ -39,6 +39,7 @@ function App() {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/charity/*" element={<CharitiesDashboard charityData={userData} />} />
         <Route path="/donate-to-charity" element={<DonorsDonateToCharity/>}/>
+        {/* create route here with path="/donors-donations" */}
       </Routes>
 
     </>

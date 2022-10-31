@@ -19,6 +19,7 @@ class DonorsController < ApplicationController
   end
 
   #Verify donor has logged in
+  #GET "/meDonor"
   def loggedIn
     user = Donor.find_by(id: session[:donor_id])
     if user

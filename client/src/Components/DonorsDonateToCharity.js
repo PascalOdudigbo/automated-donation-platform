@@ -14,13 +14,13 @@ import {
 } from "react-icons/bs";
 
 let charityData = JSON.parse(localStorage.getItem("selectedCharity"));
-let donorData = JSON.parse(localStorage.getItem("donorData"));  
+let donorData = JSON.parse(localStorage.getItem("donorData"));
+
 function DonorsDonateToCharity() {
   const [donationFrequency, setDonationFrequency] = useState("");
   const [donationAmount, setDonationAmount] = useState(0);
   const [anonymousOrNot, setAnonymousOrNot] = useState(false);
   const navigate = useNavigate();
-
 
   useEffect(() => {
     fetch("/meDonor")
@@ -28,16 +28,18 @@ function DonorsDonateToCharity() {
       .then((data) => {
         data.error ? navigate("/login") : navigate("/donate-to-charity");
         localStorage.setItem("donorData", JSON.stringify(data));
-        donorData = JSON.parse(localStorage.getItem("donorData"));
-        // const reloadOnce = setInterval(()=>window.location.reload(), 0);
-        // const myTimeout = setTimeout(clearInterval(reloadOnce), 1000);
-        // clearTimeout(myTimeout)
-       
       })
       .catch((err) => console.error(err));
   }, []);
 
-  
+  function causeRefresh() {
+    console.log("Refresh Called");
+    window.location.reload();
+    console.log(charityData)
+    console.log("After Refresh");
+    window.location.reload();
+    window.stop()
+  }
 
   function handleDonation() {
     let donationData = {
@@ -58,19 +60,18 @@ function DonorsDonateToCharity() {
           } donation to ${charityData.name}`
         );
 
-        // navigate("")
+        navigate("/donors-donations")
       })
       .catch((error) => {
         if (error.response) {
           alert(error.response.data.error);
         }
       });
-
-      
   }
   return (
     <div className="donorsDonateToCharityContainer">
       <NavBar />
+      {causeRefresh()}
       <p className="DonationPageText">
         Thank you for supporting <em>NiaAfrica’s</em> efforts to ensure that
         girls can safely navigate puberty and step into their potential. You may
@@ -121,7 +122,7 @@ function DonorsDonateToCharity() {
           <h3 className="donationText">50</h3>
         </div>
 
-        <div className="donationAmount">
+        <div className="donationCurrency">
           <h3 className="donationText">USD</h3>
         </div>
       </div>

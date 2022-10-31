@@ -8,7 +8,7 @@ let targetInventory = {};
 let targetBeneficiary = {};
 
 function CharitiesManageStories({ allInventories, allBeneficiaries, setAllInventories, setAllBeneficiaries, setAllStoriesDadhboard }) {
-  console.log("INVENTORIES INSIDE STORIES", allInventories)
+  // console.log("INVENTORIES INSIDE STORIES", allInventories)
   const [allStories, setAllStories] = useState([]);
   const [isLoadingSave, setIsLoadingSave] = useState(false);
   const [isLoadingDelete, setIsLoadingDelete] = useState(false);
@@ -183,7 +183,7 @@ function CharitiesManageStories({ allInventories, allBeneficiaries, setAllInvent
             charity_id: data?.id,
             inventory_id: targetInventory?.id
           }
-          console.log("POST DATA: ", postData)
+          // console.log("POST DATA: ", postData)
           axios
             .post(`/stories`, postData)
             .then((res) => {
