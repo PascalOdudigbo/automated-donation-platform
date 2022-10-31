@@ -1,38 +1,102 @@
-.CMB-UpdateCharityProfileContainer{
+.Back {
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    width: 70px;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 50px;
+    background-color: #fcb500;
+    border: none;
+    font-family: "Courier New", Courier, monospace;
+    margin-bottom: 10px;
+
+
+}
+
+.Back:hover {
+    background-color: #ff0000;
+    color: white;
+    cursor: pointer;
+}
+
+
+.CMB-UpdateCharityProfileContainer {
     display: flex;
     flex-direction: column;
-    margin-left: 40px;
+    margin-left: 30%;
     background-color: rgb(208, 209, 210);
     width: 500px;
-    height:300px;
+    height: 300px;
     border-radius: 5px;
     margin-top: 70px;
 
-    .UpdateCharityProfileTitle{
+    .UpdateCharityProfileTitle {
         background-color: #fcb500;
         font-family: "Courier New", Courier, monospace;
     }
-    .CMS-UpdateCharityProfileForm{
+
+    .CMS-UpdateCharityProfileForm {
         margin-top: 40px;
         margin-left: 40px;
-        .CMS-UpdateCharityProfileFormTextArea{
+
+        .CMS-UpdateCharityProfileFormTextArea {
             height: 100px;
-            background-color:white;
+            background-color: white;
         }
     }
+
+    .saveBtn {
+        border-radius: 10px;
+        text-align: center;
+        margin-top: 30px;
+        // margin-bottom: 5px;
+        // text-decoration: none;
+        // display: inline-block;
+        margin-left: 40px;
+        width: 300px;
+        background-color: #fcb500;
+        border: none;
+        height: 30px;
+        font-family: "Courier New", Courier, monospace;
+    }
+
+
 }
 
-.saveBtn{
-    border-radius: 10px;
-            text-align: center;
-            margin-top: 30px;
-            // margin-bottom: 5px;
-            // text-decoration: none;
-            // display: inline-block;
-            margin-left: 40px;
-            width: 300px;
-            background-color: #fcb500;
-            border: none;
-            height: 30px;
-            font-family: "Courier New", Courier, monospace;
+.charityFooter {
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    color: #fcb500;
+    width: 100vw;
+    margin-left: -8px;
+    padding-right: 16px;
+    margin-top: 120px;
+    height: 50px;
+    padding-top: 50px;
+    overflow-y: hidden;
+
+    h3 {
+        font-size: larger;
+        font-family: "Courier New", Courier, monospace;
+        margin-top: -7px;
+        margin-left: 25px;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        justify-content: space-evenly;
+        margin-top: -7px;
+
+        li {
+            margin-left: 20px;
+            height: 40px;
+            width: 40px;
+        }
+    }
 }
