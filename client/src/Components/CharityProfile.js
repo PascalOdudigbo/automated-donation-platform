@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios";
 import { Link, Route, Routes, useNavigate } from "react-router-dom";
+import NavBar from './NavBar';
+import {
+    BsInstagram,
+    BsFacebook,
+    BsGithub,
+    BsTwitter,
+    BsLinkedin,
+  } from "react-icons/bs";
 
 function CharityProfile() {
     const [charity, setCharity] = useState();
@@ -97,7 +105,10 @@ function CharityProfile() {
 
 
     return (
+        <>
+        <NavBar />
         <div className='CMB-UpdateCharityProfileContainer'>
+          
 
             <h1 className='UpdateCharityProfileTitle'>{`${charity?.name?.toUpperCase()}'s PROFILE`}</h1>
 
@@ -133,9 +144,29 @@ function CharityProfile() {
                 </div>
             </form>
 
-
-
         </div>
+        <div className="footer">
+        <h3>follow us</h3>
+        <ul>
+          <li>
+            <BsInstagram />
+          </li>
+          <li>
+            <BsFacebook />
+          </li>
+          <li>
+            <BsTwitter />
+          </li>
+          <li>
+            <BsGithub />
+          </li>
+          <li>
+            <BsLinkedin />
+          </li>
+        </ul>
+        <h4>2022 Copyright NIA Africa Ltd</h4>
+      </div>
+        </>
     )
 }
 
