@@ -11,6 +11,17 @@ class DonationsController < ApplicationController
     end
   end
 
+
+#GET /a_donors_donations / :donor_id
+  def donor_donations
+    donations = Donor.where(donor_id: params[:donor_id])
+    if donations.length > 0
+      render json: donations, status: :found
+    else
+      render json: {error: "no donations found"}
+    end
+  end
+
   # GET /donations
   def index
     @donations = Donation.all
