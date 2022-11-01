@@ -25,7 +25,7 @@ function CharityInventoriesManagement({ setBeneficiaries, allBeneficiaries }) {
         fetch(`/charities_inventories/${data?.id}`)
           .then((response) => response.json())
           .then((data) => {
-            console.log("INVENTORIES:", data);
+            // console.log("INVENTORIES:", data);
             if (!data.error) {
               setAllInventories(data);
               // setTargetBeneficiary({});
@@ -37,7 +37,7 @@ function CharityInventoriesManagement({ setBeneficiaries, allBeneficiaries }) {
         fetch(`/a_charitys_beneficiaries/${data?.id}`)
           .then((response) => response.json())
           .then((data) => {
-            console.log("BENEFICIARIES FROM INVENTORIES:", data);
+            // console.log("BENEFICIARIES FROM INVENTORIES:", data);
             if (!data?.error) {
               setTotalBeneficiaries(data?.length);
             }
@@ -47,12 +47,33 @@ function CharityInventoriesManagement({ setBeneficiaries, allBeneficiaries }) {
         fetch(`/a_charitys_stories/${data?.id}`)
           .then((response) => response.json())
           .then((data) => {
-            console.log("STORIES:", data);
+            // console.log("STORIES:", data);
             if (!data?.error) {
               setTotalStories(data?.length);
             }
           })
           .catch((err) => console.error(err));
+        
+          fetch(`/a_charitys_donations/${data?.id}`)
+          .then((response) => response.json())
+          .then((data) => {
+            // console.log("INVENTORIES:", data);
+            if (!data?.error) {
+              // setAllDonations(data);
+              let idArray = [];
+              let totalAmount = 0;
+              data.forEach(donation => {
+                totalAmount += donation.amount;
+                idArray.push(donation?.donor?.id);
+              })
+              setTotalDonations(totalAmount);
+              let unique = [... new Set(idArray)]
+              setTotalDonors(unique?.length)
+
+            }
+          })
+          .catch((err) => console.error(err));
+
       })
       .catch((err) => console.error(err));
     handleRefreshData();
@@ -69,7 +90,7 @@ function CharityInventoriesManagement({ setBeneficiaries, allBeneficiaries }) {
         fetch(`/charities_inventories/${data?.id}`)
           .then((response) => response.json())
           .then((data) => {
-            console.log("INVENTORIES:", data);
+            // console.log("INVENTORIES:", data);
             if (!data?.error) {
               setAllInventories(data);
               setTargetInventory({});
@@ -82,7 +103,7 @@ function CharityInventoriesManagement({ setBeneficiaries, allBeneficiaries }) {
         fetch(`/a_charitys_beneficiaries/${data?.id}`)
           .then((response) => response.json())
           .then((data) => {
-            console.log("BENEFICIARIES:", data);
+            // console.log("BENEFICIARIES:", data);
             if (!data?.error) {
               setTotalBeneficiaries(data?.length);
             }
@@ -92,9 +113,29 @@ function CharityInventoriesManagement({ setBeneficiaries, allBeneficiaries }) {
         fetch(`/a_charitys_stories/${data?.id}`)
           .then((response) => response.json())
           .then((data) => {
-            console.log("STORIES:", data);
+            // console.log("STORIES:", data);
             if (!data?.error) {
               setTotalStories((totalStories) => (totalStories = data?.length));
+            }
+          })
+          .catch((err) => console.error(err));
+
+          fetch(`/a_charitys_donations/${data?.id}`)
+          .then((response) => response.json())
+          .then((data) => {
+            // console.log("INVENTORIES:", data);
+            if (!data?.error) {
+              // setAllDonations(data);
+              let idArray = [];
+              let totalAmount = 0;
+              data.forEach(donation => {
+                totalAmount += donation.amount;
+                idArray.push(donation?.donor?.id);
+              })
+              setTotalDonations(totalAmount);
+              let unique = [... new Set(idArray)]
+              setTotalDonors(unique?.length)
+
             }
           })
           .catch((err) => console.error(err));
@@ -114,7 +155,7 @@ function CharityInventoriesManagement({ setBeneficiaries, allBeneficiaries }) {
         })
         .then((res) => {
           setIsLoadingSave(false);
-          console.log(res.data);
+          // console.log(res.data);
           alert("Inventory Updated!");
           handleRefreshData();
         })
@@ -135,7 +176,7 @@ function CharityInventoriesManagement({ setBeneficiaries, allBeneficiaries }) {
         })
         .then((res) => {
           setIsLoadingSave(false);
-          console.log(res.data);
+          // console.log(res.data);
           alert("Inventory Added!");
           setAllInventories([...allInventories, res.data])
           handleRefreshData();
@@ -183,7 +224,7 @@ function CharityInventoriesManagement({ setBeneficiaries, allBeneficiaries }) {
 
         <div className="charitiesManageInventoriesStatistic">
           <h3>TOTAL DONATIONS </h3>
-          <p>{totalDonations}</p>
+          <p>{`$${totalDonations}`}</p>
         </div>
       </div>
 
@@ -212,7 +253,7 @@ function CharityInventoriesManagement({ setBeneficiaries, allBeneficiaries }) {
                 {allBeneficiaries?.map(data =>
                   <p onClick={() => {
                     targetBeneficiary = data?.beneficiary
-                    console.log("TARGET INVENTORY", targetBeneficiary)
+                    // console.log("TARGET INVENTORY", targetBeneficiary)
                   }}>
                     {data?.beneficiary?.name}
                   </p>)}

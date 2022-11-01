@@ -3,7 +3,7 @@ function AdminCharitiesList({
     setCurrentItem,
     setDisplayData
 }) {
-    console.log(allCharities);
+    // console.log(allCharities);
     return (
         <div className="charityItem">
             {

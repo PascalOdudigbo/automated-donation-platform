@@ -26,7 +26,7 @@ function CharityRegister({ userData }) {
             })
             .then(res => {
                 setIsLoading(false);
-                console.log(res.data)
+                // console.log(res.data)
                 userData(res.data)
                 alert("Charity Registered Successfully!");
                 navigate("/")
@@ -88,7 +88,7 @@ function CharityRegister({ userData }) {
                  <br/>
                 <p className="charityRegisterSpaceline">______________________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;______________________</p>
                 <br/>
-                <button type="submit" className="signUp"> {isLoading ? "Loading..." : "Register"}</button>
+                <button style={{backgroundColor: "#fcb500", marginLeft: "-5px"}} type="submit" className="signUp"> {isLoading ? "Loading..." : "Register"}</button>
             </form>
         </div>
     )

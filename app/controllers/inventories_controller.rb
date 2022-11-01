@@ -1,7 +1,7 @@
 class InventoriesController < ApplicationController
   before_action :set_inventory, only: [:show, :update, :destroy]
 
-   #GET /inventories/:charity_id
+   #GET /charities_inventories/:charity_id
    def charity_inventories
     inventories = Inventory.where(charity_id: params[:charity_id])
     if inventories.length > 0
