@@ -1,10 +1,8 @@
-# Project Template: React/Rails API
+# Automated Donation Platform 
 
 ## Description
 
-This project is scaffolded so that you can build a React frontend and Rails
-backend together, and easily deploy them to Heroku.
-
+This is a project is built with a React frontend and Rails backend 
 ## Requirements
 
 - Ruby 2.7.4
