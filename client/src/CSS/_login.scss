@@ -1,0 +1,152 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.loginContainer {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  padding: 80px 40px 40px;
+  //background: rgba(0,0,0,0.7);
+  border-radius: 10px;
+  color: #fff;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+
+  img {
+    position: absolute;
+    top: 7px;
+    left: calc(50% - 50px);
+    width: 100px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 55%;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    color: #fcb500;
+    font-family: "Courier New", Courier, monospace;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      align-content: center;
+      align-self: center;
+      font-family: "Lucida Console", "Courier New", monospace;
+
+      .dropbtn {
+        background-color: rgb(6, 143, 255);
+        color: white;
+        padding: 10px;
+        font-size: large;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content p {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown-content p:hover {
+        background-color: #fcb500;
+    }
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+      background-color: #8d5412;
+    }
+
+    label {
+      color: black;
+      text-align: left;
+    }
+
+    input {
+      width: 95%;
+      height: 15px;
+      padding: 10px 0;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+      background-color: transparent;
+      border-radius: 10px;
+      // color: inherit;
+    }
+
+    .loginbtn {
+      color: white;
+      padding: 8px 12px;
+      //border: 1px solid #333;
+      border-radius: 10px;
+      text-align: center;
+      margin-top: 3px;
+      text-decoration: none;
+      display: inline-block;
+      margin-left: 10%;
+      margin-right: 14%;
+      font-style: bold;
+      font-size: large;
+      background-color: #fcb500;
+      border: none;
+      font-family: "Lucida Console", "Courier New", monospace;
+    }
+    .loginbtn:hover {
+      background-color: #8d5412;
+    }
+
+    p {
+      color: #fcb500;
+      text-align: center;
+      font-weight: bolder;
+    }
+
+    .signUp {
+      color: white;
+      padding: 8px 12px;
+      //border: 1px solid #333;
+      border-radius: 10px;
+      text-align: center;
+      margin-top: 3px;
+      text-decoration: none;
+      font-style: bold;
+      display: inline-block;
+      margin-left: 10%;
+      margin-right: 14%;
+      background-color: rgb(6, 143, 255);
+      font-family: "Lucida Console", "Courier New", monospace;
+    }
+    .signUp:hover {
+        background-color: #8d5412;
+      }
+
+   
+  }
+}

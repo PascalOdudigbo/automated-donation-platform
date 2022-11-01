@@ -1,0 +1,50 @@
+.charity {
+  border-radius: 10px;
+  box-shadow: 0px 5px 20px rgb(75, 71, 71);
+  margin: 20px;
+  display: table;
+  // width: 45%;
+  // height: 45%;
+  padding: 75px 50px 50px;
+  background: white;
+  align-items: center;
+  text-align: center;
+
+  h2 {
+    color: black;
+    margin-top: 0px;
+    margin-bottom: 2rem;
+    font-style: bold;
+    font-size: large;
+    font-family: "Lucida Console", "Courier New", monospace;
+  }
+
+  h5 {
+    color: black;
+    margin-top: -20px;
+    font-size: small;
+    font-family: "Lucida Console", "Courier New", monospace;
+  }
+
+  p{
+    color: black;
+  }
+
+  button {
+    margin-top: 200px;
+    border-radius: 10px;
+    background-color: #fcb500;
+    text-align: center;
+    text-decoration: none;
+    border-style: none;
+    font-style: bold;
+    font-size: large;
+    padding: 8px 12px;
+    font-family: "Lucida Console", "Courier New", monospace;
+  }
+
+  button:hover {
+    background-color: #8d5412;
+  }
+
+}
