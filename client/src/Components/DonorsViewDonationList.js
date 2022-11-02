@@ -1,8 +1,15 @@
 import React from 'react'
 
-function DonorsViewDonationList() {
+function DonorsViewDonationList({ charityName, charityEmail, amountDonated, donationFrequency, donationDate,edit }) {
   return (
-    <div>DonorsViewDonationList</div>
+    <tr>
+      <td>{charityName}</td>
+      <td>{charityEmail}</td>
+      <td>{amountDonated}</td>
+      <td>{donationFrequency}</td>
+      <td>{donationDate}</td>
+      <td>{edit}</td>
+    </tr>
   )
 }
 

@@ -14,7 +14,7 @@ class DonationsController < ApplicationController
 
 #GET /a_donors_donations / :donor_id
   def donor_donations
-    donations = Donor.where(donor_id: params[:donor_id])
+    donations = Donation.where(donor_id: params[:donor_id])
     if donations.length > 0
       render json: donations, status: :found
     else

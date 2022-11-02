@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   get "/a_charitys_donations/:charity_id", to: "donations#charity_donations"
 
   #getting a donor's donations
-  get "/a_donors_donations / :donor_id", to: "donations#donor_donations"
+  get "/a_donors_donations/:donor_id", to: "donations#donor_donations"
 
   #getting charitys inventories
   get "/charities_inventories/:charity_id", to: "inventories#charity_inventories"
