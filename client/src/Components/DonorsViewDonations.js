@@ -142,8 +142,9 @@ function DonorsViewDonations({ donors }) {
 
                     </Routes>
                     {/* <img onClick={() => navigate("/")} className="donorsDasboardLogo" src={logo} alt="logo" /> */}
+                    <div className='donorsTableContainer'>
                     <h1 className="donorsDasboardTitle">{`ALL ${donorData?.first_name?.toUpperCase()} ${donorData?.last_name?.toUpperCase()}'s DONATIONS`}</h1>
-                    <table>
+                    <table className='donorsTable'>
                         <tbody>
                             <tr>
                                 <th>
@@ -177,7 +178,8 @@ function DonorsViewDonations({ donors }) {
                             />)}
                         </tbody>
                     </table>
-                    <div className="footer">
+                    </div>
+                    <div className="donorsViewFooter">
                         <h3>follow us</h3>
                         <ul>
                             <li>

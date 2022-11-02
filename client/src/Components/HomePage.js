@@ -21,13 +21,13 @@ function HomePage() {
   const [allCharities, setAllCharities] = useState([]);
   // const [selectedCharity, setSelectedCharity] = useState({});
   const picturesUrlArray = [
-    "https://res.cloudinary.com/devex/image/fetch/c_scale,f_auto,q_auto,w_720/https://lh6.googleusercontent.com/HtP9Lm0nws0B38i5qkyqZtwRSn8xkR8TJGkriaqiWv89mLavA-_M_V5X7iGYY93QB3JpOzrnUJ-HUWC9YaYUO1bDpoq_O8FYPj_nJFw-GC5pkMeDX418bK-4ORlbY09XVMqfIhq2",
-    "http://c.files.bbci.co.uk/18FE/production/_100489360_bbc.jpg",
-    "https://www.znbc.co.zm/news/wp-content/uploads/2022/09/SANITARY-PADS-GIRLS.jpg",
-    "https://dorcas.org/wp-content/uploads/2021/05/Menstrual-Hygiene-Day-1600x1067-1.jpeg",
-    "https://artintanzania.files.wordpress.com/2021/04/1-4.jpg",
-    "https://images.squarespace-cdn.com/content/v1/5f088a46ebe405013044f1a4/1610655584126-7U6OZ6134Q3BSJIZOSBJ/cover.png",
-    "https://d141thk7ygtt3c.cloudfront.net/66875dc9-663a-44e7-be32-ed925927ddb0.jpg",
+   "https://www.aljazeera.com/wp-content/uploads/2020/08/563469beabf94e7396e3f2d3ce5df9c4_18.jpeg",
+   "https://www.aljazeera.com/wp-content/uploads/2019/03/735455d0278b4c0ea098e7cfe7014af6_8.jpeg?resize=1170%2C780",
+   "https://www.kevmrc.com/wp-content/uploads/2022/05/16-girls-education-in-kenya.jpg",
+   "https://www.aljazeera.com/wp-content/uploads/2019/03/8473ca4a4b284a9694db3a0b8a7051a7_8.jpeg",
+  //  "https://www.aljazeera.com/wp-content/uploads/2019/03/1dce5e02cc10481094344f44ff3bd6d8_8.jpeg?fit=1170%2C780",
+   "https://www.aljazeera.com/wp-content/uploads/2019/03/b67991ff069c48e59bb17c431a8378bf_8.jpeg?fit=1170%2C780",
+   "https://gdb.voanews.com/FFCE7BFC-9815-4332-9EB8-25F8DC60B5F4_w1023_r1_s.jpg"
   ];
   const [imageUrl, setImageUrl] = useState(picturesUrlArray[0]);
 
@@ -37,15 +37,6 @@ function HomePage() {
       setAllCharities(res.data);
     });
 
-    const picturesUrlArray = [
-      "https://res.cloudinary.com/devex/image/fetch/c_scale,f_auto,q_auto,w_720/https://lh6.googleusercontent.com/HtP9Lm0nws0B38i5qkyqZtwRSn8xkR8TJGkriaqiWv89mLavA-_M_V5X7iGYY93QB3JpOzrnUJ-HUWC9YaYUO1bDpoq_O8FYPj_nJFw-GC5pkMeDX418bK-4ORlbY09XVMqfIhq2",
-      "http://c.files.bbci.co.uk/18FE/production/_100489360_bbc.jpg",
-      "https://www.znbc.co.zm/news/wp-content/uploads/2022/09/SANITARY-PADS-GIRLS.jpg",
-      "https://dorcas.org/wp-content/uploads/2021/05/Menstrual-Hygiene-Day-1600x1067-1.jpeg",
-      "https://artintanzania.files.wordpress.com/2021/04/1-4.jpg",
-      "https://images.squarespace-cdn.com/content/v1/5f088a46ebe405013044f1a4/1610655584126-7U6OZ6134Q3BSJIZOSBJ/cover.png",
-      "https://d141thk7ygtt3c.cloudfront.net/66875dc9-663a-44e7-be32-ed925927ddb0.jpg",
-    ];
 
     const interval = setInterval(() => {
       let randomIndex = Math.floor(Math.random() * picturesUrlArray?.length);
