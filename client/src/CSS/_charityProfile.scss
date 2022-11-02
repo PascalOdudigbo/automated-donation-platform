@@ -26,15 +26,15 @@
 .CMB-UpdateCharityProfileContainer {
     display: flex;
     flex-direction: column;
-    margin-left: 30%;
-    background-color: rgb(208, 209, 210);
+    margin-left: 40%;
+    // background-color: rgb(208, 209, 210);
     width: 500px;
     height: 300px;
     border-radius: 5px;
     margin-top: 70px;
 
     .UpdateCharityProfileTitle {
-        background-color: #fcb500;
+        color: #fcb500;
         font-family: "Courier New", Courier, monospace;
     }
 

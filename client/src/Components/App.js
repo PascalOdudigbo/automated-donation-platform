@@ -16,6 +16,7 @@ import DonorsDonateToCharity from "./DonorsDonateToCharity";
 
 import CharityProfile from "./CharityProfile";
 
+import DonorsViewDonations from "./DonorsViewDonations";
 
 
 function App() {
@@ -35,10 +36,11 @@ function App() {
          <Route path="/edit-profile" element={< CharityProfile/>} />
         <Route path="/donate" element={<Login userData={setUserData} />} />
         <Route path="/signup" element={<SignUp userData={setUserData} />} />
-        <Route path="/research" element={<Research />} />
-        <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/research" element={<Research />}/>
+        <Route path="/about-us" element={<AboutUs />}/>
         <Route path="/charity/*" element={<CharitiesDashboard charityData={userData} />} />
-        <Route path="/donate-to-charity" element={<DonorsDonateToCharity/>}/>
+        <Route path="/donate-to-charity" element={<DonorsDonateToCharity/>} />
+        <Route path="/donors-donations/*" element={<DonorsViewDonations/>} />
         {/* create route here with path="/donors-donations" */}
       </Routes>
 

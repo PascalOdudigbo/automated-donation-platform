@@ -43,7 +43,7 @@
             margin-left: 2%;
             margin-right: 2%;
             width: 25%;
-            box-shadow: 0px 5px 20px rgb(75, 71, 71);
+            // box-shadow: 0px 5px 20px rgb(75, 71, 71);
             background-color: rgb(226, 221, 221);
             border-radius: 5px;
 
@@ -140,7 +140,16 @@
                 text-align: center;
                 border-radius: 5%;
                 background-color: #fcb500;
-                box-shadow: 0px 5px 20px rgb(75, 71, 71);
+                // box-shadow: 0px 5px 20px rgb(75, 71, 71);
+
+                h3{
+                    font-size: medium;
+                    padding-top: 10px;
+                }
+
+                p{
+                    padding-top: 5px;
+                  }
             }
            
         }

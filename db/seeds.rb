@@ -71,9 +71,9 @@ inv1= Inventory.create(item: "sanitary towels", quantity: 1000, beneficiary_id: 
 inv2 = Inventory.create(item: "exercise books", quantity: 500, beneficiary_id: b2.id, charity_id: c1.id)
 inv3 = Inventory.create(item: "stationery", quantity: 600, beneficiary_id: b3.id, charity_id: c1.id)
 
-d1 = Donor.create(first_name: "Mary", last_name: "Coleman", email: "marycole@gmail.com", password: "1234", password_confirmation: "1234", country: "USA")
-d2 = Donor.create(first_name: "Robert", last_name: "Kavai", email: "r.kavai@gmail.com", password: "5678", password_confirmation: "5678", country: "Kenya")
-d3 = Donor.create(first_name: "Susan", last_name: "Kansime", email: "marycole@gmail.com", password: "1357", password_confirmation: "1357", country: "Uganda")
+d1 = Donor.create(first_name: "Mary", last_name: "Coleman", email: "marycole@gmail.com", password: "123456789", password_confirmation: "123456789", country: "USA")
+d2 = Donor.create(first_name: "Robert", last_name: "Kavai", email: "r.kavai@gmail.com", password: "kavai1234", password_confirmation: "kavai1234", country: "Kenya")
+d3 = Donor.create(first_name: "Susan", last_name: "Kansime", email: "susan@gmail.com", password: "kansime1357", password_confirmation: "kansime1357", country: "Uganda")
 
 s1 = Story.create(title: "Story 1", beneficiary_story: "A form-two student from Kenya Kesho Girls School says she is lucky to get menstrual pads from a local non-governmental organization known as Hope Africa that empowers young girls and women in the country.
 'We can’t access these  pads until we go back to school. Our mum cannot afford to buy us pads and also provide for food. So we mostly depend on what the charity provides,' Consolata said.
