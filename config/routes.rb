@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :donors
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
-  #get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
+  get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 
   #login and logout routes for donors
   get "/meDonor", to: "donors#loggedIn"

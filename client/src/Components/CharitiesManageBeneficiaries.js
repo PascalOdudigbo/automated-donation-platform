@@ -212,7 +212,7 @@ function CharitiesManageBeneficiaries({
 
   return (
     <div className="charitiesManageBeneficiariesContainer">
-      <div className="charitiesManageBeneficiariesStatisticsContainer">
+      <div className="charitiesManageBeneficiariesStatisticsContainer" style={{"backgroundColor": "white"}}>
         <div className="charitiesManageBeneficiariesStatistic">
           <h3>TOTAL BENEFICIARIES</h3>
           <p>{totalBeneficiaries}</p>
@@ -235,9 +235,9 @@ function CharitiesManageBeneficiaries({
       </div>
 
       <div className="charitiesManageAndUpdateBeneficiariesContainer">
-        <div className="charitiesManageBeneficiariesAllBeneficiaries">
+        <div className="charitiesManageBeneficiariesAllBeneficiaries" style={{"backgroundColor": "white"}}>
           <h2 className="CMB-AllBeneficiariesTitle">MANAGE BENEFICIARIES</h2>
-          <div className="CMB-BeneficiaryItemContainer">
+          <div className="CMB-BeneficiaryItemContainer" >
             <CharitiesBeneficiaryList
               allBeneficiaries={allBeneficiaries}
               setTargetBeneficiary={setTargetBeneficiary}
@@ -249,7 +249,7 @@ function CharitiesManageBeneficiaries({
 
         </div>
 
-        <div className="CMB-UpdateOrAddBeneficiaryContainer">
+        <div className="CMB-UpdateOrAddBeneficiaryContainer" style={{"backgroundColor": "white"}}>
           <h2 className="adminTargetCharityName">
             {targetBeneficiary?.name
               ? targetBeneficiary?.name?.toUpperCase()
