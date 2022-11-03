@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Route, Routes, Link } from 'react-router-dom';
 // import { Link } from 'react-router-dom'
 // import logo from "../images/logo.png";
@@ -26,6 +26,60 @@ function DonorsViewDonations({ donors }) {
     // const navigate = useNavigate();
 
 
+    function formatDate(date) {
+        let d = new Date(date),
+            month = '' + (d.getMonth() + 1),
+            day = '' + d.getDate(),
+            year = d.getFullYear();
+    
+        if (month.length < 2) 
+            month = '0' + month;
+        if (day.length < 2) 
+            day = '0' + day;
+    
+        return [year, month, day].join('-');
+    }
+
+    const handleDonationReminders = useCallback(()=>{
+        allDonorDonations.forEach(donation => {
+            let donationDate = donation?.created_at?.toString().slice(0, 10);
+            let todaysDate = new Date();
+            todaysDate.toString().slice(0, 15);
+            let todaysDateFormattedString = formatDate(todaysDate);
+
+            let thisMonth = todaysDateFormattedString[5] + todaysDateFormattedString[6];
+            thisMonth = parseInt(thisMonth);
+
+            let thisYear = todaysDateFormattedString[0] + todaysDateFormattedString[1] + todaysDateFormattedString[2] + todaysDateFormattedString[3];
+            thisYear = parseInt(thisYear);
+
+            let donationYear = donationDate[0] + donationDate[1] + donationDate[2] + donationDate[3];
+            donationYear = parseInt(donationYear);
+
+            let donationMonth = donationDate[5] + donationDate[6];
+            donationMonth = parseInt(donationMonth);
+
+            let donationDay = donationDate[8] + donationDate[9];
+            donationDay = parseInt(donationDay);
+
+            let todaysDay = todaysDateFormattedString[8] + todaysDateFormattedString[9];
+            todaysDay = parseInt(todaysDay);
+
+
+            if (donation?.donation_frequency !== "once"){
+                if( donationDay === todaysDay && donationMonth < thisMonth){
+                    alert(`Don't forget to make a $${donation?.amount} donation to ${donation?.charity?.name} today.`)
+                }
+            }else if(donation?.donation_frequency !== "once" && donationMonth >= thisMonth ){
+                if( donationDay === todaysDay  && donationYear !== thisYear){
+                    alert(`Don't forget to make a $${donation?.amount} donation to ${donation?.charity?.name} today.`)
+                }
+            }
+
+        })
+    }, []);
+
+
     useEffect(() => {
         fetch("/meDonor")
             .then((response) => response.json())
@@ -49,6 +103,7 @@ function DonorsViewDonations({ donors }) {
                                 setAmountDonated(totalAmount);
                                 let unique = [...new Set(idArray)]
                                 setTotalCharitiesDonatedTo(unique?.length)
+                                handleDonationReminders()
 
                             }
                         })
@@ -69,7 +124,7 @@ function DonorsViewDonations({ donors }) {
 
 
 
-    }, []);
+    }, [handleDonationReminders]);
 
 
     function handleDonationEdited() {
@@ -115,6 +170,9 @@ function DonorsViewDonations({ donors }) {
 
 
     }
+
+    
+
     return (
         <div>
             <div className="donorsDasboardContainer">

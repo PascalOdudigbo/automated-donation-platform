@@ -42,7 +42,7 @@ function HomePage() {
       let randomIndex = Math.floor(Math.random() * picturesUrlArray?.length);
       setImageUrl(picturesUrlArray[randomIndex]);
       // console.log("Changed image");
-    }, 7000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [picturesUrlArray]);

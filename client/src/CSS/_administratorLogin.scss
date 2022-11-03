@@ -14,7 +14,7 @@ body{
   margin-top: 25%;
   border-radius: 10px;
   color: #fff;
-  // box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
 
   img {
     position: absolute;
@@ -29,7 +29,8 @@ body{
   h2 {
     text-align: center;
     letter-spacing: 1px;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    margin-top: 10px;
     color: #fcb500;
     font-family: "Courier New", Courier, monospace;
   }
@@ -62,7 +63,7 @@ body{
       //border: 1px solid #333;
       border-radius: 10px;
       text-align: center;
-      margin-top: 3px;
+      margin-top: 10px;
       text-decoration: none;
       display: inline-block;
       margin-left: 10%;

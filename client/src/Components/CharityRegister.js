@@ -42,7 +42,7 @@ function CharityRegister({ userData }) {
     return (
         <div className="signUpContainer">
             <form onSubmit={handleSubmit} className="form">
-                <img className={"charityRegisterLogo"} src={logo} alt="logo" />
+                <img className={"charityRegisterLogo"} onClick={() => navigate("/")} src={logo} alt="logo" />
                 <h2 className="registerCharityPageTitle">REGISTER CHARITY</h2>
                 <label htmlFor="name" className="labelName">Name</label>
                 <input className="textInput"
