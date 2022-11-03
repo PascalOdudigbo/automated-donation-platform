@@ -46,7 +46,7 @@ function AboutUs() {
                         </div>
                     </div>
                     <div className='AboutusTheoryContainer'>
-                        <img src={girls} alt="girls image"></img>
+                        <img src={girls} alt="girls"></img>
                         <div className='AboutusTheory'>
                             <h3>THEORY OF CHANGE</h3>
                             <div>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function DonorsViewDonationList({ charityName, charityEmail, amountDonated, donationFrequency, donationDate,edit }) {
+function DonorsViewDonationList({ charityName, charityEmail, amountDonated, donationFrequency, donationDate, edit }) {
   return (
     <tr>
       <td>{charityName}</td>

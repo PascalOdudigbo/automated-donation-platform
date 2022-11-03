@@ -32,11 +32,13 @@ function Login({ userData }) {
         // data.error ? navigate("/login") : navigate("/donate-to-charity")
         if (!data.error){
           localStorage.setItem("donorData", JSON.stringify(data));
+          navigate("/donors-donations");
+          userData(data);
         }
        
       })
       .catch((err) => console.error(err));
-  }, []);
+  }, [navigate, userData]);
 
   function handleOnSubmit(e) {
     e.preventDefault();
@@ -90,9 +92,9 @@ function Login({ userData }) {
       <img onClick={() => navigate("/")} src={logo} alt="logo" />
       <h2>LOGIN</h2>
       <form onSubmit={handleOnSubmit} className="form">
-        <div class="dropdown">
-          <button class="dropbtn">Select User Type</button>
-          <div class="dropdown-content">
+        <div className="dropdown">
+          <button className="dropbtn">Select User Type</button>
+          <div className="dropdown-content">
             <p
               onClick={(e) => {
                 console.log(e.target.innerText);

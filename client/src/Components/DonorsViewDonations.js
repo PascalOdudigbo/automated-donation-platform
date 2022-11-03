@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Routes, useNavigate, Link } from 'react-router-dom';
+import { Route, Routes, Link } from 'react-router-dom';
 // import { Link } from 'react-router-dom'
-import logo from "../images/logo.png";
+// import logo from "../images/logo.png";
 import DonorsViewDonationList from './DonorsViewDonationList';
 import EditDonations from './EditDonations';
 import NavBar from './NavBar';
@@ -12,32 +12,31 @@ import {
     BsTwitter,
     BsLinkedin,
 } from "react-icons/bs";
-import axios from 'axios';
+// import axios from 'axios';
 
 let allDonorDonations = JSON.parse(localStorage.getItem("allDonorDonations"));
-let DonorData = {}
 
 function DonorsViewDonations({ donors }) {
     const [donorData, setDonorData] = useState([]);
-    const [allDonations, setAllDonations] = useState(0);
+    const [, setAllDonations] = useState(0);
     const [amountDonated, setAmountDonated] = useState([]);
     const [totalCharities, setTotalCharities] = useState(0);
     const [totalCharitiesDonatedTo, setTotalCharitiesDonatedTo] = useState(0);
     const [targetDonation, setTargetDonation] = useState({});
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
 
     useEffect(() => {
         fetch("/meDonor")
             .then((response) => response.json())
             .then((data) => {
-                console.log(data)
+                // console.log(data)
                 if (!data?.error) {
                     setDonorData(data)
                     fetch(`/a_donors_donations/${data?.id}`)
                         .then((response) => response.json())
                         .then((donations) => {
-                            console.log("DONORS DONATIONS:", donations);
+                            // console.log("DONORS DONATIONS:", donations);
                             if (!donations?.error) {
                                 setAllDonations(donations);
                                 localStorage.setItem("allDonorDonations", JSON.stringify(donations));
@@ -48,7 +47,7 @@ function DonorsViewDonations({ donors }) {
                                     idArray.push(donation?.charity?.id);
                                 })
                                 setAmountDonated(totalAmount);
-                                let unique = [... new Set(idArray)]
+                                let unique = [...new Set(idArray)]
                                 setTotalCharitiesDonatedTo(unique?.length)
 
                             }
@@ -61,7 +60,7 @@ function DonorsViewDonations({ donors }) {
         fetch("/charities")
             .then((response) => response.json())
             .then((data) => {
-                console.log(data)
+                // console.log(data)
                 if (!data?.error) {
                     setTotalCharities(data?.length)
                 }
@@ -77,13 +76,13 @@ function DonorsViewDonations({ donors }) {
         fetch("/meDonor")
             .then((response) => response.json())
             .then((data) => {
-                console.log(data)
+                // console.log(data)
                 if (!data?.error) {
                     setDonorData(data)
                     fetch(`/a_donors_donations/${data?.id}`)
                         .then((response) => response.json())
                         .then((donations) => {
-                            console.log("DONORS DONATIONS:", donations);
+                            // console.log("DONORS DONATIONS:", donations);
                             if (!donations?.error) {
                                 setAllDonations(donations);
                                 localStorage.setItem("allDonorDonations", JSON.stringify(donations));
@@ -94,7 +93,7 @@ function DonorsViewDonations({ donors }) {
                                     idArray.push(donation?.charity?.id);
                                 })
                                 setAmountDonated(totalAmount);
-                                let unique = [... new Set(idArray)]
+                                let unique = [...new Set(idArray)]
                                 setTotalCharitiesDonatedTo(unique?.length)
 
                             }
@@ -107,7 +106,7 @@ function DonorsViewDonations({ donors }) {
         fetch("/charities")
             .then((response) => response.json())
             .then((data) => {
-                console.log(data)
+                // console.log(data)
                 if (!data?.error) {
                     setTotalCharities(data?.length)
                 }
@@ -168,7 +167,7 @@ function DonorsViewDonations({ donors }) {
 
                             </tr>
                             {allDonorDonations?.map((donation) => <DonorsViewDonationList
-                                key={donation?.Id}
+                                key={donation?.id}
                                 charityName={donation?.charity?.name}
                                 charityEmail={donation?.charity?.email}
                                 amountDonated={donation?.amount}

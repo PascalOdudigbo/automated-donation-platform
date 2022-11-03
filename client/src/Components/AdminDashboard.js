@@ -49,7 +49,7 @@ function AdminDashboard({ userData }) {
             .catch(err => console.error(err));
 
 
-    }, [])
+    }, [navigate])
 
     function handleDashboardStatistics(data){
         setApproved(0);
@@ -130,7 +130,7 @@ function AdminDashboard({ userData }) {
             <div className="profileAndStatsContainer">
                 <div className="profileContainer">
                     <div className="adminImageContainer">
-                        <img className="adminImage" src="" alt="admin image" />
+                        <img className="adminImage" src="" alt="admin" />
                     </div>
                     <div className="adminNameContainer">
                         <label className="adminNameLabel" htmlFor="Name">Name:</label>

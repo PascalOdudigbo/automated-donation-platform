@@ -26,7 +26,7 @@
 .CMB-UpdateCharityProfileContainer {
     display: flex;
     flex-direction: column;
-    margin-left: 40%;
+    margin-left: 35%;
     // background-color: rgb(208, 209, 210);
     width: 500px;
     height: 300px;
@@ -45,6 +45,7 @@
         .CMS-UpdateCharityProfileFormTextArea {
             height: 100px;
             background-color: white;
+            margin-left: -5px;
         }
     }
 

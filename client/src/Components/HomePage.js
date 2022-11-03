@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import NavBar from "./NavBar";
 import Charity from "./Charity";
 import axios from "axios";
-import { Link, Navigate, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import DonorViewCharityStories from "./DonorViewCharityStories";
 import { useNavigate } from "react-router-dom"
 
@@ -20,7 +20,7 @@ function HomePage() {
   const navigate = useNavigate();
   const [allCharities, setAllCharities] = useState([]);
   // const [selectedCharity, setSelectedCharity] = useState({});
-  const picturesUrlArray = [
+  const picturesUrlArray =  useMemo(() => [
    "https://www.aljazeera.com/wp-content/uploads/2020/08/563469beabf94e7396e3f2d3ce5df9c4_18.jpeg",
    "https://www.aljazeera.com/wp-content/uploads/2019/03/735455d0278b4c0ea098e7cfe7014af6_8.jpeg?resize=1170%2C780",
    "https://www.kevmrc.com/wp-content/uploads/2022/05/16-girls-education-in-kenya.jpg",
@@ -28,7 +28,7 @@ function HomePage() {
   //  "https://www.aljazeera.com/wp-content/uploads/2019/03/1dce5e02cc10481094344f44ff3bd6d8_8.jpeg?fit=1170%2C780",
    "https://www.aljazeera.com/wp-content/uploads/2019/03/b67991ff069c48e59bb17c431a8378bf_8.jpeg?fit=1170%2C780",
    "https://gdb.voanews.com/FFCE7BFC-9815-4332-9EB8-25F8DC60B5F4_w1023_r1_s.jpg"
-  ];
+  ], []);
   const [imageUrl, setImageUrl] = useState(picturesUrlArray[0]);
 
   useEffect(() => {
@@ -45,7 +45,7 @@ function HomePage() {
     }, 7000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [picturesUrlArray]);
 
   function handleDonationToCharity(charity) {
     // setSelectedCharity(charity);

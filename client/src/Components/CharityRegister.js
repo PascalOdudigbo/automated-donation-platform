@@ -79,7 +79,7 @@ function CharityRegister({ userData }) {
                 <label htmlFor="password">Password Confirmation</label>
                 <input
                     type="password"
-                    id="password"
+                    id="passwordConfirmation"
                     value={passwordConfirmation}
                     onChange={(e) => setPasswordConfirmation(e.target.value)}
                     autoComplete="current-password"
