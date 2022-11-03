@@ -49,7 +49,7 @@ function DonorsDonateToCharity() {
       donation_frequency: donationFrequency,
       anonymous: anonymousOrNot,
     };
-    // console.log("DONATION DATA", donationData);
+    console.log("DONATION DATA", donationData);
     axios
       .post("/donations", donationData)
       .then((res) => {

@@ -39,9 +39,9 @@ function EditDonations({ targetDonation, handleDataEdited }) {
                 <input className='editDonationInput' type="text" name="charityName" placeholder="donation name" value={charityName} readOnly />
                 <input className='editDonationInput' type="text" name="charityEmail" placeholder="donation email" value={charityEmail} readOnly />
                 <input className='editDonationInput' type="text" name="amountDonated" placeholder="amount donated" value={amountDonated} readOnly />
-                <div class="dropdown">
-                    <button class="dropbtn">Select Donation Frequency</button>
-                    <div class="dropdown-content">
+                <div className="dropdown">
+                    <button className="dropbtn">Select Donation Frequency</button>
+                    <div className="dropdown-content">
                         <p
                             onClick={(e) => {
                                 setDonationFrequency(e.target.innerText);
