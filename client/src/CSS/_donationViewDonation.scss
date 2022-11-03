@@ -1,102 +1,160 @@
+.donorLogout {
+  padding: 8px 12px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  width: 70px;
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 100px;
+  margin-right: 10px;
+  background-color: #fcb500;
+  border: none;
+  font-family: "Courier New", Courier, monospace;
+  margin-bottom: 10px;
+
+}
+
+.donorLogout:hover {
+  background-color: #ff0000;
+  color: white;
+  cursor: pointer;
+
+}
+
+
 .donorsViewDonationStatisticsContainer {
-    width: 40%;
-    height: 150px;
-    display: flex;
-    flex-direction: row;
-    background-color: rgb(226, 221, 221);
+  width: 40%;
+  height: 150px;
+  display: flex;
+  font-size: medium;
+  flex-direction: row;
+  //background-color: rgb(226, 221, 221);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-left: 30%;
+  margin-top: 60px;
+  //padding-top: 10px;
+
+  .donorsViewDonationStatistic {
+    height: 100px;
+    margin-right: 10%;
+    margin-top: 25px;
+    margin-left: 2%;
+    width: 200px;
+    text-align: center;
     border-radius: 5px;
-    margin-bottom: 20px;
-    margin-left: 30%;
-    margin-top: 60px;
+    background-color: #fcb500;
+    // box-shadow: 0px 5px 20px rgb(75, 71, 71);
 
-    .donorsViewDonationStatistic {
-      height: 100px;
-      margin-right: 10%;
-      margin-top: 25px;
-      margin-left: 2%;
-      width: 200px;
-      text-align: center;
-      border-radius: 5px;
+    h3 {
+      padding-top: 10px;
+      margin-left: 5px;
+      font-size: 12px;
+      margin-right: 5px;
+    }
+  }
+}
+
+.donorsTableContainer {
+  margin-left: 80px;
+  margin-top: 100px;
+
+  .donorsDasboardTitle {
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  .donorsTable {
+    width: 90%;
+
+    table {
+      margin-left: auto;
+      margin-right: auto;
+
+    }
+
+    th {
+      height: 10px;
+      padding: 10px;
       background-color: #fcb500;
-      // box-shadow: 0px 5px 20px rgb(75, 71, 71);
-
-      h3 {
-        margin-left: 5px;
-        margin-right: 5px;
-      }
+      color: white;
     }
+
+    td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 2px solid rgb(6, 143, 255);
+    }
+
+    tr:nth-child(even) {
+      background-color: #ebebeb;
+    }
+
+    tr:hover {
+      background-color: #935815da;
+      color: white
+    }
+
   }
 
-  .donorsTableContainer{
-    margin-left: 80px;
-    margin-top: 100px;
-
-    .donorsDasboardTitle{
-      text-align: center;
-    }
-
-    .donorsTable{
-      width:90%;
-      table{
-        margin-left: auto;
-        margin-right: auto;
-      }
-      
-      th {
-        height: 10px;
-        padding: 10px;
-        background-color: #fcb500;
-        color: white;
-      }
-      
-      td {
-        padding: 15px;
-        text-align: left;
-        border-bottom: 2px solid rgb(6, 143, 255);
-      }
-      tr:nth-child(even) {background-color: #ebebeb;}
-      
-      tr:hover {background-color:  #935815da; color:white}
-      
-    }
+  .editlink {
+    background-color: #fcb500;
+    color: white;
+    padding: 5px 12px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 3px;
+    text-decoration: none;
+    font-style: bold;
+    display: inline-block;
   }
 
-  .donorsViewFooter {
+  .editlink:hover,
+  .editlink:active .editlink:visited {
+    background-color: #935815da;
+  }
+
+}
+
+.donorsViewFooter {
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+  color: #fcb500;
+  width: 100vw;
+  margin-left: 0px;
+  padding-right: 16px;
+  margin-top: 450px;
+  height: 50px;
+  padding-top: 50px;
+
+  h3 {
+    font-size: larger;
+    font-family: "Amethysta', serif";
+    margin-top: -7px;
+    margin-left: 50px;
+  }
+
+  ul {
     display: flex;
     flex-direction: row;
-    background-color: black;
-    color: #fcb500;
-    width: 100vw;
-    margin-left: 0px;
-    padding-right: 16px;
-    margin-top: 450px;
-    height: 50px;
-    padding-top: 50px;
-  
-    h3 {
-      font-size: larger;
-      font-family: "Amethysta', serif";
-      margin-top: -7px;
-      margin-left: 50px;
-    }
-  
-    ul {
-      display: flex;
-      flex-direction: row;
-      list-style: none;
-      justify-content: space-evenly;
-      margin-top: -7px;
-  
-      li {
-        margin-left: 20px;
-        height: 40px;
-        width: 40px;
-      }
-    }
-  
-    h4 {
-      text-align: center;
-      margin-top: -7px;
+    list-style: none;
+    justify-content: space-evenly;
+    margin-top: -7px;
+
+    li {
+      margin-left: 20px;
+      height: 40px;
+      width: 40px;
+
     }
   }
-  
+
+  h4 {
+    text-align: center;
+    margin-top: -7px;
+  }
+}

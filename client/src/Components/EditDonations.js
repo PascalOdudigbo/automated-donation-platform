@@ -9,7 +9,7 @@ function EditDonations({ targetDonation, handleDataEdited }) {
     const [charityEmail, setcharityEmail] = useState(targetDonation?.charity?.email);
     const [amountDonated, setAmountDonated] = useState(targetDonation?.amount);
     const [donationFrequency, setDonationFrequency] = useState(targetDonation?.donation_frequency);
-const navigate = useNavigate();
+    const navigate = useNavigate();
 
 
     function handleOnSubmit(event){
@@ -34,11 +34,11 @@ const navigate = useNavigate();
 
 
     return (
-        <div>
-            <form className={"form"} onSubmit={handleOnSubmit}>
-                <input type="text" name="charityName" placeholder="donation name" value={charityName} readOnly />
-                <input type="text" name="charityEmail" placeholder="donation email" value={charityEmail} readOnly />
-                <input type="text" name="amountDonated" placeholder="amount donated" value={amountDonated} readOnly />
+        <div className='editDonation'>
+            <form className={"form"} >
+                <input className='editDonationInput' type="text" name="charityName" placeholder="donation name" value={charityName} readOnly />
+                <input className='editDonationInput' type="text" name="charityEmail" placeholder="donation email" value={charityEmail} readOnly />
+                <input className='editDonationInput' type="text" name="amountDonated" placeholder="amount donated" value={amountDonated} readOnly />
                 <div class="dropdown">
                     <button class="dropbtn">Select Donation Frequency</button>
                     <div class="dropdown-content">
@@ -58,7 +58,7 @@ const navigate = useNavigate();
                         </p>
                     </div>
                 </div>
-                <button className="ui button" type="submit">
+                <button onSubmit={handleOnSubmit} className="editButton" type="submit">
                     Edit
                 </button>
             </form>
