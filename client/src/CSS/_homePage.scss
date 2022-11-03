@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Amethysta&family=EB+Garamond&display=swap');
+
 body {
   justify-content: center;
 }
@@ -5,17 +7,51 @@ body {
 .randomImages {
   width: 100%;
   height: 600px;
+  margin-top: 10px;
+  background-size: cover;
+  background-position: center;
+  background-color: white;
+
+
 }
 
 .NiaAbout {
   text-align: justify;
-  font-weight: bold;
-  margin-top: 10px;
+  font-weight: medium;
+  // font-weight: bold;
+  margin-top: 30px;
+  margin-left: 40px;
+  margin-right: 40px;
   margin-bottom: 30px;
   font-size: larger;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Amethysta', serif";
+  // font-size: larger;
+  // font-family: "Courier New", Courier, monospace;
 }
 
+
+
+// .registerCharity {
+//   text-decoration: none;
+//   width: 100px;
+//   height: 20px;
+//   color: white;
+//   padding: 8px 12px;
+//   border-radius: 10px;
+//   // justify-self: center;
+//   text-align: center;
+//   margin-left: 43%;
+//   margin-top: 50px;
+//   margin-bottom: 50%;
+//   font-style: bold;
+//   font-size: large;
+//   background-color: #fcb500;
+//   border: none;
+//   font-family: "Amethysta', serif";
+// }
+// .registerCharity:hover{
+//   background-color: #8d5412;
+// }
 
 .registerCharity {
   text-decoration: none;
@@ -33,23 +69,29 @@ body {
   font-size: large;
   background-color: #fcb500;
   border: none;
-  font-family: "Lucida Console", "Courier New", monospace;
+  font-family: "Amethysta', serif";
+}
+
+.registerCharity:hover {
+  background-color: #8d5412;
 }
 
 
 
 
-h1 {
+
+.charitiesTitle {
   text-align: center;
   letter-spacing: 1px;
   margin-bottom: 2rem;
   margin-top: 5rem;
   color: #fcb500;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Amethysta', serif";
 }
 
 .CharitiesContainer {
   display: grid;
+  // height: 300px;
   gap: 25px 25px;
   grid-template-columns: auto auto auto;
   padding: 10px;
@@ -60,8 +102,8 @@ h1 {
   flex-direction: row;
   background-color: black;
   color: #fcb500;
-  width: 100%;
-  margin-left: -8px;
+  width: 100vw;
+  margin-left: 0px;
   padding-right: 16px;
   margin-bottom: -8px;
   height: 50px;
@@ -69,9 +111,9 @@ h1 {
 
   h3 {
     font-size: larger;
-    font-family: "Courier New", Courier, monospace;
+    font-family: "Amethysta', serif";
     margin-top: -7px;
-    margin-left: 25px;
+    margin-left: 50px;
   }
 
   ul {
@@ -82,6 +124,7 @@ h1 {
     margin-top: -7px;
 
     li {
+      margin-left: 20px;
       height: 40px;
       width: 40px;
     }

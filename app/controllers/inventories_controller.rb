@@ -1,6 +1,16 @@
 class InventoriesController < ApplicationController
   before_action :set_inventory, only: [:show, :update, :destroy]
 
+   #GET /charities_inventories/:charity_id
+   def charity_inventories
+    inventories = Inventory.where(charity_id: params[:charity_id])
+    if inventories.length > 0
+      render json: inventories, status: :found
+    else
+      render json: {error: "no inventories found"}
+    end
+  end
+
   # GET /inventories
   def index
     @inventories = Inventory.all
@@ -18,7 +28,7 @@ class InventoriesController < ApplicationController
     @inventory = Inventory.new(inventory_params)
 
     if @inventory.save
-      render json: @inventory, status: :created, location: @inventory
+      render json: @inventory, status: :created
     else
       render json: @inventory.errors, status: :unprocessable_entity
     end
@@ -46,6 +56,6 @@ class InventoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def inventory_params
-      params.permit(:item, :quantity, :benefeciaries_id, :charities_id)
+      params.permit(:item, :quantity, :beneficiary_id, :charity_id)
     end
 end

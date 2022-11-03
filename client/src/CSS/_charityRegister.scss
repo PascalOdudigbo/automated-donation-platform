@@ -1,0 +1,70 @@
+.signUpContainer {
+  margin-top: 20px;
+  height: 550px;
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    .charityRegisterLogo {
+      position: absolute;
+      top: 7px;
+      left: calc(50% - 50px);
+      width: 100px;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 55%;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+
+    .registerCharityPageTitle {
+      margin-top: 45px;
+      margin-bottom: 10px;
+    }
+
+    .namesInput {
+      display: flex;
+      flex-direction: row;
+      text-align: left;
+
+      label {
+        color: black;
+        text-align: left;
+        margin-left: 9px;
+      }
+
+      .labelName {
+        // margin-right: 0px;
+        margin-top: -17px;
+      }
+
+      .charityRegisterSpaceline {
+        margin-top: 15px;
+      }
+
+      .charityRegisterSignUp {
+        color: white;
+        padding: 8px 12px;
+        //border: 1px solid #333;
+        border-radius: 10px;
+        text-align: center;
+        margin-top: 3px;
+        text-decoration: none;
+        font-size: large;
+        border: none;
+        font-style: bold;
+        display: inline-block;
+        margin-left: 10%;
+        margin-right: 14%;
+        background-color: #fcb500;
+        font-family: "Lucida Console", "Courier New", monospace;
+      }
+
+      .charityRegisterSignUp:hover {
+        cursor: pointer;
+        background-color: #8d5412;
+      }
+    }
+  }
+}

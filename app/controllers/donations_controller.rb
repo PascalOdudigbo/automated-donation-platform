@@ -1,6 +1,27 @@
 class DonationsController < ApplicationController
   before_action :set_donation, only: [:show, :update, :destroy]
 
+  #GET /a_charitys_donations/:charity_id
+  def charity_donations
+    donations = Donation.where(charity_id: params[:charity_id])
+    if donations.length > 0
+      render json: donations, status: :found
+    else
+      render json: {error: "no donations found"}
+    end
+  end
+
+
+#GET /a_donors_donations / :donor_id
+  def donor_donations
+    donations = Donation.where(donor_id: params[:donor_id])
+    if donations.length > 0
+      render json: donations, status: :found
+    else
+      render json: {error: "no donations found"}
+    end
+  end
+
   # GET /donations
   def index
     @donations = Donation.all
@@ -15,7 +36,7 @@ class DonationsController < ApplicationController
 
   # POST /donations
   def create
-    @donation = Donation.new(donation_params)
+    @donation = Donation.new(donation_params.except(:donation))
 
     if @donation.save
       render json: @donation, status: :created, location: @donation
@@ -46,6 +67,6 @@ class DonationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def donation_params
-      params.permit(:donors_id, :charities_id, :amount)
+      params.permit(:donor_id, :charity_id, :donation_frequency, :amount, :anonymous, :donation)
     end
 end

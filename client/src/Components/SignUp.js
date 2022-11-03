@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import axios from "axios";
 import logo from "../images/logo.png";
 
@@ -31,7 +31,7 @@ function SignUp({ userData }) {
                 setIsLoading(false);
                 userData(res.data)
                 alert("Signup successful!")
-                // navigate("/")
+                navigate("/login")
             })
             .catch(error => {
                 setIsLoading(false);
@@ -45,7 +45,7 @@ function SignUp({ userData }) {
     return (
         <div className="signUpContainer">
             <form onSubmit={handleSubmit} className="form">
-                <img src={logo} alt="logo" />
+                <img  onClick={() => navigate("/")} src={logo} alt="logo" />
                 <h2>Sign Up</h2>
                 <div className="namesInput">
                     <label htmlFor="firstName" className="labelFirstName">First Name</label>
@@ -97,7 +97,7 @@ function SignUp({ userData }) {
                     required
                 />
                 <p>______________________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;______________________</p>
-                <button type="submit" className="signUp"> {isLoading ? "Loading..." : "SignUp"}</button>
+                <button type="submit" className="signUp"  style={{marginLeft: "-1px"}}> {isLoading ? "Loading..." : "SignUp"}</button>
             </form>
         </div>
     );

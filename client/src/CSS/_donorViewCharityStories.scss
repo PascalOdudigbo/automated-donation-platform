@@ -1,0 +1,92 @@
+body {
+  justify-content: center;
+  overflow-x: hidden;
+ font-family: "Amethysta', serif";
+}
+
+.donorViewCharityStoryContainer {
+//   height: 100vh;
+  width: 98vw;
+
+  .donorViewCharityStoryPageTitle{
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+font-size: larger;
+    margin-top: 2rem;
+    color: #fcb500;
+    
+  }
+
+  .donorViewCharityStoryPageCharityAboutContainer{
+    border-bottom: double;
+    .donorViewCharityStoryPageCharityAboutTitle{
+        margin-bottom: 10px;
+    }
+
+    .donorViewCharityStoryPageCharityAbout{
+        margin-bottom: 30px;
+    }
+
+  }
+
+  .donorCharityAllStoriesContainer{
+    .donorCharityStoryContainer{
+        border-bottom: double;
+        .donorCharityStoryTitle{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .donorCharityStoryBeneficiary{
+            margin-bottom: 5px;
+        }
+        .donorCharityStoryInventory{
+            margin-bottom: 5px;
+        }
+        .donorCharityStoryInventoryQuantity{
+            margin-bottom: 5px;
+        }
+    }
+  }
+
+  .DVCfooter {
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    color: #fcb500;
+    width: 100%;
+    margin-left: -8px;
+    padding-right: 16px;
+    // margin-bottom: -8px;
+    height: 50px;
+    padding-top: 50px;
+    // position: relative;
+    bottom: 0px;
+  
+    h3 {
+      font-size: larger;
+     
+      margin-top: -7px;
+      margin-left: 25px;
+    }
+  
+    ul {
+      display: flex;
+      flex-direction: row;
+      list-style: none;
+      justify-content: space-evenly;
+      margin-top: -7px;
+  
+      li {
+        margin-left: 20px;
+        height: 40px;
+        width: 40px;
+      }
+    }
+  
+    h4 {
+      text-align: center;
+      margin-top: -7px;
+    }
+  }
+}

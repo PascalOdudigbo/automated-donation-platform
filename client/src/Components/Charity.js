@@ -1,11 +1,16 @@
 import React from "react";
 
-function Charity({name, address, description, handleDonateClicked}){
+function Charity({name, address, handleSetSelectedCharity, handleDonateClicked}){
     return(
-        <div className="charity">
+        <div className="charity" 
+        onClick={()=>{
+            localStorage.clear();
+            handleSetSelectedCharity();
+        }}
+        >
             <h2>{name}</h2>
+            <br/>
             <h5>{address}</h5>
-            <p>{description}</p>
             <button onClick={()=>{handleDonateClicked()}}>Donate</button>
         </div>
     );

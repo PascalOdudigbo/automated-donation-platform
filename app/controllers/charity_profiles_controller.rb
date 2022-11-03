@@ -46,6 +46,6 @@ class CharityProfilesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def charity_profile_params
-      params.permit(:charities, :about_us)
+      params.permit(:charity_id, :about_us)
     end
 end

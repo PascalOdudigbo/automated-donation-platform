@@ -1,12 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import logo from "../images/logo.png";
 
 function AdministratorLogin({ userData }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    fetch("/meAdministrator")
+      .then((response) => response.json())
+      .then((data) => {
+        if (!data?.error) {
+          navigate("/admin");
+          userData(data);
+        }
+      })
+      .catch((err) => console.error(err));
+  }, [navigate, userData]);
 
   function handleOnSubmit(e) {
     e.preventDefault();
@@ -19,7 +32,7 @@ function AdministratorLogin({ userData }) {
       })
       .then((res) => {
         setIsLoading(false);
-        console.log(res.data);
+        //console.log(res.data);
         userData(res.data);
         // localStorage.setItem("userId", JSON.stringify(res.data.id));
         alert("Login successful");
@@ -35,28 +48,32 @@ function AdministratorLogin({ userData }) {
   }
 
   return (
-    <form onSubmit={handleOnSubmit} className="form">
-      <h3>LOGIN</h3>
-      <label htmlFor="email">Email: </label>
-      <input
-        type="email"
-        id="email"
-        value={email}
-        required
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <label htmlFor="password">Password: </label>
-      <input
-        type="password"
-        id="password"
-        value={password}
-        required
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button type="submit" className="login">
-        {isLoading ? "Loading..." : "Login"}
-      </button>
-    </form>
+    <div className="adminLoginContainer">
+      <form onSubmit={handleOnSubmit} className="form">
+        <img onClick={() => navigate("/")} src={logo} alt="logo" />
+        <h2>LOGIN</h2>
+        <label htmlFor="email">Email: </label>
+        <input
+          type="email"
+          id="email"
+          value={email}
+          required
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <label htmlFor="password">Password: </label>
+        <input
+          type="password"
+          id="password"
+          value={password}
+          required
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button type="submit" className="loginbtn">
+          {isLoading ? "Loading..." : "Login"}
+        </button>
+      </form>
+    </div>
+
   );
 }
 export default AdministratorLogin;

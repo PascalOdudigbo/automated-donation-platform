@@ -1,7 +1,7 @@
 class CharitiesController < ApplicationController
   before_action :set_charity, only: [:show, :update, :destroy]
 
-  #Login donor
+  #Login charity
   def login
     user = Charity.find_by(email: params[:email])
     if user&.authenticate(params[:password])
@@ -21,7 +21,11 @@ class CharitiesController < ApplicationController
   #Verify charity has logged in
   def loggedIn
     user = Charity.find_by(id: session[:charity_id])
-    render json: user, status: :created
+    if user
+      render json: user, status: :found
+    else
+      render json: { error: "Not authorized" }, status: :unauthorized
+    end
   end
 
 
@@ -70,6 +74,6 @@ class CharitiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def charity_params
-      params.permit(:name, :address, :email, :approved)
+      params.permit(:name, :address, :email, :approved, :password, :password_confirmation)
     end
 end

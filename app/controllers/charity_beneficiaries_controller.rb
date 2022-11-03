@@ -1,6 +1,17 @@
 class CharityBeneficiariesController < ApplicationController
   before_action :set_charity_beneficiary, only: [:show, :update, :destroy]
 
+  #GET /beneficiaries/:charity_id
+  def charity_beneficiaries
+    beneficiaries = CharityBeneficiary.where(charity_id: params[:charity_id])
+    if beneficiaries.length > 0
+      render json: beneficiaries, status: :found
+    else
+      render json: {error: "no beneficiaries found"}
+    end
+  end
+  
+  
   # GET /charity_beneficiaries
   def index
     @charity_beneficiaries = CharityBeneficiary.all
@@ -46,6 +57,6 @@ class CharityBeneficiariesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def charity_beneficiary_params
-      params.require(:charity_beneficiary).permit(:charities_id, :beneficiaries_id)
+      params.permit(:charity_id, :beneficiary_id)
     end
 end

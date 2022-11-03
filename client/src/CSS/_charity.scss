@@ -4,7 +4,7 @@
   margin: 20px;
   display: table;
   // width: 45%;
-  // height: 45%;
+  // height: 200px;
   padding: 75px 50px 50px;
   background: white;
   align-items: center;
@@ -15,15 +15,15 @@
     margin-top: 0px;
     margin-bottom: 2rem;
     font-style: bold;
-    font-size: large;
-    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: larger;
+    font-family: "Amethysta', serif";
   }
 
   h5 {
     color: black;
     margin-top: -20px;
-    font-size: small;
-    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: large;
+    font-family: "Amethysta', serif";
   }
 
   p{
@@ -40,11 +40,11 @@
     font-style: bold;
     font-size: large;
     padding: 8px 12px;
-    font-family: "Lucida Console", "Courier New", monospace;
+    font-family: "Amethysta', serif";
   }
 
   button:hover {
-    background-color: #8d5412;
+    background-color: #a7671f;
   }
 
 }

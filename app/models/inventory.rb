@@ -1,4 +1,5 @@
 class Inventory < ApplicationRecord
-  belongs_to :beneficiaries
-  belongs_to :charities
+  belongs_to :beneficiary
+  belongs_to :charity
+  has_many :stories
 end

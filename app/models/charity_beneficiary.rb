@@ -1,4 +1,4 @@
 class CharityBeneficiary < ApplicationRecord
-  belongs_to :charities
-  belongs_to :beneficiaries
+  belongs_to :charity
+  belongs_to :beneficiary
 end
