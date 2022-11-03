@@ -25,6 +25,9 @@ module ReactRailsApiProjectTemplate
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
 
+    # Use SameSite=Strict for all cookies to help protect against CSRF
+    config.action_dispatch.cookies_same_site_protection = :strict
+
     #cors permission for requests to backend
     config.middleware.insert_before 0, Rack::Cors do
       allow do
