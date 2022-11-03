@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 // import DropdownButton from 'react-bootstrap/DropdownButton';
 // import Dropdown from 'react-bootstrap/Dropdown'
 import axios from "axios";
@@ -21,7 +21,7 @@ function AdminUpdateCharity({ selectedItem, handleDataEdit, handleDataDelete, di
     function handleOnSubmit() {
         let status = false
 
-        if (approvalStatus == "Approved") {
+        if (approvalStatus === "Approved") {
             setIsLoadingApproved(true);
             status = true;
         }

@@ -67,7 +67,7 @@ function CharityInventoriesManagement({ setBeneficiaries, allBeneficiaries }) {
                 idArray.push(donation?.donor?.id);
               })
               setTotalDonations(totalAmount);
-              let unique = [... new Set(idArray)]
+              let unique = [...new Set(idArray)]
               setTotalDonors(unique?.length)
 
             }
@@ -133,7 +133,7 @@ function CharityInventoriesManagement({ setBeneficiaries, allBeneficiaries }) {
                 idArray.push(donation?.donor?.id);
               })
               setTotalDonations(totalAmount);
-              let unique = [... new Set(idArray)]
+              let unique = [...new Set(idArray)]
               setTotalDonors(unique?.length)
 
             }
@@ -251,7 +251,9 @@ function CharityInventoriesManagement({ setBeneficiaries, allBeneficiaries }) {
               <button className="inventoryDropbtn">Select Beneficiary</button>
               <div className="inventoryDropdown-content">
                 {allBeneficiaries?.map(data =>
-                  <p onClick={() => {
+                  <p 
+                  key={data?.id}
+                  onClick={() => {
                     targetBeneficiary = data?.beneficiary
                     // console.log("TARGET INVENTORY", targetBeneficiary)
                   }}>

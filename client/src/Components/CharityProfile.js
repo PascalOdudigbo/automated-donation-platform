@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios";
-import { Link, Route, Routes, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import NavBar from './NavBar';
 import {
     BsInstagram,
@@ -33,7 +33,7 @@ function CharityProfile() {
             })
             .catch((err) => console.error(err));
 
-    }, []);
+    }, [navigate]);
 
     function handleRefreshData() {
         fetch("/meCharity")
@@ -53,7 +53,7 @@ function CharityProfile() {
 
     function handleSave() {
         // console.log("Charity", charity)
-        if (charity?.charity_profile?.about_us != undefined) {
+        if (charity?.charity_profile?.about_us !== undefined) {
             setIsLoadingSave(true);
 
             axios

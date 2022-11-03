@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../images/logo.png";
+// import logo from "../images/logo.png";
 import girls from "../images/girls.png";
 import schoolGirls from "../images/scoolgirls.jpg";
 import NavBar from "./NavBar";
@@ -93,7 +93,7 @@ function Research() {
         </div>
         <hr></hr>
         <div className="intro2">
-          <img src={girls} alt="girls image"></img>
+          <img src={girls} alt="charity girls"></img>
           <p className="welcome">
             In Kenya, girls drop out of school at a higher rate than boys
             beginning at puberty,
@@ -122,7 +122,7 @@ function Research() {
             <br /> the time for NiaAfrica’s solution is now.
           </p>
 
-          <img src={schoolGirls} alt="girls image"></img>
+          <img src={schoolGirls} alt="charity girls"></img>
         </div>
       </div>
       <div className="footer">

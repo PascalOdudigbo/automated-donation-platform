@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import CharitiesBeneficiaryList from "./CharitiesBeneficiaryList";
 
 function CharitiesManageBeneficiaries({
@@ -26,59 +26,7 @@ function CharitiesManageBeneficiaries({
   const [isLoadingSave, setIsLoadingSave] = useState(false);
   const [isLoadingDelete, setIsLoadingDelete] = useState(false);
 
-  useEffect(() => {
-    fetch("/meCharity")
-      .then((response) => response.json())
-      .then((data) => {
-        setCharityData(data);
-        fetch(`/a_charitys_beneficiaries/${data?.id}`)
-          .then((response) => response.json())
-          .then((data) => {
-            // console.log("BENEFICIARIES:", data);
-            if (!data?.error) {
-              setBeneficiaries(data);
-              setTotalBeneficiaries(data?.length);
-              setTargetBeneficiary({});
-              handleRefreshData();
-            }
-          })
-          .catch((err) => console.error(err));
-
-        fetch(`/a_charitys_stories/${data?.id}`)
-          .then((response) => response.json())
-          .then((data) => {
-            // console.log("STORIES:", data);
-            if (!data?.error) {
-              setTotalStories(data?.length);
-            }
-          })
-          .catch((err) => console.error(err));
-
-        fetch(`/a_charitys_donations/${data?.id}`)
-          .then((response) => response.json())
-          .then((data) => {
-            // console.log("INVENTORIES:", data);
-            if (!data?.error) {
-              // setAllDonations(data);
-              let idArray = [];
-              let totalAmount = 0;
-              data.forEach(donation => {
-                totalAmount += donation.amount;
-                idArray.push(donation?.donor?.id);
-              })
-              setTotalDonations(totalAmount);
-              let unique = [... new Set(idArray)]
-              setTotalDonors(unique?.length)
-
-            }
-          })
-          .catch((err) => console.error(err));
-
-      })
-      .catch((err) => console.error(err));
-  }, []);
-
-  function handleRefreshData() {
+  const handleRefreshData = useCallback(()=> {
     fetch("/meCharity")
       .then((response) => response.json())
       .then((data) => {
@@ -121,7 +69,7 @@ function CharitiesManageBeneficiaries({
                 idArray.push(donation?.donor?.id);
               })
               setTotalDonations(totalAmount);
-              let unique = [... new Set(idArray)]
+              let unique = [...new Set(idArray)]
               setTotalDonors(unique?.length)
 
             }
@@ -130,7 +78,61 @@ function CharitiesManageBeneficiaries({
 
       })
       .catch((err) => console.error(err));
-  }
+  }, [setBeneficiaries])
+
+  useEffect(() => {
+    fetch("/meCharity")
+      .then((response) => response.json())
+      .then((data) => {
+        setCharityData(data);
+        fetch(`/a_charitys_beneficiaries/${data?.id}`)
+          .then((response) => response.json())
+          .then((data) => {
+            // console.log("BENEFICIARIES:", data);
+            if (!data?.error) {
+              setBeneficiaries(data);
+              setTotalBeneficiaries(data?.length);
+              setTargetBeneficiary({});
+              handleRefreshData();
+            }
+          })
+          .catch((err) => console.error(err));
+
+        fetch(`/a_charitys_stories/${data?.id}`)
+          .then((response) => response.json())
+          .then((data) => {
+            // console.log("STORIES:", data);
+            if (!data?.error) {
+              setTotalStories(data?.length);
+            }
+          })
+          .catch((err) => console.error(err));
+
+        fetch(`/a_charitys_donations/${data?.id}`)
+          .then((response) => response.json())
+          .then((data) => {
+            // console.log("INVENTORIES:", data);
+            if (!data?.error) {
+              // setAllDonations(data);
+              let idArray = [];
+              let totalAmount = 0;
+              data.forEach(donation => {
+                totalAmount += donation.amount;
+                idArray.push(donation?.donor?.id);
+              })
+              setTotalDonations(totalAmount);
+              let unique = [...new Set(idArray)]
+              setTotalDonors(unique?.length)
+
+            }
+          })
+          .catch((err) => console.error(err));
+
+      })
+      .catch((err) => console.error(err));
+  }, [handleRefreshData, setBeneficiaries]);
+
+ 
 
   function handleSave() {
     if (targetBeneficiary?.id) {

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import { useState } from "react";
 import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import logo from "../images/logo.png";
@@ -12,9 +12,15 @@ function CharitiesDashboard(charityData) {
   const [charity, setCharity] = useState(charityData);
   const [beneficiaries, setBeneficiaries] = useState([]);
   const [allInventories, setAllInventories] = useState([]);
-  const [allStories, setAllStories] = useState([]);
+  const [, setAllStories] = useState([]);
 
   const navigate = useNavigate();
+
+  const handleLogout = useCallback(()=>{
+    fetch("/logoutCharity", {
+      method: "DELETE",
+    }).then(() => navigate("/"));
+  }, [navigate])
 
   useEffect(() => {
     fetch("/meCharity")
@@ -66,13 +72,7 @@ function CharitiesDashboard(charityData) {
       .catch((err) => console.error(err));
 
       
-  }, []);
-
-  function handleLogout() {
-    fetch("/logoutCharity", {
-      method: "DELETE",
-    }).then(() => navigate("/"));
-  }
+  }, [handleLogout, navigate]);
 
   return (
     <div className="charitiesDasboardContainer">
@@ -84,7 +84,7 @@ function CharitiesDashboard(charityData) {
       <div className="charitiesDasboardProfileAndNavigationContainer">
         <div className="charitiesDasboardProfileContainer">
           <div className="charitiesDasboardProfileImageContainer">
-            <img className="charityImage" src="" alt="charity image" />
+            <img className="charityImage" src="" alt="charity" />
             <h3 id="Name" className="charityName">
               {charity?.name}
             </h3>
