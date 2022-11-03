@@ -8,7 +8,9 @@
     height: 150px;
     display: flex;
     flex-direction: row;
-    background-color: rgb(226, 221, 221);
+    // background-color: rgb(226, 221, 221);
+    border-style: solid;
+    border-color: #fcb500;
     border-radius: 5px;
     margin-bottom: 20px;
 
@@ -37,7 +39,9 @@
   }
 
   .CVD-AllDonorsTable {
-    background-color: rgb(208, 209, 210);
+    // background-color: rgb(208, 209, 210);
+    border-style: solid;
+    border-color: #fcb500;
     border-radius: 5px;
     height: 330px;
     overflow-y: auto;

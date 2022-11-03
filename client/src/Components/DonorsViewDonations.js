@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Route, Routes, Link } from 'react-router-dom';
+import { Route, Routes, Link, useNavigate } from 'react-router-dom';
 // import { Link } from 'react-router-dom'
 // import logo from "../images/logo.png";
 import DonorsViewDonationList from './DonorsViewDonationList';
@@ -23,7 +23,7 @@ function DonorsViewDonations({ donors }) {
     const [totalCharities, setTotalCharities] = useState(0);
     const [totalCharitiesDonatedTo, setTotalCharitiesDonatedTo] = useState(0);
     const [targetDonation, setTargetDonation] = useState({});
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
 
     function formatDate(date) {
