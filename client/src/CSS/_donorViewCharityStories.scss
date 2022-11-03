@@ -1,6 +1,7 @@
 body {
   justify-content: center;
   overflow-x: hidden;
+ font-family: "Amethysta', serif";
 }
 
 .donorViewCharityStoryContainer {
@@ -11,9 +12,10 @@ body {
     text-align: center;
     letter-spacing: 1px;
     margin-bottom: 2rem;
+font-size: larger;
     margin-top: 2rem;
     color: #fcb500;
-    font-family: "Courier New", Courier, monospace;
+    
   }
 
   .donorViewCharityStoryPageCharityAboutContainer{
@@ -63,7 +65,7 @@ body {
   
     h3 {
       font-size: larger;
-      font-family: "Courier New", Courier, monospace;
+     
       margin-top: -7px;
       margin-left: 25px;
     }

@@ -170,14 +170,21 @@ function DonorsViewDonations({ donors }) {
 
 
     }
+    
+       function handleLogout(){
+        fetch("/logoutDonor", {
+            method: "DELETE",
+        }).then(() => navigate("/"));
+    }
 
     
-
+   
     return (
         <div>
             <div className="donorsDasboardContainer">
                 <div className="donorsDasboardLogoAndTitleContainer">
                     <NavBar />
+                    <button className='donorLogout' onClick={handleLogout}>Logout</button>
                     <div className="donorsViewDonationStatisticsContainer">
                         <div className="donorsViewDonationStatistic">
                             <h3>TOTAL DONATED</h3>
