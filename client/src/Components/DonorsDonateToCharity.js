@@ -30,7 +30,7 @@ function DonorsDonateToCharity() {
         localStorage.setItem("donorData", JSON.stringify(data));
       })
       .catch((err) => console.error(err));
-  }, []);
+  }, [navigate]);
 
   function causeRefresh() {
     console.log("Refresh Called");

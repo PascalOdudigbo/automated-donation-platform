@@ -39,7 +39,7 @@ function CharitiesViewDonations() {
                                 idArray.push(donation?.donor?.id);
                             })
                             setTotalAmountDonated(totalAmount);
-                            let unique = [... new Set(idArray)]
+                            let unique = [...new Set(idArray)]
                             setTotalDonors(unique?.length)
 
                         }

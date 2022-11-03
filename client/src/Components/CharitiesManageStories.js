@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import BeneficiariesStoriesList from "./BeneficiariesStoriesList";
 import axios from "axios";
 import '../CSS/_charitiesManageStories.scss';
@@ -21,62 +21,8 @@ function CharitiesManageStories({ allInventories, allBeneficiaries, setAllInvent
   const [storyTitle, setStoryTitle] = useState("");
 
 
-  useEffect(() => {
-    fetch("/meCharity")
-      .then((response) => response.json())
-      .then((data) => {
-        // setCharityData(data);
-        fetch(`/a_charitys_stories/${data?.id}`)
-          .then((response) => response.json())
-          .then((data) => {
-            // console.log("STORIES:", data);
-            if (!data.error) {
-              setAllStories(data);
-              // handleDashboardStatistics(res.data)
-              setTotalStories((totalStories) => (totalStories = data?.length));
-              setAllStoriesDadhboard(data?.length);
-              setTargetStory({});
-              handleRefreshData();
-            }
 
-          })
-          .catch((err) => console.error(err));
-
-        fetch(`/a_charitys_beneficiaries/${data?.id}`)
-          .then((response) => response.json())
-          .then((data) => {
-            // console.log("BENEFICIARIES:", data);
-            if (!data?.error) {
-              setTotalBeneficiaries(data?.length);
-              handleRefreshData();
-            }
-          })
-          .catch((err) => console.error(err));
-
-          fetch(`/a_charitys_donations/${data?.id}`)
-          .then((response) => response.json())
-          .then((data) => {
-            // console.log("INVENTORIES:", data);
-            if (!data?.error) {
-              // setAllDonations(data);
-              let idArray = [];
-              let totalAmount = 0;
-              data.forEach(donation => {
-                totalAmount += donation.amount;
-                idArray.push(donation?.donor?.id);
-              })
-              setTotalAmountDonated(totalAmount);
-              let unique = [... new Set(idArray)]
-              setTotalDonors(unique?.length)
-
-            }
-          })
-          .catch((err) => console.error(err));
-      })
-      .catch((err) => console.error(err));
-  }, []);
-
-  function handleRefreshData() {
+  const handleRefreshData = useCallback(()=> {
     fetch("/meCharity")
       .then((response) => response.json())
       .then((data) => {
@@ -130,7 +76,7 @@ function CharitiesManageStories({ allInventories, allBeneficiaries, setAllInvent
                 idArray.push(donation?.donor?.id);
               })
               setTotalAmountDonated(totalAmount);
-              let unique = [... new Set(idArray)]
+              let unique = [...new Set(idArray)]
               setTotalDonors(unique?.length)
 
             }
@@ -141,9 +87,64 @@ function CharitiesManageStories({ allInventories, allBeneficiaries, setAllInvent
       .catch((err) => console.error(err));
 
 
-  }
+  }, [setAllBeneficiaries, setAllInventories])
 
+  useEffect(() => {
+    fetch("/meCharity")
+      .then((response) => response.json())
+      .then((data) => {
+        // setCharityData(data);
+        fetch(`/a_charitys_stories/${data?.id}`)
+          .then((response) => response.json())
+          .then((data) => {
+            // console.log("STORIES:", data);
+            if (!data.error) {
+              setAllStories(data);
+              // handleDashboardStatistics(res.data)
+              setTotalStories((totalStories) => (totalStories = data?.length));
+              setAllStoriesDadhboard(data?.length);
+              setTargetStory({});
+              handleRefreshData();
+            }
 
+          })
+          .catch((err) => console.error(err));
+
+        fetch(`/a_charitys_beneficiaries/${data?.id}`)
+          .then((response) => response.json())
+          .then((data) => {
+            // console.log("BENEFICIARIES:", data);
+            if (!data?.error) {
+              setTotalBeneficiaries(data?.length);
+              handleRefreshData();
+            }
+          })
+          .catch((err) => console.error(err));
+
+          fetch(`/a_charitys_donations/${data?.id}`)
+          .then((response) => response.json())
+          .then((data) => {
+            // console.log("INVENTORIES:", data);
+            if (!data?.error) {
+              // setAllDonations(data);
+              let idArray = [];
+              let totalAmount = 0;
+              data.forEach(donation => {
+                totalAmount += donation.amount;
+                idArray.push(donation?.donor?.id);
+              })
+              setTotalAmountDonated(totalAmount);
+              let unique = [...new Set(idArray)]
+              setTotalDonors(unique?.length)
+
+            }
+          })
+          .catch((err) => console.error(err));
+      })
+      .catch((err) => console.error(err));
+  }, [handleRefreshData, setAllStoriesDadhboard]);
+
+  
 
   function handleSave() {
     fetch("/meCharity")

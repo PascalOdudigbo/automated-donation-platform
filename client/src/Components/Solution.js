@@ -17,8 +17,8 @@ function Solution (){
     <NavBar/>
     <div className="title">
 
-     <div class="title-image">
-     <div class="title-text">
+     <div className="title-image">
+     <div className="title-text">
       <h2 className="menstrual-health-title">Menstrual health management</h2>
     </div>
      </div>

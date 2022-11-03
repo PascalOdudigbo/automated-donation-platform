@@ -5,9 +5,9 @@ import { useNavigate } from 'react-router-dom';
 function EditDonations({ targetDonation, handleDataEdited }) {
     // charity name, Charity email, amount donated, Donation frequency, Donation date, Edit)
 
-    const [charityName, setcharityName] = useState(targetDonation?.charity?.name);
-    const [charityEmail, setcharityEmail] = useState(targetDonation?.charity?.email);
-    const [amountDonated, setAmountDonated] = useState(targetDonation?.amount);
+    const [charityName, ] = useState(targetDonation?.charity?.name);
+    const [charityEmail, ] = useState(targetDonation?.charity?.email);
+    const [amountDonated, ] = useState(targetDonation?.amount);
     const [donationFrequency, setDonationFrequency] = useState(targetDonation?.donation_frequency);
     const navigate = useNavigate();
 

@@ -19,7 +19,7 @@ function AdministratorLogin({ userData }) {
         }
       })
       .catch((err) => console.error(err));
-  }, []);
+  }, [navigate, userData]);
 
   function handleOnSubmit(e) {
     e.preventDefault();
