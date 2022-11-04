@@ -22,7 +22,7 @@ This is a project is built with a React frontend and Rails backend
 
 
 ## live link
-
+https://charity-donation-automation.herokuapp.com/
 
 
 ## Technologies Used
