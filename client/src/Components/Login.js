@@ -32,7 +32,7 @@ function Login({ userData }) {
         // data.error ? navigate("/login") : navigate("/donate-to-charity")
         if (!data.error){
           localStorage.setItem("donorData", JSON.stringify(data));
-          // navigate("/donors-donations");
+          navigate("/donors-donations");
           userData(data);
         }
        
